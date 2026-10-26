@@ -1,12 +1,12 @@
 // データのまちがいを調べる： node tools/check.js
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const dir = path.join(__dirname, '..', 'js', 'data');
-const ctx = { window: {} }; ctx.EK = undefined; vm.createContext(ctx);
-for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort()) {
-  try { vm.runInContext(fs.readFileSync(path.join(dir, f), 'utf8').replace(/^window\.EK = window\.EK \|\| \{\};/m, 'window.EK = window.EK || {}; EK = window.EK;'), ctx, { filename: f }); }
+const ctx = {}; ctx.window = ctx; vm.createContext(ctx);
+for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.js')).sort()) { // _init.js が いちばん先
+  try { vm.runInContext(fs.readFileSync(path.join(dir, f), 'utf8'), ctx, { filename: f }); }
   catch (e) { console.log('✕ ' + f + ': ' + e.message); process.exitCode = 1; }
 }
-const EK = ctx.window.EK || ctx.EK || {};
+const EK = ctx.EK || {};
 const data = EK.data || {};
 let bad = 0; const err = (g, m) => { bad++; console.log('✕ [' + g + '] ' + m); };
 const isStr = s => typeof s === 'string' && s.trim().length > 0;
@@ -62,6 +62,8 @@ for (const g of Object.keys(data)) {
     (d.words || []).concat(d.idioms || []).forEach(w => {
       const c = core[w.en]; if (!c) return err(g, 'core: ' + w.en + ' がない');
       if (!isStr(c.hint) || !isStr(c.core) || !isStr(c.tip)) err(g, 'core: ' + w.en + ' の hint/core/tip');
+      if (c.pic != null && (typeof c.pic !== 'string' || [...c.pic].length > 8)) err(g, 'core: ' + w.en + ' の pic');
+      if (c.hint && c.hint.toLowerCase().includes((w.en || '').replace(/\s*~.*$/, '').toLowerCase())) err(g, 'core: ' + w.en + ' の hint に英語そのもの');
       if (c.hint && c.hint.length > 40) err(g, 'core: ' + w.en + ' の hint が長い（' + c.hint.length + '字）');
       if (c.tip && c.tip.length > 60) err(g, 'core: ' + w.en + ' の tip が長い（' + c.tip.length + '字）');
       (w.ja || '').split(/[・、（）()～~]/).filter(t => t.length >= 2).forEach(t => { if ((c.hint || '').includes(t)) err(g, 'core: ' + w.en + ' の hint に答え「' + t + '」'); });
@@ -84,4 +86,10 @@ for (const g of Object.keys(data)) {
   console.log('○ [' + g + '] 単語 ' + (d.words || []).length + '・熟語 ' + (d.idioms || []).length + '・穴うめ ' + (d.cloze || []).length +
     '（正解の位置 ' + dist.join('/') + '）・長文 ' + (d.reading || []).length + '・英作文 ' + (d.writing || []).length + '・コア ' + Object.keys(Object.assign({}, d.core, d.icore)).length + '・穴うめ解説 ' + (d.clozeHelp || []).length);
 }
+const owner = {};
+for (const g of Object.keys(data)) for (const w of (data[g].words || []).concat(data[g].idioms || [])) {
+  const k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').trim();
+  if (owner[k] && owner[k] !== g) err(g, w.en + ' は ' + owner[k] + ' にもある'); owner[k] = owner[k] || g;
+}
+for (const g of Object.keys(data)) { const m = {}; for (const w of data[g].words || []) { if (m[w.ja]) err(g, '意味が同じ：' + m[w.ja] + ' / ' + w.en + '（' + w.ja + '）'); m[w.ja] = w.en; } }
 if (bad) { console.log('まちがい ' + bad + ' 件'); process.exitCode = 1; } else console.log('まちがいなし');

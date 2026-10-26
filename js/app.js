@@ -246,10 +246,15 @@
   function mc(right, wrong) { var opts = shuffle([right].concat(wrong)); return { opts: opts, a: opts.indexOf(right) }; }
 
   // 🧠 コアの意味 と 🔑 覚え方（まちがえたときは 大きく、正解のときは 小さく）
-  function coreBox(c, wrong) {
-    if (!c) return '';
-    return '<div class="core' + (wrong ? ' big' : '') + '"><div class="core-h">🧠 コアの意味</div><div>' + esc(c.core) + '</div>' +
-      (c.tip ? (wrong ? '<div class="core-h tip">🔑 覚え方</div><div>' + esc(c.tip) + '</div>' : '<details><summary>🔑 覚え方</summary>' + esc(c.tip) + '</details>') : '') + '</div>';
+  // en をわたすと、熟語なら out / up などの イメージ図も つける
+  function coreBox(c, wrong, en) {
+    var fig = en && window.EKFIG ? EKFIG.particle(en) : '';
+    if (!c && !fig) return '';
+    c = c || {};
+    return '<div class="core' + (wrong ? ' big' : '') + '">' +
+      (c.core ? '<div class="core-h">🧠 コアの意味</div><div class="core-t">' + (c.pic ? '<span class="pic">' + esc(c.pic) + '</span>' : '') + esc(c.core) + '</div>' : '') +
+      fig +
+      (c.tip ? '<div class="core-h tip">🔑 覚え方</div><div>' + esc(c.tip) + '</div>' : '') + '</div>';
   }
   // えらんだ まちがいの 選択肢が、本当は 何の意味か
   function pickedBox(html) { return html ? '<div class="picked">👆 ' + html + '</div>' : ''; }
@@ -296,7 +301,7 @@
         picked: function (k) { var o = wordByJa(list, q.opts[k]); return o && '「' + esc(o.ja) + '」は <b class="en">' + esc(o.en) + '</b> の意味'; } };
     }
     q.id = iid(g.id, w); q.recap = recap; q.hint = c ? c.hint : '例文の 場面から 考えよう';
-    q.explain = function (ok) { return '<div class="ex"><b>' + esc(w.en) + '</b> ＝ ' + esc(w.ja) + '</div>' + coreBox(c, !ok) + ex; };
+    q.explain = function (ok) { return '<div class="ex"><b>' + esc(w.en) + '</b> ＝ ' + esc(w.ja) + '</div>' + coreBox(c, !ok, w.en) + ex; };
     return q;
   }
   var pref = { dir: 'ej', imode: 'ja', ckind: '' };
@@ -308,7 +313,8 @@
     var html = '<h2>📘 単語</h2><p class="sub">' + g.name + ' によく出る 単語 ' + g.d.words.length + ' 語。1 回 10 問。○ が 3 回 続くと「定着」です。</p>' +
       '<div class="card">' + meter(c.wFix, g.d.words.length, '定着') + '<div style="height:8px"></div>' + meter(c.wSeen, g.d.words.length, '学習した') + '</div>' +
       segBtns('dir', [['ej', '英語 → 意味'], ['je', '意味 → 英語']], pref.dir) +
-      '<div class="btns"><button class="btn main grow" data-start="word">今日の 10 語</button><button class="btn grow" data-start="wordr">ランダム 10 語</button></div>' +
+      '<div class="btns"><button class="btn grow" data-study="w">📖 覚えるカード（10 語）</button></div>' +
+      '<div class="btns"><button class="btn main grow" data-start="word">今日の 10 語 クイズ</button><button class="btn grow" data-start="wordr">ランダム 10 語</button></div>' +
       '<div class="btns"><button class="btn grow" data-go="#/' + g.id + '/list/w">📋 単語の一覧</button></div>';
     view('📘 単語 ' + g.name, html, g.color, '#/' + g.id);
   }
@@ -317,7 +323,8 @@
     var html = '<h2>📗 熟語</h2><p class="sub">' + g.name + ' によく出る 熟語 ' + g.d.idioms.length + ' 個。例文の（　）で 練習すると、大問1 と同じ 形になります。</p>' +
       '<div class="card">' + meter(c.iFix, g.d.idioms.length, '定着') + '<div style="height:8px"></div>' + meter(c.iSeen, g.d.idioms.length, '学習した') + '</div>' +
       segBtns('imode', [['ja', '熟語 → 意味'], ['ex', '例文の（　）']], pref.imode) +
-      '<div class="btns"><button class="btn main grow" data-start="idiom">今日の 10 個</button><button class="btn grow" data-start="idiomr">ランダム 10 個</button></div>' +
+      '<div class="btns"><button class="btn grow" data-study="i">📖 覚えるカード（10 個）</button></div>' +
+      '<div class="btns"><button class="btn main grow" data-start="idiom">今日の 10 個 クイズ</button><button class="btn grow" data-start="idiomr">ランダム 10 個</button></div>' +
       '<div class="btns"><button class="btn grow" data-go="#/' + g.id + '/list/i">📋 熟語の一覧</button></div>';
     view('📗 熟語 ' + g.name, html, g.color, '#/' + g.id);
   }
@@ -326,10 +333,50 @@
     var html = '<h2>' + (t === 'i' ? '📗 熟語' : '📘 単語') + 'の一覧</h2><p class="sub">✓ は 定着、・は 学習中。🔊 で 発音を 聞けます。</p>' +
       list.map(function (w) {
         var id = idf(g.id, w), st = fixed(id) ? '<span class="done">✓</span>' : seen(id) ? '・' : '';
+        var c = g.core[w.en];
         return '<div class="row"><div class="t"><span class="en" style="font-size:18px;font-weight:600">' + esc(w.en) + '</span> ' + (w.pos ? '<span class="tag">' + w.pos + '</span> ' : '') + esc(w.ja) +
-          '<small class="en">' + bracket(w.ex) + '</small><small>' + esc(w.exja) + '</small></div>' + st + sayBtn(w.en) + '</div>';
+          (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') +
+          '<small class="en">' + bracket(w.ex) + '</small><small>' + esc(w.exja) + '</small>' +
+          (c || t === 'i' ? '<details class="ld"><summary>🧠 イメージと 覚え方</summary>' + coreBox(c, false, t === 'i' ? w.en : null) + '</details>' : '') + '</div>' + st + sayBtn(w.en) + '</div>';
       }).join('');
     view((t === 'i' ? '熟語' : '単語') + 'の一覧 ' + g.name, html, g.color, '#/' + g.id + (t === 'i' ? '/idiom' : '/word'));
+  }
+
+  // ---------- 📖 覚えるカード：単語 → タップで 意味・イメージ・覚え方 → 覚えた／もう一度 ----------
+  var study = null;
+  function studyStart(g, t) {
+    var list = t === 'i' ? g.d.idioms : g.d.words, idf = t === 'i' ? iid : wid;
+    var ws = sessionPick(list, function (w) { return idf(g.id, w); }, 10);
+    study = { g: g, t: t, list: ws, i: 0, again: 0, parent: location.hash, all: ws.slice() };
+    studyShow(false);
+  }
+  function studyShow(open) {
+    var st = study, w = st.list[st.i], g = st.g, c = g.core[w.en];
+    var html = '<div class="prog"><span>' + (st.i + 1) + ' / ' + st.list.length + '</span><div class="meter"><i style="width:' + Math.round(st.i / st.list.length * 100) + '%"></i></div></div>' +
+      '<div class="qbox scard"><div class="qkind">' + (st.t === 'i' ? '熟語' : '単語・' + esc(w.pos)) + ' ' + sayBtn(w.en) + '</div>' +
+      '<div class="qword"' + (st.t === 'i' ? ' style="font-size:28px"' : '') + '>' + esc(w.en) + '</div>' +
+      (open ? '<div class="sja">' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + '</div>' + coreBox(c, true, st.t === 'i' ? w.en : null) +
+        '<div class="ex">' + bracket(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>'
+        : (c ? '<div class="hintx">💡 ' + esc(c.hint) + '</div>' : '') + '<p class="note">意味を 思い出してから めくろう</p>') + '</div>' +
+      '<div class="btns">' + (open ? '<button class="btn grow" data-sagain>🔁 もう一度</button><button class="btn main grow" data-snext>覚えた →</button>'
+        : '<button class="btn main grow" data-sopen>めくる（意味と イメージを 見る）</button>') + '</div>';
+    view((st.t === 'i' ? '📗 熟語' : '📘 単語') + 'カード ' + g.name, html, g.color, st.parent);
+    if (!open) speak(w.en);
+  }
+  function studyNext(again) {
+    var st = study; if (!st) return;
+    if (again) { st.list.push(st.list[st.i]); st.again++; }
+    st.i++;
+    if (st.i < st.list.length) return studyShow(false);
+    var html = '<div class="card score"><div class="big">' + st.all.length + '</div><p>' + (st.t === 'i' ? '個の 熟語' : '語') + 'を 見ました。<br>すぐに クイズで たしかめると 記憶に 残りやすくなります。</p></div>' +
+      '<div class="btns"><button class="btn main grow" data-squiz>このまま クイズで たしかめる</button><button class="btn grow" data-go="' + st.parent + '">もどる</button></div>';
+    view('📖 カード ' + st.g.name, html, st.g.color, st.parent);
+  }
+  function studyQuiz() {
+    var st = study, g = st.g;
+    var qs = shuffle(st.all).map(function (w) { return st.t === 'i' ? idiomQ(g, w, pref.imode) : wordQ(g, w, pref.dir); });
+    startQuiz((st.t === 'i' ? '📗 熟語 ' : '📘 単語 ') + g.name, qs, g.color, st.parent);
+    quiz.again = studyQuiz;
   }
 
   // ---------- 大問1 穴うめ ----------
@@ -529,6 +576,11 @@
     if (t.dataset.opt != null) return answer(+t.dataset.opt);
     if (t.dataset.next != null) return next();
     if (t.dataset.hint != null) return showHint();
+    if (t.dataset.study) return studyStart(GR[cur.parts[0]], t.dataset.study);
+    if (t.dataset.sopen != null) return studyShow(true);
+    if (t.dataset.snext != null) return studyNext(false);
+    if (t.dataset.sagain != null) return studyNext(true);
+    if (t.dataset.squiz != null) return studyQuiz();
     if (t.dataset.rhint != null) { var hx = document.createElement('div'); hx.className = 'hintx'; hx.textContent = '💡 ' + t.dataset.rhint; t.closest('.rq').after(hx); t.remove(); return; }
     if (t.dataset.again != null) { var a = quiz && quiz.again; if (a) a(); return; }
     if (t.dataset.seg) {

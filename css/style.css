@@ -324,3 +324,26 @@ body.rk-on { overflow: hidden; }
   .tbar.hurry, .spd.fast, .rk.boost .meter2 i, .count, .slidein, .shake, .arrive .ae { animation: none !important; }
 }
 .tstats span { white-space: nowrap; }
+
+/* 🧠 イメージ・覚えるカード */
+.pic { font-size: 1.25em; margin-right: 4px; }
+.core-t .pic { float: left; font-size: 30px; line-height: 1; margin: 2px 8px 0 0; }
+.core::after { content: ""; display: block; clear: both; }
+.pimg { display: flex; gap: 10px; align-items: center; margin: 8px 0 2px; padding: 6px 8px; background: var(--panel); border-radius: 6px; font-size: 14px; }
+.pimg b { font-size: 17px; color: var(--c, var(--accent)); }
+.pimg span { color: var(--ink); }
+.pfig { flex: none; width: 96px; height: 58px; }
+.pfig .gd { stroke: var(--muted); stroke-width: 2; }
+.pfig .gd.thick { stroke-width: 4; stroke: var(--c, var(--accent)); }
+.pfig .dash { stroke-dasharray: 4 3; }
+.pfig .bx { fill: none; stroke: var(--muted); stroke-width: 2; }
+.pfig .bx.fill { fill: var(--muted); }
+.pfig .mv { stroke: var(--c, var(--accent)); stroke-width: 3; fill: none; stroke-linecap: round; }
+.pfig .mv.dash { stroke-dasharray: 5 4; }
+.pfig .mvh { fill: var(--c, var(--accent)); }
+.pfig .dt { fill: var(--warm); }
+.pfig .dt.faint { opacity: .4; }
+.pfig .band { fill: var(--blue-soft); }
+.ld { margin-top: 4px; }
+.ld summary { cursor: pointer; font-size: 13px; color: var(--c, var(--accent)); }
+.scard .sja { font-size: 24px; font-weight: 700; margin-top: 10px; }
