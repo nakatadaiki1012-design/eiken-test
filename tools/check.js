@@ -55,8 +55,33 @@ for (const g of Object.keys(data)) {
     if (w.type !== 'opinion' && !(w.passage || []).length) err(g, k + ': passage がない');
     if (w.type === 'email' && !/\[[^\]]+\]/.test((w.passage || []).join(' '))) err(g, k + ': 下線部 [ ] がない');
   });
+
+  // core.js
+  const core = Object.assign({}, d.core, d.icore); const has = Object.keys(core).length;
+  if (has) {
+    (d.words || []).concat(d.idioms || []).forEach(w => {
+      const c = core[w.en]; if (!c) return err(g, 'core: ' + w.en + ' がない');
+      if (!isStr(c.hint) || !isStr(c.core) || !isStr(c.tip)) err(g, 'core: ' + w.en + ' の hint/core/tip');
+      if (c.hint && c.hint.length > 40) err(g, 'core: ' + w.en + ' の hint が長い（' + c.hint.length + '字）');
+      if (c.tip && c.tip.length > 60) err(g, 'core: ' + w.en + ' の tip が長い（' + c.tip.length + '字）');
+      (w.ja || '').split(/[・、（）()～~]/).filter(t => t.length >= 2).forEach(t => { if ((c.hint || '').includes(t)) err(g, 'core: ' + w.en + ' の hint に答え「' + t + '」'); });
+    });
+    const keys = new Set((d.words || []).concat(d.idioms || []).map(w => w.en));
+    Object.keys(core).forEach(k => { if (!keys.has(k)) err(g, 'core: ' + k + ' は words/idioms にない'); });
+  }
+  if (d.clozeHelp) {
+    if (d.clozeHelp.length !== (d.cloze || []).length) err(g, 'clozeHelp の数が cloze とちがう');
+    d.clozeHelp.forEach((h, i) => {
+      if (!isStr(h.hint) || !isStr(h.think) || !Array.isArray(h.opts) || h.opts.length !== 4) err(g, 'clozeHelp[' + i + ']');
+      const o = (d.cloze || [])[i]; if (o && h.hint && new RegExp('\\b' + o.c[o.a].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i').test(h.hint)) err(g, 'clozeHelp[' + i + '] hint に答え');
+    });
+  }
+  if (d.readHint) {
+    if (d.readHint.length !== (d.reading || []).length) err(g, 'readHint の数が reading とちがう');
+    d.readHint.forEach((a, i) => { if (!Array.isArray(a) || a.length !== ((d.reading[i] || {}).qs || []).length) err(g, 'readHint[' + i + '] の数'); });
+  }
   const ans = (d.cloze || []).map(o => o.a); const dist = [0, 1, 2, 3].map(n => ans.filter(a => a === n).length);
   console.log('○ [' + g + '] 単語 ' + (d.words || []).length + '・熟語 ' + (d.idioms || []).length + '・穴うめ ' + (d.cloze || []).length +
-    '（正解の位置 ' + dist.join('/') + '）・長文 ' + (d.reading || []).length + '・英作文 ' + (d.writing || []).length);
+    '（正解の位置 ' + dist.join('/') + '）・長文 ' + (d.reading || []).length + '・英作文 ' + (d.writing || []).length + '・コア ' + Object.keys(Object.assign({}, d.core, d.icore)).length + '・穴うめ解説 ' + (d.clozeHelp || []).length);
 }
 if (bad) { console.log('まちがい ' + bad + ' 件'); process.exitCode = 1; } else console.log('まちがいなし');

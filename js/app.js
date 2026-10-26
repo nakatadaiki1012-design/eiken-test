@@ -2,11 +2,13 @@
 (function () {
   'use strict';
   var EK = window.EK, DATA = EK.data || {}, GR = {};
-  EK.grades.forEach(function (g) { GR[g.id] = g; g.d = DATA[g.id] || {}; ['words', 'idioms', 'cloze', 'reading', 'writing'].forEach(function (k) { g.d[k] = g.d[k] || []; }); });
+  EK.grades.forEach(function (g) { GR[g.id] = g; g.d = DATA[g.id] || {}; ['words', 'idioms', 'cloze', 'reading', 'writing', 'clozeHelp', 'readHint'].forEach(function (k) { g.d[k] = g.d[k] || []; });
+    g.core = Object.assign({}, g.d.core, g.d.icore); // 単語・熟語の ヒント・コアの意味・覚え方
+  });
 
   // ---------- 記録（このブラウザの中だけ） ----------
   var KEY = 'eikenlab-v1';
-  function blank() { return { srs: {}, read: {}, write: {}, drafts: {}, theme: '' }; }
+  function blank() { return { srs: {}, read: {}, write: {}, drafts: {}, theme: '', best: {}, sfx: true }; }
   var S = (function () {
     try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && typeof v === 'object') return Object.assign(blank(), v); } catch (e) { }
     return blank();
@@ -16,10 +18,11 @@
   // 間をあけてくり返す：○が続くと 1→2→4→7→15→30 日後。✕ はその日のうちにもう一度
   var GAP = [1, 2, 4, 7, 15, 30];
   function today() { var d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
-  function mark(id, ok) {
+  function mark(id, ok, soft) { // soft：ヒントを見て 正解した → 次の日に もう一度（段は 上げない）
     var r = S.srs[id], t = today();
     if (!r) r = S.srs[id] = { b: 0, d: t };
-    if (ok) { if (r.d <= t) { r.b = Math.min(r.b + 1, GAP.length); r.d = t + GAP[r.b - 1]; } }
+    if (ok && soft) { r.d = Math.max(r.d, t + 1); }
+    else if (ok) { if (r.d <= t) { r.b = Math.min(r.b + 1, GAP.length); r.d = t + GAP[r.b - 1]; } }
     else { r.b = 0; r.d = t; r.ng = (r.ng || 0) + 1; }
     save(); updateDue();
   }
@@ -87,6 +90,7 @@
   }
   function route() {
     if (window.speechSynthesis) speechSynthesis.cancel();
+    if (window.EKGAME) EKGAME.quit();
     quiz = null;
     var p = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
     cur.parts = p;
@@ -101,6 +105,7 @@
     if (sec === 'read') return p[2] != null ? readOne(g, +p[2]) : readList(g);
     if (sec === 'write') return p[2] != null ? writeOne(g, +p[2]) : writeList(g);
     if (sec === 'mock') return mockStart(g);
+    if (sec === 'rocket' && window.EKGAME) return EKGAME.menu(g);
     if (sec === 'list') return wordList(g, p[2] || 'w');
     gradeHome(g);
   }
@@ -146,6 +151,7 @@
       tile('#/' + g.id + '/read', '📖', '長文', '解いた ' + c.rDone + ' / ' + g.d.reading.length) +
       tile('#/' + g.id + '/write', '✍️', '英作文', '書いた ' + c.wrDone + ' / ' + g.d.writing.length) +
       tile('#/' + g.id + '/mock', '🏁', 'ミニ模試', '穴うめ 10 ＋ 長文 1') +
+      '<button class="tile wide rocket" data-go="#/' + g.id + '/rocket"><span class="ic">🚀</span><b>英単語ロケット</b><span>単語・熟語・穴うめを どんどん 正解して 宇宙へ</span></button>' +
       '</div><h3>' + g.name + ' の 筆記試験</h3><div class="card"><ul class="parts">' +
       g.parts.map(function (p) { return '<li><b>' + esc(p[0]) + '</b><span>' + esc(p[1]) + '</span></li>'; }).join('') +
       '</ul><p class="note">リスニング・二次試験（面接）も あります。くわしくは 英検の 公式サイトで。</p></div>';
@@ -163,11 +169,12 @@
   }
   function showQ() {
     var z = quiz, q = z.qs[z.i];
-    z.answered = false;
+    z.answered = false; z.hints = 0;
     var html = '<div class="prog"><span>' + (z.i + 1) + ' / ' + z.qs.length + '</span>' +
       '<div class="meter"><i style="width:' + Math.round(z.i / z.qs.length * 100) + '%"></i></div><span>○ ' + z.ok + '</span></div>' +
       (q.before || '') +
-      '<div class="qbox"><div class="qkind">' + esc(q.label) + (q.say ? ' ' + sayBtn(q.say) : '') + '</div>' + q.prompt + '</div>' +
+      '<div class="qbox"><div class="qkind">' + esc(q.label) + (q.say ? ' ' + sayBtn(q.say) : '') + (q.hint ? '<button class="hintb" type="button" data-hint>💡 ヒント</button>' : '') + '</div>' + q.prompt +
+      '<div class="hintx" id="hintx" hidden></div></div>' +
       '<div class="opts">' + q.opts.map(function (o, k) {
         return '<button class="opt' + (q.en ? ' en-opt' : '') + '" data-opt="' + k + '"><span class="n">' + (k + 1) + '</span><span>' + esc(o) + '</span></button>';
       }).join('') + '</div><div id="fb"></div>';
@@ -175,21 +182,35 @@
   }
   function answer(k) {
     var z = quiz; if (!z || z.answered) return;
+    var ob = document.querySelectorAll('.opt')[k]; if (!ob || ob.disabled) return; // ヒントで 消した選択肢は えらべない
     var q = z.qs[z.i], ok = k === q.a;
     z.answered = true;
     if (ok) z.ok++; else z.miss.push(q);
-    if (q.id) mark(q.id, ok);
+    if (q.id) mark(q.id, ok, ok && z.hints > 0);
     if (q.onAnswer) q.onAnswer(ok);
+    var hb = document.querySelector('[data-hint]'); if (hb) hb.hidden = true;
     document.querySelectorAll('.opt').forEach(function (b, n) {
       b.disabled = true;
       if (n === q.a) b.classList.add('ok'); else if (n === k) b.classList.add('ng');
     });
     var last = z.i === z.qs.length - 1;
-    $('#fb').innerHTML = '<div class="fb"><div class="res ' + (ok ? 'ok">○ 正解' : 'ng">✕ 正解は ' + (q.a + 1) + '. ' + esc(q.opts[q.a])) + '</div>' + (q.after || '') + '</div>' +
+    var body = q.explain ? q.explain(ok) : (q.after || '');
+    if (!ok && q.picked) body = pickedBox(q.picked(k)) + body;
+    $('#fb').innerHTML = '<div class="fb' + (ok ? '' : ' ng') + '"><div class="res ' + (ok ? 'ok">○ 正解' + (z.hints ? '（ヒントあり → 明日 もう一度）' : '') : 'ng">✕ 正解は ' + (q.a + 1) + '. ' + esc(q.opts[q.a])) + '</div>' + body + '</div>' +
       '<div class="btns"><button class="btn main grow" data-next>' + (last ? '結果を見る' : '次へ') + '</button></div>';
     if (q.sayAfter && !ok) speak(q.sayAfter);
     var nb = document.querySelector('[data-next]'); if (nb) nb.focus({ preventScroll: true });
     $('#fb').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  // 💡 ヒント：1 回目は 考え方の ヒント、2 回目は 選択肢を 2 つに しぼる
+  function showHint() {
+    var z = quiz; if (!z || z.answered) return;
+    var q = z.qs[z.i], box = $('#hintx'), hb = document.querySelector('[data-hint]');
+    z.hints++;
+    if (z.hints === 1) { box.hidden = false; box.innerHTML = '💡 ' + esc(q.hint); if (hb) hb.textContent = '🎯 2つにしぼる'; return; }
+    var wrong = [0, 1, 2, 3].filter(function (n) { return n !== q.a; }), out = shuffle(wrong).slice(0, 2);
+    document.querySelectorAll('.opt').forEach(function (b, n) { if (out.indexOf(n) >= 0) { b.disabled = true; b.classList.add('gone'); } });
+    if (hb) hb.hidden = true;
   }
   function next() {
     var z = quiz; if (!z || !z.answered) return;
@@ -223,31 +244,60 @@
     return out;
   }
   function mc(right, wrong) { var opts = shuffle([right].concat(wrong)); return { opts: opts, a: opts.indexOf(right) }; }
+
+  // 🧠 コアの意味 と 🔑 覚え方（まちがえたときは 大きく、正解のときは 小さく）
+  function coreBox(c, wrong) {
+    if (!c) return '';
+    return '<div class="core' + (wrong ? ' big' : '') + '"><div class="core-h">🧠 コアの意味</div><div>' + esc(c.core) + '</div>' +
+      (c.tip ? (wrong ? '<div class="core-h tip">🔑 覚え方</div><div>' + esc(c.tip) + '</div>' : '<details><summary>🔑 覚え方</summary>' + esc(c.tip) + '</details>') : '') + '</div>';
+  }
+  // えらんだ まちがいの 選択肢が、本当は 何の意味か
+  function pickedBox(html) { return html ? '<div class="picked">👆 ' + html + '</div>' : ''; }
+  function wordByJa(list, ja) { for (var i = 0; i < list.length; i++) if (list[i].ja === ja) return list[i]; return null; }
+  function wordByEn(list, en) { return find(list, en); }
   function wordQ(g, w, dir) {
-    var list = g.d.words, samePos = function (y) { return y.pos === w.pos; };
-    var after = '<div class="ex">' + esc(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>';
+    var list = g.d.words, samePos = function (y) { return y.pos === w.pos; }, c = g.core[w.en];
+    var ex = '<div class="ex">' + esc(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>';
+    var recap = '<span class="en">' + esc(w.en) + '</span> … ' + esc(w.ja) + (c ? '<br><small>🧠 ' + esc(c.core) + '</small>' : '');
+    // ヒント1：コアのヒント（なければ 例文）。ヒント2：2 つに しぼる
+    var hint = c ? c.hint : dir === 'je' ? '頭文字は「' + w.en.charAt(0) + '」' : '例文：' + w.ex;
+    var q;
     if (dir === 'je') {
       var m = mc(w.en, distract(list, w, 'en', 3, samePos));
-      return { id: wid(g.id, w), label: '単語・' + w.pos + '　英語は？', prompt: '<div class="qword ja">' + esc(w.ja) + '</div>', opts: m.opts, a: m.a, en: true,
-        after: '<div class="ex"><b>' + esc(w.en) + '</b> ' + sayBtn(w.en) + '</div>' + after, recap: '<span class="en">' + esc(w.en) + '</span> … ' + esc(w.ja) };
+      q = { label: '単語・' + w.pos + '　英語は？', prompt: '<div class="qword ja">' + esc(w.ja) + '</div>', opts: m.opts, a: m.a, en: true,
+        head: '<div class="ex"><b>' + esc(w.en) + '</b> ' + sayBtn(w.en) + '　' + esc(w.ja) + '</div>',
+        picked: function (k) { var o = wordByEn(list, q.opts[k]); return o && '<b class="en">' + esc(o.en) + '</b> は「' + esc(o.ja) + '」という意味'; } };
+    } else {
+      var m2 = mc(w.ja, distract(list, w, 'ja', 3, samePos));
+      q = { label: '単語・' + w.pos + '　意味は？', say: w.en, prompt: '<div class="qword">' + esc(w.en) + '</div>', opts: m2.opts, a: m2.a,
+        head: '<div class="ex"><b>' + esc(w.en) + '</b> ＝ ' + esc(w.ja) + '</div>',
+        picked: function (k) { var o = wordByJa(list, q.opts[k]); return o && '「' + esc(o.ja) + '」は <b class="en">' + esc(o.en) + '</b> の意味'; } };
     }
-    var m2 = mc(w.ja, distract(list, w, 'ja', 3, samePos));
-    return { id: wid(g.id, w), label: '単語・' + w.pos + '　意味は？', say: w.en, prompt: '<div class="qword">' + esc(w.en) + '</div>', opts: m2.opts, a: m2.a,
-      after: after, recap: '<span class="en">' + esc(w.en) + '</span> … ' + esc(w.ja) };
+    q.id = wid(g.id, w); q.hint = hint; q.recap = recap;
+    q.explain = function (ok) { return q.head + coreBox(c, !ok) + ex; };
+    return q;
   }
+  function formOf(w) { return (w.ex.match(/\[([^\]]+)\]/) || [])[1]; }
   function idiomQ(g, w, mode) {
-    var list = g.d.idioms;
-    var after = '<div class="ex">' + bracket(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>';
-    var recap = '<span class="en">' + esc(w.en) + '</span> … ' + esc(w.ja);
+    var list = g.d.idioms, c = g.core[w.en];
+    var ex = '<div class="ex">' + bracket(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>';
+    var recap = '<span class="en">' + esc(w.en) + '</span> … ' + esc(w.ja) + (c ? '<br><small>🧠 ' + esc(c.core) + '</small>' : '');
+    var q;
     if (mode === 'ex') {
-      var form = (w.ex.match(/\[([^\]]+)\]/) || [])[1];
-      var others = list.filter(function (y) { return y !== w; }).map(function (y) { return { f: (y.ex.match(/\[([^\]]+)\]/) || [])[1] }; }).filter(function (y) { return y.f && y.f !== form; });
+      var form = formOf(w);
+      var others = list.filter(function (y) { return y !== w; }).map(function (y) { return { f: formOf(y), o: y }; }).filter(function (y) { return y.f && y.f !== form; });
       var m = mc(form, distract(others, { f: form }, 'f', 3));
-      return { id: iid(g.id, w), label: '熟語　（　）に入るのは？', prompt: '<div class="qsent">' + bracket(w.ex, 'blank') + '</div><div class="tr" style="margin:8px 0 0">' + esc(w.exja) + '</div>',
-        opts: m.opts, a: m.a, en: true, after: '<div class="ex"><b>' + esc(w.en) + '</b> … ' + esc(w.ja) + '</div>' + after, recap: recap };
+      q = { label: '熟語　（　）に入るのは？', prompt: '<div class="qsent">' + bracket(w.ex, 'blank') + '</div><div class="tr" style="margin:8px 0 0">' + esc(w.exja) + '</div>',
+        opts: m.opts, a: m.a, en: true,
+        picked: function (k) { var o = others.filter(function (y) { return y.f === q.opts[k]; })[0]; return o && '<b class="en">' + esc(o.o.en) + '</b> は「' + esc(o.o.ja) + '」という意味'; } };
+    } else {
+      var m2 = mc(w.ja, distract(list, w, 'ja', 3));
+      q = { label: '熟語　意味は？', say: w.en, prompt: '<div class="qword" style="font-size:26px">' + esc(w.en) + '</div>', opts: m2.opts, a: m2.a,
+        picked: function (k) { var o = wordByJa(list, q.opts[k]); return o && '「' + esc(o.ja) + '」は <b class="en">' + esc(o.en) + '</b> の意味'; } };
     }
-    var m2 = mc(w.ja, distract(list, w, 'ja', 3));
-    return { id: iid(g.id, w), label: '熟語　意味は？', say: w.en, prompt: '<div class="qword" style="font-size:26px">' + esc(w.en) + '</div>', opts: m2.opts, a: m2.a, after: after, recap: recap };
+    q.id = iid(g.id, w); q.recap = recap; q.hint = c ? c.hint : '例文の 場面から 考えよう';
+    q.explain = function (ok) { return '<div class="ex"><b>' + esc(w.en) + '</b> ＝ ' + esc(w.ja) + '</div>' + coreBox(c, !ok) + ex; };
+    return q;
   }
   var pref = { dir: 'ej', imode: 'ja', ckind: '' };
   function segBtns(name, items, val) {
@@ -284,10 +334,21 @@
 
   // ---------- 大問1 穴うめ ----------
   function clozeQ(g, o, i) {
-    var right = o.c[o.a];
-    return { id: cid(g.id, i), label: '大問1・' + o.kind, prompt: '<div class="qsent">' + blankify(o.q) + '</div>', opts: o.c, a: o.a, en: true,
-      after: '<div class="ex">' + blankify(o.q, right) + '</div><div class="exja">' + esc(o.ja) + '</div><div class="why">💡 ' + esc(o.why) + '</div>',
-      recap: '<span class="en">' + blankify(o.q, right) + '</span><br><small>' + esc(o.why) + '</small>', sayAfter: null };
+    var right = o.c[o.a], h = g.d.clozeHelp[i];
+    var q = { id: cid(g.id, i), label: '大問1・' + o.kind, prompt: '<div class="qsent">' + blankify(o.q) + '</div>', opts: o.c, a: o.a, en: true,
+      hint: h ? h.hint : '日本語にすると どんな 文になるか 考えよう',
+      recap: '<span class="en">' + blankify(o.q, right) + '</span><br><small>' + esc(h ? h.think : o.why) + '</small>',
+      picked: function (k) { return h && h.opts[k] ? '<span class="en">' + esc(h.opts[k]) + '</span>' : ''; } };
+    q.explain = function (ok) {
+      var html = '<div class="ex">' + blankify(o.q, right) + ' ' + sayBtn(o.q.replace(/\(\s*\)/, right)) + '</div><div class="exja">' + esc(o.ja) + '</div>';
+      if (h) {
+        html += '<div class="core' + (ok ? '' : ' big') + '"><div class="core-h">🧭 考え方</div><div>' + esc(h.think) + '</div>' +
+          (ok ? '<details><summary>4 つの 選択肢の 意味</summary>' : '<div class="core-h tip">4 つの 選択肢の 意味</div>') +
+          '<ul class="olist">' + h.opts.map(function (t, n) { return '<li class="' + (n === o.a ? 'is-a' : '') + '"><span class="en">' + esc(t) + '</span></li>'; }).join('') + '</ul>' + (ok ? '</details>' : '') + '</div>';
+      } else html += '<div class="why">💡 ' + esc(o.why) + '</div>';
+      return html;
+    };
+    return q;
   }
   function clozeMenu(g) {
     var kinds = {}; g.d.cloze.forEach(function (o) { kinds[o.kind] = (kinds[o.kind] || 0) + 1; });
@@ -355,7 +416,8 @@
     var r = g.d.reading[i]; if (!r) return readList(g);
     var html = '<div class="btns" style="margin:0 0 10px">' + sayBtn(r.text.join(' '), true) + '<span class="note" style="margin:0;align-self:center">本文を 読み上げ（聞きながら 読む 練習にも）</span></div>' +
       passageHTML(r) + '<div id="rqs">' + r.qs.map(function (q, k) {
-        return '<div class="rq">(' + (k + 1) + ') ' + esc(q.q) + '</div><div class="opts" data-rq="' + k + '">' + q.c.map(function (c, n) {
+        var rh = (g.d.readHint[i] || [])[k];
+        return '<div class="rq">(' + (k + 1) + ') ' + esc(q.q) + (rh ? ' <button class="hintb" type="button" data-rhint="' + esc(rh) + '">💡 ヒント</button>' : '') + '</div><div class="opts" data-rq="' + k + '">' + q.c.map(function (c, n) {
           return '<button class="opt en-opt" data-ropt="' + n + '"><span class="n">' + (n + 1) + '</span><span>' + esc(c) + '</span></button>';
         }).join('') + '</div><div class="rfb"></div>';
       }).join('') + '</div><div id="rsum"></div>';
@@ -466,6 +528,8 @@
     }
     if (t.dataset.opt != null) return answer(+t.dataset.opt);
     if (t.dataset.next != null) return next();
+    if (t.dataset.hint != null) return showHint();
+    if (t.dataset.rhint != null) { var hx = document.createElement('div'); hx.className = 'hintx'; hx.textContent = '💡 ' + t.dataset.rhint; t.closest('.rq').after(hx); t.remove(); return; }
     if (t.dataset.again != null) { var a = quiz && quiz.again; if (a) a(); return; }
     if (t.dataset.seg) {
       pref[t.dataset.seg] = t.dataset.v;
@@ -482,10 +546,17 @@
   });
   document.addEventListener('keydown', function (e) {
     if (!quiz || quiz.done || /TEXTAREA|INPUT/.test(e.target.tagName)) return;
+    if (e.key === 'h' && !quiz.answered) { showHint(); e.preventDefault(); return; }
     if (/^[1-4]$/.test(e.key) && !quiz.answered) { answer(+e.key - 1); e.preventDefault(); }
     else if ((e.key === 'Enter' || e.key === ' ') && quiz.answered) { next(); e.preventDefault(); }
   });
 
+  // game.js（英単語ロケット）から使う道具
+  window.EKAPP = {
+    S: function () { return S; }, save: save, mark: mark, GR: GR, esc: esc, shuffle: shuffle, speak: speak, sayBtn: sayBtn, bracket: bracket, blankify: blankify,
+    view: view, toast: toast, go: go, wordQ: wordQ, idiomQ: idiomQ, clozeQ: clozeQ, wid: wid, iid: iid, cid: cid, fixed: fixed,
+    sfx: function () { return S.sfx !== false; }
+  };
   if (S.theme) document.documentElement.dataset.theme = S.theme;
   window.addEventListener('hashchange', route);
   updateDue();
