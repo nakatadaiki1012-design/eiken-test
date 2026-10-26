@@ -5,32 +5,38 @@ EK.put("p2", {
     "achieve": {
       hint: "努力を つづけて、ゴールに たどりつくイメージ",
       core: "長い道のりの『最後まで行きつく』。夢や目標に 手が届く → 達成する。例文は 医者になる夢に たどりつく。",
-      tip: "a（～へ）＋chieve（頭＝chief と同じ仲間）→『頭（さいご）まで』行く。名詞は achievement。"
+      tip: "a（～へ）＋chieve（頭＝chief と同じ仲間）→『頭（さいご）まで』行く。名詞は achievement。",
+      pic: "🏁"
     },
     "complain": {
       hint: "うるさい となりの 部屋に「なんとかして！」と ひとこと",
       core: "いやなことを 口に出して ぶつける。例文は となりの部屋の さわがしさに 文句を言う。complain about ～ の形。",
-      tip: "名詞 complaint は『苦情』。日本語の『クレーム』に あたる語。"
+      tip: "名詞 complaint は『苦情』。日本語の『クレーム』に あたる語。",
+      pic: "😤"
     },
     "decrease": {
       hint: "de-（下へ）＋crease（育つ）",
       core: "数や量が『下のほうへ 育つ』＝だんだん少なくなる。例文は 子どもの数が 少なくなっていく。",
-      tip: "de（下へ）＋crease（育つ）。反対は increase（in＋crease）。セットで覚える。"
+      tip: "de（下へ）＋crease（育つ）。反対は increase（in＋crease）。セットで覚える。",
+      pic: "📉"
     },
     "increase": {
       hint: "in-（中・上へ）＋crease（育つ）",
       core: "数・量が『上へ 育っていく』。例文は 天気が悪くて 野菜の値段が 上がった。名詞でも使う。",
-      tip: "crease は『育つ』。crescent（三日月＝だんだん 大きくなる月）と同じ仲間。反対は decrease。"
+      tip: "crease は『育つ』。crescent（三日月＝だんだん 大きくなる月）と同じ仲間。反対は decrease。",
+      pic: "📈"
     },
     "recommend": {
       hint: "ネットの「あなたへの おすすめ」の カタカナ語に 近い",
       core: "『これ、いいよ』と 人に すすめる。例文は 先生が 夏に読む本を すすめてくれた。recommend A to B の形。",
-      tip: "動画サイトの『レコメンド（おすすめ表示）』。名詞は recommendation。"
+      tip: "動画サイトの『レコメンド（おすすめ表示）』。名詞は recommendation。",
+      pic: "👍"
     },
     "suggest": {
       hint: "「～しようよ」と 考えを 相手に 出してみる",
       core: "考えを『下からそっと 差し出す』。押しつけずに『～はどう？』と出す → 提案する。suggest that we ～。",
-      tip: "sug（下から）＋gest（運ぶ）。下から そっと 考えを 運ぶ。名詞は suggestion。"
+      tip: "sug（下から）＋gest（運ぶ）。下から そっと 考えを 運ぶ。名詞は suggestion。",
+      pic: "💡"
     },
     "improve": {
       hint: "今より『もっと よく』なるように 手を加える",
@@ -45,7 +51,8 @@ EK.put("p2", {
     "prepare": {
       hint: "pre- は「前もって」。始まる前に そろえておく",
       core: "何かが 始まる『前に そろえておく』。例文は 夕食の したく。prepare for ～ で『～にそなえる』。",
-      tip: "pre（前に）＋pare（そろえる）。名詞は preparation。"
+      tip: "pre（前に）＋pare（そろえる）。名詞は preparation。",
+      pic: "🎒"
     },
     "provide": {
       hint: "pro- は「前もって」。必要なものを 用意して 渡す",
@@ -60,17 +67,20 @@ EK.put("p2", {
     "protect": {
       hint: "スポーツで 体を おおう「プロテクター」",
       core: "前に立って『おおい』、危ないものから 守る。例文は ヘルメットが 頭を 守る。protect A from B。",
-      tip: "pro（前に）＋tect（おおう）。体を おおう『プロテクター』。"
+      tip: "pro（前に）＋tect（おおう）。体を おおう『プロテクター』。",
+      pic: "🛡️"
     },
     "respect": {
       hint: "ふり返って 何度も 見たくなる、すごい人",
       core: "『ふり返って よく見る』→ その人の よさを 認めて 大切に思う。例文は 話を よく聞く 田中先生。",
-      tip: "re（ふり返って）＋spect（見る）。spect は spectator（観客）と同じ『見る』。"
+      tip: "re（ふり返って）＋spect（見る）。spect は spectator（観客）と同じ『見る』。",
+      pic: "🙇"
     },
     "replace": {
       hint: "re-（もう一度）＋place（置く）",
       core: "古いものを どけて『新しいものを その場所に 置く』。例文は 止まった時計の 電池を 新しくする。",
-      tip: "re（再び）＋place（置く）。replace A with B『A を B に かえる』。"
+      tip: "re（再び）＋place（置く）。replace A with B『A を B に かえる』。",
+      pic: "🔄"
     },
     "realize": {
       hint: "real（本当の）に なる。頭の中で ハッとする",
@@ -85,32 +95,38 @@ EK.put("p2", {
     "receive": {
       hint: "バレーボールで 飛んできた ボールを「レシーブ」",
       core: "向こうから 来たものを『こちらで 受けとめる』。例文は おばあちゃんからの 手紙。",
-      tip: "re（もどって）＋ceive（取る）。お店の『レシート（receipt）』も 受け取る紙。"
+      tip: "re（もどって）＋ceive（取る）。お店の『レシート（receipt）』も 受け取る紙。",
+      pic: "📥"
     },
     "refuse": {
       hint: "首を 横にふって「ノー」と はねつける",
       core: "たのみや 申し出を『はねつけて 受けない』。refuse to ～ で『～しようとしない』。例文は 話すのを こばむ。",
-      tip: "名詞は refusal。reject と同じく『ノー』を はっきり言う語。"
+      tip: "名詞は refusal。reject と同じく『ノー』を はっきり言う語。",
+      pic: "🙅"
     },
     "reply": {
       hint: "SNS で コメントに 返す「リプ」",
       core: "来たものに『折り返して』言葉を 返す。例文は メールに 返す。reply to ～ と to が つく。",
-      tip: "re（もどして）＋ply（折る）。SNS の『リプライ（リプ）』で おなじみ。"
+      tip: "re（もどして）＋ply（折る）。SNS の『リプライ（リプ）』で おなじみ。",
+      pic: "↩️💬"
     },
     "request": {
       hint: "ラジオで 曲を「リク○○ト」する",
       core: "『～してください』と ていねいに 求める。例文は 店長が 早く来るよう 求めた。名詞でも使う。",
-      tip: "re（再び）＋quest（求める）。ラジオの『リクエスト曲』。question も 同じ仲間。"
+      tip: "re（再び）＋quest（求める）。ラジオの『リクエスト曲』。question も 同じ仲間。",
+      pic: "🙏"
     },
     "describe": {
       hint: "scribe は「書く」。言葉で 姿を 書きあらわす",
       core: "見たものを『言葉で 書き写す』ように 伝える。例文は 駅の近くで 見た男の 見た目を 言う。",
-      tip: "de（下に）＋scribe（書く）。名詞 description。subscribe（サブスク）も 同じ scribe。"
+      tip: "de（下に）＋scribe（書く）。名詞 description。subscribe（サブスク）も 同じ scribe。",
+      pic: "🖼️➡️📝"
     },
     "discover": {
       hint: "dis-（取る）＋cover（おおい）",
       core: "かぶさっていた『おおいを 取ると』、かくれていたものが 見つかる。例文は 深海の 新しい魚。",
-      tip: "dis（取りのぞく）＋cover（カバー）。カバーを 外したら 見つかった。"
+      tip: "dis（取りのぞく）＋cover（カバー）。カバーを 外したら 見つかった。",
+      pic: "🔦"
     },
     "explain": {
       hint: "ex-（外へ）＋plain（わかりやすい）",
@@ -120,7 +136,8 @@ EK.put("p2", {
     "express": {
       hint: "ex-（外へ）＋press（押す）",
       core: "心の中のものを『外へ 押し出す』→ 言葉などで あらわす。例文は 外国語で 気持ちを 言う。",
-      tip: "ex（外へ）＋press（押す）。名詞 expression（表情・言い方）。"
+      tip: "ex（外へ）＋press（押す）。名詞 expression（表情・言い方）。",
+      pic: "💭➡️💬"
     },
     "include": {
       hint: "in-（中に）＋clude（閉じる）",
@@ -130,17 +147,20 @@ EK.put("p2", {
     "introduce": {
       hint: "intro-（中へ）。新しい人を 仲間の輪へ 連れてくる",
       core: "人やものを『中へ 導き入れる』。例文は カナダから来た 友だちを みんなに 引き合わせる。",
-      tip: "intro（中へ）＋duce（導く）。曲の『イントロ』は 曲の中への 入口。"
+      tip: "intro（中へ）＋duce（導く）。曲の『イントロ』は 曲の中への 入口。",
+      pic: "🤝"
     },
     "invent": {
       hint: "それまで 世の中に なかったものを 生み出す",
       core: "考えて『まだない 新しいもの』を 生み出す。例文は さいしょの めがねを 作った人。",
-      tip: "in（上に）＋vent（来る）→ 思いつきに 行き当たる。名詞は invention。"
+      tip: "in（上に）＋vent（来る）→ 思いつきに 行き当たる。名詞は invention。",
+      pic: "⚙️💡"
     },
     "manage": {
       hint: "「マネージャー」の 仲間。テストを 時間内に どうにか",
       core: "もとは『手で うまく あつかう』。むずかしくても やりくりして 終える → なんとか やりとげる。",
-      tip: "『マネージャー』は 手を回して うまく やりくりする人。manage to ～ の形で。"
+      tip: "『マネージャー』は 手を回して うまく やりくりする人。manage to ～ の形で。",
+      pic: "🤹"
     },
     "mention": {
       hint: "会話の中で ちょっとだけ ふれる",
@@ -155,27 +175,32 @@ EK.put("p2", {
     "offer": {
       hint: "仕事の「オファーが来た」の あの語",
       core: "相手の前に『どうぞ』と 差し出す。手伝いを 差し出す → ～しようと言う。例文は 車で 送ろうかと 言ってくれた。",
-      tip: "of（～へ）＋fer（運ぶ）。『オファー』は 相手へ 運んで 差し出すこと。"
+      tip: "of（～へ）＋fer（運ぶ）。『オファー』は 相手へ 運んで 差し出すこと。",
+      pic: "🎁"
     },
     "operate": {
       hint: "機械を 動かす「オペレーター」",
       core: "『はたらかせる』。機械を はたらかせる → 動かす、体に はたらきかける → 手術する（オペ）。",
-      tip: "opera（作品・仕事）と同じ『はたらく』の仲間。手術の『オペ』も operation。"
+      tip: "opera（作品・仕事）と同じ『はたらく』の仲間。手術の『オペ』も operation。",
+      pic: "⚙️"
     },
     "organize": {
       hint: "イベントの「オーガナイザー（まとめ役）」",
       core: "バラバラの ものや 人を『1つに まとめて 形にする』。例文は クラスで お別れ会を 開いた。",
-      tip: "名詞 organization（組織）。organ（体の器官）が まとまって 体ができる。"
+      tip: "名詞 organization（組織）。organ（体の器官）が まとまって 体ができる。",
+      pic: "🗂️"
     },
     "prevent": {
       hint: "pre-（前に）。悪いことが 起きる前に 立ちふさがる",
       core: "悪いことが 来る『前に 立ちふさがる』。例文は 手を洗って かぜが 広がらないようにする。",
-      tip: "pre（前に）＋vent（来る）。prevent A from ～ing『A が ～するのを さまたげる』。"
+      tip: "pre（前に）＋vent（来る）。prevent A from ～ing『A が ～するのを さまたげる』。",
+      pic: "🚧"
     },
     "produce": {
       hint: "pro-（前へ）＋duce（導く）。畑や工場から 出てくる",
       core: "中から『前へ 導き出す』→ 作物や 製品を 生み出す。例文は この地域で 米が たくさん とれる。",
-      tip: "番組を 生み出す『プロデューサー』。名詞 product（製品）。"
+      tip: "番組を 生み出す『プロデューサー』。名詞 product（製品）。",
+      pic: "🏭"
     },
     "promise": {
       hint: "pro-（前に）。先のことを「必ずやるよ」と 言う",
@@ -185,7 +210,8 @@ EK.put("p2", {
     "publish": {
       hint: "public（みんなの）。みんなに 向けて 出す",
       core: "書いたものを『おおやけ（public）にする』→ 本や 雑誌として 世に出す。例文は 19歳で 小説が 出た。",
-      tip: "public（おおやけの）と同じ仲間。本を出す会社は publisher。"
+      tip: "public（おおやけの）と同じ仲間。本を出す会社は publisher。",
+      pic: "📖"
     },
     "recognize": {
       hint: "re-（再び）。前に 見た顔だと わかる",
@@ -195,12 +221,14 @@ EK.put("p2", {
     "recover": {
       hint: "パソコンの「リカバリー」。けがの あとで",
       core: "なくした 元気や ものを『とりもどす』。例文は ひざの けがから もとの体に もどる。recover from ～。",
-      tip: "パソコンの『リカバリー（もとにもどす）』。cover（おおう）とは 語源が別。"
+      tip: "パソコンの『リカバリー（もとにもどす）』。cover（おおう）とは 語源が別。",
+      pic: "🔋"
     },
     "relax": {
       hint: "かたくなった 体や 心を ゆるめるイメージ",
       core: "はりつめたものを『ゆるめる』。体や心が ゆるむ → のんびりする。例文は 音楽を 聞いて 一休み。",
-      tip: "re（もとへ）＋lax（ゆるい）。日本語でも『リラックス』。"
+      tip: "re（もとへ）＋lax（ゆるい）。日本語でも『リラックス』。",
+      pic: "😌"
     },
     "rely": {
       hint: "○○ on ～：～に 体重を あずけるように もたれる",
@@ -215,7 +243,8 @@ EK.put("p2", {
     "repair": {
       hint: "こわれたものを また 使えるように する",
       core: "こわれたものを『もう一度 使える状態に そろえ直す』。例文は 嵐のあと 屋根を 直す。fix と 近い。",
-      tip: "re（再び）＋pair（そろえる＝prepare の pare）。pair（ペア）とは 別。"
+      tip: "re（再び）＋pair（そろえる＝prepare の pare）。pair（ペア）とは 別。",
+      pic: "🔧"
     },
     "report": {
       hint: "学校の 宿題の「レポート」",
@@ -225,7 +254,8 @@ EK.put("p2", {
     "rescue": {
       hint: "消防の「○○○ュー隊」",
       core: "危ない場所から『引っぱり出して 助ける』。例文は 木から 下りられない ねこを 助けた。",
-      tip: "消防の『レスキュー隊』。help より『危険から 助け出す』感じが 強い。"
+      tip: "消防の『レスキュー隊』。help より『危険から 助け出す』感じが 強い。",
+      pic: "🆘"
     },
     "reserve": {
       hint: "re-（後ろに）＋serve（とっておく）。席を おさえる",
@@ -235,7 +265,8 @@ EK.put("p2", {
     "solve": {
       hint: "からまった 結び目を ほどくイメージ",
       core: "からまったものを『ほどく』。むずかしい問題を ほどいて 答えを出す。例文は 数学の問題。",
-      tip: "名詞 solution（答え・解決策）と同じ仲間。『ほどく』と覚える。"
+      tip: "名詞 solution（答え・解決策）と同じ仲間。『ほどく』と覚える。",
+      pic: "🧩"
     },
     "spread": {
       hint: "パンに ジャムを うすく のばして ぬるイメージ",
@@ -250,7 +281,8 @@ EK.put("p2", {
     "supply": {
       hint: "sup-（下から）。足りない所を 満たす",
       core: "足りないところへ『下から 満たしていく』。例文は 発電所が 町じゅうに 電気を 送る。",
-      tip: "sup（下から）＋ply（満たす）。『サプリ（supplement）』も 足りない栄養を 満たす。"
+      tip: "sup（下から）＋ply（満たす）。『サプリ（supplement）』も 足りない栄養を 満たす。",
+      pic: "🚚"
     },
     "support": {
       hint: "sup-（下から）＋port（運ぶ）。下から 持ち上げる",
@@ -260,7 +292,8 @@ EK.put("p2", {
     "survive": {
       hint: "sur-（こえて）＋vive（いのち）。「サバイバル」",
       core: "きびしい時を『こえて 生きる』。例文は ラクダが 水なしで 長く 生きられる。",
-      tip: "sur（こえて）＋vive（生きる）。『サバイバル（survival）』ゲーム。"
+      tip: "sur（こえて）＋vive（生きる）。『サバイバル（survival）』ゲーム。",
+      pic: "🌵"
     },
     "translate": {
       hint: "trans-（向こうへ）。ある言葉を 別の言葉へ 運ぶ",
@@ -275,12 +308,14 @@ EK.put("p2", {
     "attend": {
       hint: "at-（～へ）。その場所へ 心と体を むける",
       core: "『～の方へ 心と体を のばす』→ 会や 授業に 行って その場に いる。attend the meeting（to は いらない）。",
-      tip: "at（～へ）＋tend（のばす）。お客に 気を配る『アテンダント』。"
+      tip: "at（～へ）＋tend（のばす）。お客に 気を配る『アテンダント』。",
+      pic: "🏫"
     },
     "attract": {
       hint: "遊園地の「アトラクション」。人を 呼びよせる",
       core: "『こちらへ 引っぱる』→ 人の 気持ちや 足を 引きよせる。例文は きれいな浜が 観光客を 呼ぶ。",
-      tip: "at（～へ）＋tract（引く）。トラクター（tractor）も『引っぱる』車。"
+      tip: "at（～へ）＋tract（引く）。トラクター（tractor）も『引っぱる』車。",
+      pic: "🧲"
     },
     "avoid": {
       hint: "渋滞に まきこまれないよう、早めに 家を 出る",
@@ -295,7 +330,8 @@ EK.put("p2", {
     "compare": {
       hint: "com-（いっしょに）。2つを ならべて 見る",
       core: "2つを『ならべて 同じ所・ちがう所を 見る』。例文は 2まいの 絵の 小さな ちがい。compare A with B。",
-      tip: "com（いっしょに）＋par（等しい）。ゴルフの『パー（基準）』も par。"
+      tip: "com（いっしょに）＋par（等しい）。ゴルフの『パー（基準）』も par。",
+      pic: "⚖️"
     },
     "consider": {
       hint: "あれこれ 考えて すぐには 決めない",
@@ -305,7 +341,8 @@ EK.put("p2", {
     "contain": {
       hint: "con-（いっしょに）＋tain（保つ）。入れ物の中",
       core: "『中に かかえて 保つ』。入れ物や 食べ物の 中に 何かが 入っている。例文は 飲み物の さとう。",
-      tip: "荷物を 中に 保つ『コンテナ（container）』。"
+      tip: "荷物を 中に 保つ『コンテナ（container）』。",
+      pic: "🥫"
     },
     "continue": {
       hint: "ゲームオーバーのあと「つづきから」の ボタン",
@@ -315,22 +352,26 @@ EK.put("p2", {
     "create": {
       hint: "作品を 生み出す人を「クリエイター」と言う",
       core: "それまで なかったものを『0 から 生み出す』。例文は 古いびんで アート作品を 作る。",
-      tip: "『クリエイター』『クリエイティブ』。形容詞 creative（独創的な）。"
+      tip: "『クリエイター』『クリエイティブ』。形容詞 creative（独創的な）。",
+      pic: "🎨"
     },
     "damage": {
       hint: "ゲームで 敵の こうげきを 受けたときの カタカナ語",
       core: "物に『きずを つけて 悪くする』。例文は 地震で 家が こわれた。名詞でも 使う。",
-      tip: "『ダメージを受けた』の ダメージ。人より 物や 体に よく使う。"
+      tip: "『ダメージを受けた』の ダメージ。人より 物や 体に よく使う。",
+      pic: "💥"
     },
     "decorate": {
       hint: "スマホを「デコる」の もとの語",
       core: "きれいなものを つけて『見ばえを よくする』。例文は 紙の花で 教室を いろどる。",
-      tip: "『デコる』『デコレーションケーキ』。名詞 decoration。"
+      tip: "『デコる』『デコレーションケーキ』。名詞 decoration。",
+      pic: "🎀"
     },
     "deliver": {
       hint: "ピザの「デリバリー」",
       core: "物を『はなして 相手の 手もとまで 届ける』。例文は 30分以内に ピザを 届ける。",
-      tip: "de（はなれて）＋liver（自由にする）。『デリバリー（delivery）』で 覚える。"
+      tip: "de（はなれて）＋liver（自由にする）。『デリバリー（delivery）』で 覚える。",
+      pic: "📦"
     },
     "depend": {
       hint: "ペンダントのように「～から ぶら下がる」",
@@ -340,27 +381,32 @@ EK.put("p2", {
     "develop": {
       hint: "包みを ほどいて、中身を 少しずつ 広げていく",
       core: "『包みを ほどく』→ 中に ねむる力が 広がる。体が 育つ、国が のびる、新しい製品を 作り出す。",
-      tip: "envelope（封筒＝包むもの）の 反対で『包みを ほどく』。developer（開発者）。"
+      tip: "envelope（封筒＝包むもの）の 反対で『包みを ほどく』。developer（開発者）。",
+      pic: "🌱➡️🌳"
     },
     "encourage": {
       hint: "en-（～にする）＋courage（勇気）",
       core: "相手に『勇気を 入れてあげる』。例文は つかれた時 コーチが 声をかける。encourage A to ～。",
-      tip: "en（～にする）＋courage（勇気）。反対は discourage（勇気を くじく）。"
+      tip: "en（～にする）＋courage（勇気）。反対は discourage（勇気を くじく）。",
+      pic: "📣"
     },
     "establish": {
       hint: "stable（ぐらつかない）と 同じ仲間",
       core: "ぐらつかないように『しっかり 立てる』。学校や 会社を しっかり 作る。例文は 百年以上前に できた学校。",
-      tip: "stable（安定した）と 同じ語源。しっかり すえつけるイメージ。"
+      tip: "stable（安定した）と 同じ語源。しっかり すえつけるイメージ。",
+      pic: "🏗️"
     },
     "exchange": {
       hint: "ex-（外へ）＋change（かえる）",
       core: "こちらのものを 出して、別のものと『とりかえる』。例文は シャツを 大きいサイズと かえる。",
-      tip: "留学の exchange student（交換留学生）。ex＋change で『かえっこ』。"
+      tip: "留学の exchange student（交換留学生）。ex＋change で『かえっこ』。",
+      pic: "↔️"
     },
     "expect": {
       hint: "ex-（外を）＋spect（見る）。先を のぞいて 待つ",
       core: "『外を 見て 待つ』→ これから 起きそうなことを 考える。例文は 50人くらい 来ると 思う。",
-      tip: "ex（外を）＋spect（見る）。名詞 expectation。"
+      tip: "ex（外を）＋spect（見る）。名詞 expectation。",
+      pic: "🤞"
     },
     "gather": {
       hint: "ばらばらの ものが 1 か所に よってくる",
@@ -370,42 +416,50 @@ EK.put("p2", {
     "graduate": {
       hint: "grade（学年・段階）を 上りきって 学校を 出る",
       core: "段を 1 つずつ のぼり『さいごの段を こえて 学校を出る』。graduate from ～ の形。",
-      tip: "grade（段階）と 同じ仲間。色が 段々と かわる『グラデーション』。"
+      tip: "grade（段階）と 同じ仲間。色が 段々と かわる『グラデーション』。",
+      pic: "🎓"
     },
     "hire": {
       hint: "運転手つきの 貸し切り車「ハイヤー」",
       core: "お金を はらって『人に はたらいてもらう』。例文は いそがしい時期に コックを 2人 入れる。",
-      tip: "お金を はらって たのむ車『ハイヤー』。employ と 近い。"
+      tip: "お金を はらって たのむ車『ハイヤー』。employ と 近い。",
+      pic: "💼"
     },
     "imagine": {
       hint: "頭の中に 絵（image）を うかべる",
       core: "目の前に ないものを『頭の中の 絵（image）に する』。例文は スマホのない 生活を 思いうかべる。",
-      tip: "image（イメージ）の 動詞形。imagine ～ing の形も。"
+      tip: "image（イメージ）の 動詞形。imagine ～ing の形も。",
+      pic: "💭"
     },
     "investigate": {
       hint: "警察が「足あと」を たどって 中を さぐる",
       core: "『足あとを たどって 中まで さぐる』→ くわしく しらべる。例文は 警察が 火事の原因を しらべる。",
-      tip: "in（中へ）＋vestig（足あと）。名探偵が 足あとを 追う 場面で。"
+      tip: "in（中へ）＋vestig（足あと）。名探偵が 足あとを 追う 場面で。",
+      pic: "👣🔍"
     },
     "lend": {
       hint: "borrow の 反対の 動き。辞書を となりの 人に",
       core: "自分のものを『相手のほうへ 一時 わたす』。あとで 返してもらう。lend A B『A に B を』。",
-      tip: "lend（相手へ わたす）↔ borrow（自分が もらう）。Lend me ～.『～を かして』。"
+      tip: "lend（相手へ わたす）↔ borrow（自分が もらう）。Lend me ～.『～を かして』。",
+      pic: "📤"
     },
     "measure": {
       hint: "巻き尺の「メジャー」。保健室で 身長計に のる",
       core: "ものさしを あてて『大きさ・量を 数字に する』。例文は 身長と 体重。名詞で『手段・対策』。",
-      tip: "巻き尺の『メジャー』。名詞 measurement。"
+      tip: "巻き尺の『メジャー』。名詞 measurement。",
+      pic: "📏"
     },
     "observe": {
       hint: "会議に 見るだけで 参加する「オブザーバー」",
       core: "『じっと 見守る』。星や 生き物を 注意して 見る。ルールを 見守る → 守る、の意味も。",
-      tip: "ob（～に向かって）＋serve（見守る）。見学する人『オブザーバー』。"
+      tip: "ob（～に向かって）＋serve（見守る）。見学する人『オブザーバー』。",
+      pic: "🔭"
     },
     "perform": {
       hint: "ステージでの「パフォーマンス」",
       core: "人の前で『形にして やってみせる』。歌・おどり・劇を する。仕事を やりとげる、の意味も。",
-      tip: "『パフォーマンス』『パフォーマー』。名詞 performance（演技・できばえ）。"
+      tip: "『パフォーマンス』『パフォーマー』。名詞 performance（演技・できばえ）。",
+      pic: "🎭"
     },
     "persuade": {
       hint: "per-（さいごまで）。何度も 話して 気持ちを かえる",
@@ -415,22 +469,26 @@ EK.put("p2", {
     "pollute": {
       hint: "工場の よごれた水が 川に 流れこむ 場面",
       core: "きれいな水や 空気に『よごれを まぜて だめにする』。例文は 工場が 川を よごしていた。",
-      tip: "名詞 pollution（汚染）と セットで。air pollution は 大気の よごれ。"
+      tip: "名詞 pollution（汚染）と セットで。air pollution は 大気の よごれ。",
+      pic: "🚱"
     },
     "predict": {
       hint: "pre-（前に）＋dict（言う）",
       core: "起きる『前に 言う』。天気予報や 未来の ことを 言い当てる。例文は 山で 大雪になると 言う。",
-      tip: "pre（前に）＋dict（言う）。dictionary（辞書）も dict（言う）の 仲間。"
+      tip: "pre（前に）＋dict（言う）。dictionary（辞書）も dict（言う）の 仲間。",
+      pic: "🔮"
     },
     "purchase": {
       hint: "pur＋chase（追いかける）。ネットで チケットを",
       core: "お金を はらって『手に入れる』。buy の かたい言い方。例文は 美術館の チケットを ネットで 手に入れる。",
-      tip: "pur（～のために）＋chase（追いかける）。追いかけて 手に入れる。"
+      tip: "pur（～のために）＋chase（追いかける）。追いかけて 手に入れる。",
+      pic: "🛒"
     },
     "raise": {
       hint: "rise の なかま。クッキーを 売って 募金を",
       core: "下にあるものを『上へ 持ち上げる』。手を あげる、値段を あげる、お金を 集める、子どもを 育てる。",
-      tip: "rise（自分が 上がる）↔ raise（何かを 上げる）。raise your hand（手を あげて）。"
+      tip: "rise（自分が 上がる）↔ raise（何かを 上げる）。raise your hand（手を あげて）。",
+      pic: "⬆️"
     },
     "contribute": {
       hint: "con-（いっしょに）。自分の 力を みんなに 出す",
@@ -440,12 +498,14 @@ EK.put("p2", {
     "celebrate": {
       hint: "誕生日や お正月、ケーキを かこんで 楽しむ",
       core: "うれしい日に『みんなで 集まって もりあげる』。例文は おじいちゃんの 80さいの 誕生日。",
-      tip: "セレブ（celebrity＝有名人）と 同じ語源。名詞 celebration（お祝い）。"
+      tip: "セレブ（celebrity＝有名人）と 同じ語源。名詞 celebration（お祝い）。",
+      pic: "🎉"
     },
     "cancel": {
       hint: "予約を「なかったことに」する カタカナ語",
       core: "決まっていた予定を『なしにする』。例文は 大雪で 飛行機が 飛ばなくなった。受け身で よく使う。",
-      tip: "日本語でも『キャンセル』。be canceled の形で 出やすい。"
+      tip: "日本語でも『キャンセル』。be canceled の形で 出やすい。",
+      pic: "❌"
     },
     "borrow": {
       hint: "lend の 反対の 動き。図書館の カードを 使う",
@@ -457,7 +517,8 @@ EK.put("p2", {
     "environment": {
       hint: "わたしたちを ぐるりと 取りまく 自然や まわりの ようす",
       core: "人や 生き物を『ぐるりと 取りまく もの』。自然・空気・水、くらしの まわりの ようす。",
-      tip: "en（中に）＋viron（取りまく）。形容詞 environmental（環境の）。"
+      tip: "en（中に）＋viron（取りまく）。形容詞 environmental（環境の）。",
+      pic: "🌳🌊"
     },
     "advantage": {
       hint: "テニスで 1点 リードした 状態の カタカナ語",
@@ -467,12 +528,14 @@ EK.put("p2", {
     "ability": {
       hint: "able（～できる）の 名詞",
       core: "『できる（able）力』。例文は 4つの言葉を 話せる力。the ability to ～ の形。",
-      tip: "be able to ～（～できる）の able ＋ ity。"
+      tip: "be able to ～（～できる）の able ＋ ity。",
+      pic: "💪"
     },
     "audience": {
       hint: "aud は「聞く」。コンサートで 聞いている 人たち",
       core: "『聞く 人たち』の あつまり。劇や コンサートを 見て 聞く 人々。例文は 劇のあと 大きな はく手。",
-      tip: "aud（聞く）。『オーディオ』『オーディション』も 同じ仲間。"
+      tip: "aud（聞く）。『オーディオ』『オーディション』も 同じ仲間。",
+      pic: "👏"
     },
     "average": {
       hint: "野球で よく打つ「○○○○ージ・ヒッター」",
@@ -487,12 +550,14 @@ EK.put("p2", {
     "climate": {
       hint: "その日の 天気（weather）ではなく、1年を 通した 天気",
       core: "ある地域の『長い あいだの 天気の くせ』。暑い・寒い・雨が多いなど。climate change（気候変動）。",
-      tip: "weather＝その日の 天気、climate＝長いあいだの 天気、と 分けて 覚える。"
+      tip: "weather＝その日の 天気、climate＝長いあいだの 天気、と 分けて 覚える。",
+      pic: "🌦️"
     },
     "community": {
       hint: "同じ 町に すむ人や、同じ 仲間の あつまり",
       core: "『共通（common）の もの』で つながった 人々の あつまり。地域の 人たち、ネットの 仲間。",
-      tip: "common（共通の）の 仲間。『コミュニティ』。"
+      tip: "common（共通の）の 仲間。『コミュニティ』。",
+      pic: "🏘️"
     },
     "condition": {
       hint: "スポーツ選手が「今日は ○○○○ィション が いい」",
@@ -502,7 +567,8 @@ EK.put("p2", {
     "customer": {
       hint: "custom（いつものこと）。いつも 買いに来る 人",
       core: "お店で『物を 買う人』。もとは『いつも（習慣で）来る人』。例文は 店が 小さな プレゼントを 渡す。",
-      tip: "custom（習慣）＋er。お店の『カスタマーセンター』。"
+      tip: "custom（習慣）＋er。お店の『カスタマーセンター』。",
+      pic: "🛍️"
     },
     "decision": {
       hint: "decide の 名詞。まよいを スパッと 切る",
@@ -512,22 +578,26 @@ EK.put("p2", {
     "department": {
       hint: "大きなお店「デパート」の もとの語",
       core: "大きな ものを『分けた 1つの 部分』。会社の 部、デパートの 売り場、大学の 学科。",
-      tip: "depart（分かれる）＋ment。department store＝売り場が 分かれた お店。"
+      tip: "depart（分かれる）＋ment。department store＝売り場が 分かれた お店。",
+      pic: "🏬"
     },
     "device": {
       hint: "スマホや タブレットを まとめて「○○イス」",
       core: "ある目的のために『くふうして 作られた 道具』。例文は 歩数を はかる 小さな 機械。",
-      tip: "IT の『デバイス』。動詞 devise（くふうする）と 同じ仲間。"
+      tip: "IT の『デバイス』。動詞 devise（くふうする）と 同じ仲間。",
+      pic: "📱"
     },
     "disease": {
       hint: "dis-（ない）＋ease（楽）。体が 楽ではない",
       core: "体が『楽（ease）でない』状態 → 体の 調子を こわすもの。例文は 治す方法を さがす。",
-      tip: "dis（ない）＋ease（楽）。heart disease（心臓病）。illness より 病名に 使う。"
+      tip: "dis（ない）＋ease（楽）。heart disease（心臓病）。illness より 病名に 使う。",
+      pic: "🤒"
     },
     "distance": {
       hint: "dis-（はなれて）＋stance（立つ）",
       core: "2つが『はなれて 立っている』あいだの 長さ。例文は 家から 駅まで 2 キロ。",
-      tip: "dis（はなれて）＋stance（立つ）。形容詞 distant（遠い）。『ソーシャルディスタンス』。"
+      tip: "dis（はなれて）＋stance（立つ）。形容詞 distant（遠い）。『ソーシャルディスタンス』。",
+      pic: "📍↔️📍"
     },
     "effect": {
       hint: "効果音のことを「サウンド○○ェクト」",
@@ -537,22 +607,26 @@ EK.put("p2", {
     "election": {
       hint: "e-（外へ）＋lect（えらぶ）。投票所へ 行く日",
       core: "多くの人から 代表を『えらび出す』こと。例文は 若い人も 投票しよう。",
-      tip: "elect（えらぶ）＋ion。select（えらぶ）も 同じ lect。"
+      tip: "elect（えらぶ）＋ion。select（えらぶ）も 同じ lect。",
+      pic: "🗳️"
     },
     "employee": {
       hint: "-ee は「～される人」。会社に やとわれている 人",
       core: "会社に『やとわれている（employ される）人』。例文は 東京オフィスに 500人。",
-      tip: "employ（やとう）＋ee（される人）。employer は『やとう人』。"
+      tip: "employ（やとう）＋ee（される人）。employer は『やとう人』。",
+      pic: "👔"
     },
     "energy": {
       hint: "電気や ガスの もと。体を 動かす 元気の もとも",
       core: "ものを『動かす 力の もと』。電気・ガス、そして 人の 元気。例文は 太陽光で 家じゅうの 電気。",
-      tip: "発音は『エナジー』に 近い。エナジードリンクの energy。"
+      tip: "発音は『エナジー』に 近い。エナジードリンクの energy。",
+      pic: "⚡"
     },
     "equipment": {
       hint: "equip（そなえつける）の 名詞。ゲームの「そうび」",
       core: "ある目的のために『そなえつけられた 道具・機械 全部』。数えられない名詞。例文は ジムの 新しい マシン。",
-      tip: "equip（そなえつける）＋ment。a piece of equipment と 数える。"
+      tip: "equip（そなえつける）＋ment。a piece of equipment と 数える。",
+      pic: "🧰"
     },
     "experience": {
       hint: "実際に やってみて 身についたこと",
@@ -562,72 +636,86 @@ EK.put("p2", {
     "experiment": {
       hint: "理科の 授業で 試験管や ビーカーを 使って ためす",
       core: "本当か どうか『ためしてみる』こと。例文は 植物の 育ち方を 調べる。do an experiment。",
-      tip: "experience（経験）と 同じ『ためす』の 仲間。"
+      tip: "experience（経験）と 同じ『ためす』の 仲間。",
+      pic: "🧪"
     },
     "facility": {
       hint: "プールや 体育館など、人が 使うための 建物",
       core: "物事を『しやすく（easy）する ための 場所や 建物』。例文は 新しい スポーツの 建物。",
-      tip: "faci は『しやすい』（facile）。複数形 facilities で よく使う。"
+      tip: "faci は『しやすい』（facile）。複数形 facilities で よく使う。",
+      pic: "🏢"
     },
     "government": {
       hint: "govern（おさめる）＋ment。国を うごかす 組織",
       core: "国や 地域を『おさめる（govern）しくみ・人たち』。例文は 小さな 会社を 助ける 計画を 出した。",
-      tip: "govern（おさめる）＋ment。governor は『知事』。"
+      tip: "govern（おさめる）＋ment。governor は『知事』。",
+      pic: "🏛️"
     },
     "harvest": {
       hint: "秋の 田んぼで コンバインが 走る ころ",
       core: "実った 作物を『とり入れること・とれた量』。例文は ことしの りんごが よく とれた。",
-      tip: "秋の 満月は harvest moon。実りの 秋の 場面で 覚える。"
+      tip: "秋の 満月は harvest moon。実りの 秋の 場面で 覚える。",
+      pic: "🌾"
     },
     "income": {
       hint: "in（中に）＋come（来る）。毎月の バイト代など",
       core: "はたらいて『自分の 中に 入ってくる お金』。例文は バイトで ふえる お金。",
-      tip: "in（中に）＋come（来る）。反対の 出ていくお金は expense。"
+      tip: "in（中に）＋come（来る）。反対の 出ていくお金は expense。",
+      pic: "💰"
     },
     "information": {
       hint: "駅や デパートの「インフォメーション（案内所）」",
       core: "人に『知らせる（inform）ための 中身』。数えられない名詞で s が つかない。",
-      tip: "inform（知らせる）＋ation。『インフォメーション』。"
+      tip: "inform（知らせる）＋ation。『インフォメーション』。",
+      pic: "ℹ️"
     },
     "ingredient": {
       hint: "カレーなら じゃがいも・にんじん・肉…",
       core: "料理などの『中に 入っている 1つ1つの もの』。例文は ソースに 欠かせない トマト。",
-      tip: "in（中に）＋gredi（進む）→ 中へ 入りこむもの。料理番組の 場面で。"
+      tip: "in（中に）＋gredi（進む）→ 中へ 入りこむもの。料理番組の 場面で。",
+      pic: "🥕🧅"
     },
     "instrument": {
       hint: "ギターや バイオリンなど、音を 出す 道具",
       core: "何かを するための『道具』。とくに 音を 出す 道具。例文は ギター・バイオリン。",
-      tip: "歌のない 演奏曲『インストゥルメンタル』。musical instrument。"
+      tip: "歌のない 演奏曲『インストゥルメンタル』。musical instrument。",
+      pic: "🎻"
     },
     "invention": {
       hint: "invent（それまでに ない物を 生み出す）の 名詞",
       core: "それまで 世の中に なかった ものを『考え出したもの』。例文は 電話。",
-      tip: "invent の 名詞形。発明家は inventor。"
+      tip: "invent の 名詞形。発明家は inventor。",
+      pic: "💡"
     },
     "journey": {
       hint: "フランス語の jour（1日）から。長い 道のり",
       core: "ある所から 遠い所へ『長い 道のりを 行くこと』。例文は 電車で 国を 横切る。trip より 長い感じ。",
-      tip: "もとは フランス語で『1日の 道のり』。jour（日）と 同じ仲間。"
+      tip: "もとは フランス語で『1日の 道のり』。jour（日）と 同じ仲間。",
+      pic: "🧳"
     },
     "knowledge": {
       hint: "know（知っている）の 名詞。頭の中に たまったもの",
       core: "学んで『頭の中に たまった 知っていること』。例文は お城に ついて よく 知っている。",
-      tip: "know＋ledge。k は 読まない（ナレッジ）。数えられない名詞。"
+      tip: "know＋ledge。k は 読まない（ナレッジ）。数えられない名詞。",
+      pic: "🧠📚"
     },
     "location": {
       hint: "テレビの「ロケ」。外の どこか",
       core: "ものが『ある・いる ところ』。例文は 海と 駅の 近くの ホテル。",
-      tip: "loc は『場所』（local と 同じ）。テレビの『ロケ（location 撮影）』。"
+      tip: "loc は『場所』（local と 同じ）。テレビの『ロケ（location 撮影）』。",
+      pic: "📍"
     },
     "material": {
       hint: "布・木・プラスチック・リサイクルびん…",
       core: "物を 作る『もとに なる もの』。例文は 古いペットボトルから できた バッグ。",
-      tip: "『マテリアル』。matter（もの・物質）と 同じ仲間。"
+      tip: "『マテリアル』。matter（もの・物質）と 同じ仲間。",
+      pic: "🪵"
     },
     "medicine": {
       hint: "かぜをひいたとき、病院で もらって のむもの",
       core: "病気を『なおすための もの』。のむ・ぬる など。例文は 1日3回 食後に のむ。",
-      tip: "medical（医学の）の 仲間。take medicine（のむ）と take を 使う。"
+      tip: "medical（医学の）の 仲間。take medicine（のむ）と take を 使う。",
+      pic: "💊"
     },
     "method": {
       hint: "勉強の「○○ッド」",
@@ -637,7 +725,8 @@ EK.put("p2", {
     "neighbor": {
       hint: "同じ通りに 住んでいて、朝 あいさつする 相手",
       core: "『近くに すむ 人』。となりや 近所の 人。例文は 庭の 野菜を くれた。",
-      tip: "neigh は『近い（nigh）』。neighborhood（近所・地域）。gh は 読まない。"
+      tip: "neigh は『近い（nigh）』。neighborhood（近所・地域）。gh は 読まない。",
+      pic: "🏠🏠"
     },
     "opinion": {
       hint: "In my ○○○○○○, ～. 英作文の 書き出し",
@@ -652,12 +741,14 @@ EK.put("p2", {
     "population": {
       hint: "popul は「人々」。町に すむ 人の 数",
       core: "ある場所に すむ『人々の 数』。large / small で 多い・少ない を言う（many は 使わない）。",
-      tip: "popul（人々）。popular（人々に 人気の）と 同じ仲間。"
+      tip: "popul（人々）。popular（人々に 人気の）と 同じ仲間。",
+      pic: "👥"
     },
     "pollution": {
       hint: "工場の けむりや よごれた水で 空気や 川が だめになる",
       core: "空気・水・土が『よごれて しまうこと』。air pollution（大気）、water pollution（水）。",
-      tip: "動詞 pollute（よごす）の 名詞形。"
+      tip: "動詞 pollute（よごす）の 名詞形。",
+      pic: "🏭💨"
     },
     "product": {
       hint: "produce（生み出す）から できた もの",
@@ -667,7 +758,8 @@ EK.put("p2", {
     "purpose": {
       hint: "pur-（前に）＋pose（置く）。何のために？",
       core: "『前に 置いた ゴール』→ 何のために するか。on purpose で『わざと』。",
-      tip: "pur（前に）＋pose（置く）。on purpose（わざと）も 覚える。"
+      tip: "pur（前に）＋pose（置く）。on purpose（わざと）も 覚える。",
+      pic: "🎯"
     },
     "quality": {
       hint: "「この パン、○○リティ が 高い」",
@@ -677,17 +769,20 @@ EK.put("p2", {
     "research": {
       hint: "re-（何度も）＋search（さがす）",
       core: "答えを『何度も さがして くわしく しらべる』こと。do research on ～。",
-      tip: "re（くり返し）＋search（さがす）。『リサーチ』。"
+      tip: "re（くり返し）＋search（さがす）。『リサーチ』。",
+      pic: "🔬"
     },
     "resident": {
       hint: "re-（後ろに）＋side（すわる）。その町に こしを すえる",
       core: "ある場所に『ずっと すんでいる 人』。例文は 新しい道に ついて 話し合った 町の人。",
-      tip: "re（後ろに）＋side（すわる）。マンション名の『レジデンス』。"
+      tip: "re（後ろに）＋side（すわる）。マンション名の『レジデンス』。",
+      pic: "🏡"
     },
     "resource": {
       hint: "source（ソース＝わき出る もと）の 仲間",
       core: "役に立つ『もとに なる もの』。水・石油・森など。例文は 水は 地球の 大切な もの。",
-      tip: "source（みなもと）と 同じ仲間。natural resources で よく出る。"
+      tip: "source（みなもと）と 同じ仲間。natural resources で よく出る。",
+      pic: "🛢️"
     },
     "result": {
       hint: "ゲームで 戦いが 終わったときの「リザルト画面」",
@@ -697,17 +792,20 @@ EK.put("p2", {
     "schedule": {
       hint: "手帳や カレンダーに 書きこむ「何時に 何をするか」",
       core: "いつ 何を するかを『時間に ならべた もの』。例文は 今週は いそがしい。",
-      tip: "日本語でも『スケジュール』。on schedule（予定どおり）。"
+      tip: "日本語でも『スケジュール』。on schedule（予定どおり）。",
+      pic: "🕒📋"
     },
     "solution": {
       hint: "solve（ほどく）の 名詞。問題を ほどく 答え",
       core: "からまった 問題を『ほどく 方法・答え』。a solution to ～（to に 注意）。",
-      tip: "solve の 名詞形。『ソリューション』。"
+      tip: "solve の 名詞形。『ソリューション』。",
+      pic: "🔑"
     },
     "species": {
       hint: "spec は「見る」。見た目で 分けた 生き物の なかま",
       core: "生き物を『見た目などで 分けた なかま』。例文は いろいろな 鳥が 冬に 来る。単数も 複数も 同じ形。",
-      tip: "spec（見る）の 仲間。単数も species、複数も species。"
+      tip: "spec（見る）の 仲間。単数も species、複数も species。",
+      pic: "🐾"
     },
     "situation": {
       hint: "site（場所）の 仲間。「シチュエーション」",
@@ -717,42 +815,50 @@ EK.put("p2", {
     "technology": {
       hint: "techno（わざ）＋logy（学）。スマホや AI のような",
       core: "科学を 使った『わざの しくみ』。例文は 新しい わざのおかげで 家で はたらける。",
-      tip: "techno（わざ）＋logy（学問）。『テクノロジー』。technique（テクニック）も 仲間。"
+      tip: "techno（わざ）＋logy（学問）。『テクノロジー』。technique（テクニック）も 仲間。",
+      pic: "🤖"
     },
     "temperature": {
       hint: "天気予報の「最高○○ 30度」。体温計で はかるもの",
       core: "あつい・さむいを『数字で あらわしたもの』。例文は 0度より 下がった。体温にも 使う。",
-      tip: "take one's temperature（体温を はかる）。天気予報で 毎日 聞く語。"
+      tip: "take one's temperature（体温を はかる）。天気予報で 毎日 聞く語。",
+      pic: "🌡️"
     },
     "tradition": {
       hint: "親から子へ、昔から わたされてきた ならわし",
       core: "昔から『世代から世代へ わたされてきた』ならわし。例文は 大みそかに そばを 食べる。",
-      tip: "tra（向こうへ）＋dition（わたす）。形容詞 traditional。"
+      tip: "tra（向こうへ）＋dition（わたす）。形容詞 traditional。",
+      pic: "🏮"
     },
     "vehicle": {
       hint: "車・バス・トラックを まとめて 言う 語",
       core: "人や 物を『のせて 運ぶ もの』。例文は 電気で 走る 車。car より 広い語。",
-      tip: "vehi は ラテン語の『運ぶ』。h は ほとんど 読まない（ヴィークル）。"
+      tip: "vehi は ラテン語の『運ぶ』。h は ほとんど 読まない（ヴィークル）。",
+      pic: "🚗"
     },
     "volunteer": {
       hint: "vol は「自分の 意思」。お金なしで すすんで 手伝う人",
       core: "だれにも 言われず『自分から すすんで』手伝う人。例文は 嵐のあと 浜を そうじした人たち。",
-      tip: "vol（自分の 意思）。動詞『自分から 申し出る』でも 使う。"
+      tip: "vol（自分の 意思）。動詞『自分から 申し出る』でも 使う。",
+      pic: "🙋"
     },
     "waste": {
       hint: "a ○○○○ of time：時間を むだに 捨てる",
       core: "役に立たず『捨てられる もの』。物なら すてるもの、時間や お金なら むだづかい。",
-      tip: "a waste of time で 覚える。waist（こし・ウエスト）と 発音は 同じだが 別の語。"
+      tip: "a waste of time で 覚える。waist（こし・ウエスト）と 発音は 同じだが 別の語。",
+      pic: "🗑️"
     },
     "wildlife": {
       hint: "wild（自然の まま）＋life（生き物）",
       core: "人に かわれず『自然の 中で 生きている 生き物 全部』。例文は クマや シカが すむ 国立公園。",
-      tip: "wild（野生の）＋life（生き物）。数えられない名詞。"
+      tip: "wild（野生の）＋life（生き物）。数えられない名詞。",
+      pic: "🦌"
     },
     "budget": {
       hint: "旅行の前に「使って いい お金は これだけ」と 決める",
       core: "前もって『使って いいと 決めた お金の わく』。例文は お金が 少ないので 安いホテル。",
-      tip: "もとは フランス語の『小さな さいふ』。on a budget（お金を おさえて）。"
+      tip: "もとは フランス語の『小さな さいふ』。on a budget（お金を おさえて）。",
+      pic: "🧮"
     },
     "colleague": {
       hint: "col-（いっしょに）。オフィスの となりの 席の 人",
@@ -762,39 +868,46 @@ EK.put("p2", {
     "emergency": {
       hint: "急に 何かが 起きたとき。非常口は ○○○○○ exit",
       core: "思いがけず『急に 出てきた 危ない できごと』。例文は そのときは この番号へ。",
-      tip: "emerge（急に 出てくる）の 仲間。emergency exit（非常口）。"
+      tip: "emerge（急に 出てくる）の 仲間。emergency exit（非常口）。",
+      pic: "🚨"
     },
     "flight": {
       hint: "fly（飛ぶ）の 名詞。空港の 出発案内に 出る",
       core: "『飛ぶ（fly）こと』→ 飛行機で 行くこと、その便。例文は ロンドン行きが 霧で おくれた。",
-      tip: "fly の 名詞形。空港の『フライト情報』。"
+      tip: "fly の 名詞形。空港の『フライト情報』。",
+      pic: "✈️"
     },
     "passenger": {
       hint: "pass（通る）。バスの 運転手 ではない ほうの 人",
       core: "乗り物に『乗って 運ばれる 人』。運転する人ではない。例文は バスで シートベルト。",
-      tip: "pass（通る）＋enger。運転手（driver）と 区別して 覚える。"
+      tip: "pass（通る）＋enger。運転手（driver）と 区別して 覚える。",
+      pic: "💺"
     },
     "souvenir": {
       hint: "フランス語で「思い出す」。京都旅行の 帰りに 買う",
       core: "旅の『思い出に 持ち帰るもの』。例文は 京都で 家族に クッキー。",
-      tip: "フランス語の『思い出す』から。発音は『スーベニア』。"
+      tip: "フランス語の『思い出す』から。発音は『スーベニア』。",
+      pic: "🎁"
     },
 
     // ===== 形容詞 =====
     "available": {
       hint: "avail（役に立つ）＋able。会議室が 空いているか たずねる",
       core: "『すぐに 使える・手に入る』状態。部屋が 空いている、人が 手が空いている、品物が 買える。",
-      tip: "avail（役に立つ）＋able（できる）。Are you available?（お時間ありますか）。"
+      tip: "avail（役に立つ）＋able（できる）。Are you available?（お時間ありますか）。",
+      pic: "🈳"
     },
     "convenient": {
       hint: "24時間 開いている「コンビニ」の もとの語",
       core: "自分の 都合に『ちょうど ぴったり 合う』。例文は 家から 出ずに 買い物できる。",
-      tip: "『コンビニ』は convenience store（便利な 店）。"
+      tip: "『コンビニ』は convenience store（便利な 店）。",
+      pic: "👌"
     },
     "crowded": {
       hint: "crowd は「人の むれ」。朝の 満員電車",
       core: "人が『ぎゅうぎゅうに つまっている』。例文は 電車に すわる 席が ない。",
-      tip: "crowd（群衆）＋ed。『満員電車』を 思いうかべる。"
+      tip: "crowd（群衆）＋ed。『満員電車』を 思いうかべる。",
+      pic: "🚃"
     },
     "efficient": {
       hint: "ef-（外へ）＋fic（作る）。少ない 電気で しっかり あたたまる",
@@ -804,12 +917,14 @@ EK.put("p2", {
     "enormous": {
       hint: "e-（外へ）＋norm（ふつう）。ふつうを はみ出す",
       core: "ふつうの 大きさを『はみ出すほど』とても 大きい。例文は お寺の 庭の 大きな 木。",
-      tip: "e（外へ）＋norm（基準）。norm は『ノルマ』と 同じ語。"
+      tip: "e（外へ）＋norm（基準）。norm は『ノルマ』と 同じ語。",
+      pic: "🐋"
     },
     "entire": {
       hint: "どこも 欠けていない。the ○○○○ day＝朝から晩まで",
       core: "どこも 欠けていない『まるごと 全部の』。例文は 週末 ずっと 雨。the entire weekend。",
-      tip: "副詞 entirely（すっかり）。whole と ほぼ 同じ はたらき。"
+      tip: "副詞 entirely（すっかり）。whole と ほぼ 同じ はたらき。",
+      pic: "🎂"
     },
     "essential": {
       hint: "「エッセンス」＝一番 大事な 中身",
@@ -829,17 +944,20 @@ EK.put("p2", {
     "frequent": {
       hint: "ラジオの 周波数 frequency と 同じ仲間",
       core: "何度も『くり返し 起きる』。例文は 空港と 町を 結ぶ バスが たくさん 出ている。",
-      tip: "副詞 frequently（よく）、名詞 frequency（ひんど・周波数）。"
+      tip: "副詞 frequently（よく）、名詞 frequency（ひんど・周波数）。",
+      pic: "🔁"
     },
     "global": {
       hint: "globe（地球儀）の 形容詞",
       core: "地球（globe）『まるごとに かかわる』。例文は 気候の 変化は どの国も 取りくむ 問題。",
-      tip: "globe（地球・地球儀）＋al。global warming（地球温暖化）。"
+      tip: "globe（地球・地球儀）＋al。global warming（地球温暖化）。",
+      pic: "🌍"
     },
     "healthy": {
       hint: "health＋y。野菜たっぷりの 朝ごはん",
       core: "『けんこうな 状態の・けんこうを 生む』。人にも 食べ物にも 使う。例文は 朝ごはん。",
-      tip: "health（名詞）＋y（形容詞）。healthy food で 覚える。"
+      tip: "health（名詞）＋y（形容詞）。healthy food で 覚える。",
+      pic: "🥗"
     },
     "independent": {
       hint: "in-（ない）＋depend（頼る）",
@@ -854,7 +972,8 @@ EK.put("p2", {
     "modern": {
       hint: "「○○ン な 建物」。古い お寺の 反対",
       core: "『今の 時代の・新しい』。例文は 新しい ビルと 古いお寺が ならぶ町。",
-      tip: "『モダン』。modern art（今の 時代の アート）。"
+      tip: "『モダン』。modern art（今の 時代の アート）。",
+      pic: "🏙️"
     },
     "native": {
       hint: "nat は「生まれる」。生まれた 時から の",
@@ -864,7 +983,8 @@ EK.put("p2", {
     "nervous": {
       hint: "nerve（神経）が ピリピリする",
       core: "神経（nerve）が『ピリピリ』して どきどきする。例文は みんなの前で 話す前。",
-      tip: "nerve（神経）の 形容詞。get nervous で よく使う。"
+      tip: "nerve（神経）の 形容詞。get nervous で よく使う。",
+      pic: "😰"
     },
     "ordinary": {
       hint: "いつもの order（順番・きまり）どおり",
@@ -874,7 +994,8 @@ EK.put("p2", {
     "patient": {
       hint: "名詞では 病院の「患者」。列で 文句を 言わず 待つ",
       core: "つらいことにも『じっと たえて 待てる』。名詞では 病気に たえる人 → 患者。",
-      tip: "名詞 patience（がまん）。名詞 patient は『患者』と 覚えておく。"
+      tip: "名詞 patience（がまん）。名詞 patient は『患者』と 覚えておく。",
+      pic: "⏳"
     },
     "polite": {
       hint: "ラテン語で「みがかれた」。ホテルの スタッフの 態度",
@@ -889,12 +1010,14 @@ EK.put("p2", {
     "private": {
       hint: "「○○イベート な 時間」。みんなの ものではない",
       core: "みんな（public）の ものではなく『自分たちだけの』。例文は ホテルの 客だけが 使える 浜。",
-      tip: "『プライベート』。反対は public（おおやけの）。"
+      tip: "『プライベート』。反対は public（おおやけの）。",
+      pic: "🔒"
     },
     "rare": {
       hint: "ゲームの「レアキャラ」。この地方で 雪が ふるのは…",
       core: "『めったに 見られない・起きない』。例文は この地方で 雪を 見るのは めずらしい。",
-      tip: "『レアカード・レアキャラ』。副詞 rarely（めったに～ない）。"
+      tip: "『レアカード・レアキャラ』。副詞 rarely（めったに～ない）。",
+      pic: "🍀"
     },
     "recent": {
       hint: "副詞にすると「-ly」が つく。a ○○○○ survey",
@@ -914,42 +1037,50 @@ EK.put("p2", {
     "similar": {
       hint: "same（同じ）ほどでは ないが、近い",
       core: "まったく 同じでは ないが『かなり 近い』。例文は 新しいスマホは 前のと そっくり、でも 画面が 大きい。",
-      tip: "similar to ～ の形で 覚える。名詞 similarity。"
+      tip: "similar to ～ の形で 覚える。名詞 similarity。",
+      pic: "🍎🍏"
     },
     "traditional": {
       hint: "tradition（昔から わたされてきた ならわし）＋al",
       core: "昔から『世代を こえて わたされてきた』。例文は 夏祭りの 着物（ゆかた）。",
-      tip: "tradition（伝統）の 形容詞。traditional Japanese food（和食）。"
+      tip: "tradition（伝統）の 形容詞。traditional Japanese food（和食）。",
+      pic: "⛩️"
     },
     "various": {
       hint: "テレビの「○○エティ番組」の 仲間",
       core: "『いろいろに 変わる（vary）』→ 1つでなく たくさんの 種類の。例文は 世界中の いろんな アート。",
-      tip: "vary（変わる）、variety（バラエティ）と 同じ仲間。various kinds of ～。"
+      tip: "vary（変わる）、variety（バラエティ）と 同じ仲間。various kinds of ～。",
+      pic: "🌈"
     },
     "valuable": {
       hint: "value（ねうち）＋able",
       core: "『ねうち（value）が ある』。お金だけでなく 経験や 時間にも。例文は ホームステイの 経験。",
-      tip: "value（バリュー＝ねうち）＋able。valuable experience で よく出る。"
+      tip: "value（バリュー＝ねうち）＋able。valuable experience で よく出る。",
+      pic: "💎"
     },
     "ancient": {
       hint: "ピラミッドが 作られた ころの",
       core: "『ずっと 大むかしの』。例文は 昔の エジプト。old より ずっと 古い 時代。",
-      tip: "ante（前）が もと。antique（アンティーク）も 同じ仲間。"
+      tip: "ante（前）が もと。antique（アンティーク）も 同じ仲間。",
+      pic: "🏺"
     },
     "annual": {
       hint: "ann は「年」。anniversary と 同じ仲間",
       core: "『1年ごとの』。毎年 決まって やってくる。例文は 毎年 8月の 花火大会。",
-      tip: "ann（年）は anniversary（〇周年記念日）と 同じ。"
+      tip: "ann（年）は anniversary（〇周年記念日）と 同じ。",
+      pic: "🗓️🔁"
     },
     "curious": {
       hint: "「なんで？ どうして？」が 口ぐせの 子ども",
       core: "まわりの ものに『知りたい！』と 心が 向く。例文は 小さな子は 何でも 知りたがる。be curious about ～。",
-      tip: "名詞は curiosity。『知りたがり』の 子どもを 思いうかべる。"
+      tip: "名詞は curiosity。『知りたがり』の 子どもを 思いうかべる。",
+      pic: "🧐"
     },
     "harmful": {
       hint: "harm＋ful。日焼けの しすぎは はだに…",
       core: "体や ものに『きず（harm）を あたえる』。例文は 日光の 浴びすぎは はだに よくない。",
-      tip: "harm（害）＋ful。反対は harmless（無害な）。"
+      tip: "harm（害）＋ful。反対は harmless（無害な）。",
+      pic: "☠️"
     },
     "nearby": {
       hint: "near＋by。美術館の あとで 歩いて 行ける カフェ",
@@ -991,7 +1122,8 @@ EK.put("p2", {
     "unfortunately": {
       hint: "un-（ない）＋fortune（運）",
       core: "『運（fortune）が ない』ことに。文の はじめで『がっかりだけど…』の 合図。例文は チケットが 売り切れ。",
-      tip: "un（ない）＋fortunate（運のよい）＋ly。反対は fortunately。"
+      tip: "un（ない）＋fortunate（運のよい）＋ly。反対は fortunately。",
+      pic: "😞"
     },
     "gradually": {
       hint: "grade（段）を 1つずつ のぼるように",
@@ -1001,12 +1133,14 @@ EK.put("p2", {
     "immediately": {
       hint: "im-（ない）＋mediate（あいだ）。あいだを おかない",
       core: "あいだに『何も はさまない』→ 時間を おかず すぐ。例文は ベルが 鳴って みんな すぐ 外へ。",
-      tip: "im（ない）＋mediate（あいだにある）。right away と ほぼ 同じ。"
+      tip: "im（ない）＋mediate（あいだにある）。right away と ほぼ 同じ。",
+      pic: "⚡"
     },
     "abroad": {
       hint: "a（～に）＋broad（広い）。広い 世界へ 出ていく",
       core: "国の 外の『広い 世界へ・で』。副詞なので to は いらない（go abroad / study abroad）。",
-      tip: "a（～に）＋broad（広い）。go to abroad は まちがい と 覚える。"
+      tip: "a（～に）＋broad（広い）。go to abroad は まちがい と 覚える。",
+      pic: "✈️🌍"
     }
   }
 });
