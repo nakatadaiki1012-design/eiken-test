@@ -1183,7 +1183,7 @@ EK.put("p1", {
       pair: "strength は 一度に 出す 力、stamina は 長く 続ける 力。"
     },
     "testament": {
-      hint: "300年たっても立つ橋が、建てた人の腕前を物語る",
+      hint: "300年たっても立つ橋が、建てた人の腕前を今に伝える",
       core: "ある 事実を『証言して くれる もの』。be a testament to ～で ～をはっきり 示す。",
       tip: "testify（証言する）と 同じ仲間。聖書の Old Testament（旧約）も 同じ語。",
       pic: "🌉",
