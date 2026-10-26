@@ -78,7 +78,7 @@ EK.put("g2", {
     {"en":"pandemic","pos":"名","ja":"世界的流行","ex":"The pandemic forced many schools to switch to online classes.","exja":"パンデミックのために、多くの学校がオンライン授業への切り替えを迫られた。"},
     {"en":"burial","pos":"名","ja":"埋葬","ex":"The burial took place in a small church in his hometown.","exja":"埋葬は彼の故郷の小さな教会で行われた。"},
     {"en":"prominent","pos":"形","ja":"著名な・目立つ","ex":"A prominent scientist gave a speech at our graduation ceremony.","exja":"ある著名な科学者が私たちの卒業式でスピーチをした。"},
-    {"en":"proceed","pos":"動","ja":"（先へ）進む","ex":"After a short break, the speaker proceeded to the next topic.","exja":"短い休憩のあと、講演者は次の話題に進んだ。"},
+    {"en":"proceed","pos":"動","ja":"進む・続行する","ex":"After a short break, the speaker proceeded to the next topic.","exja":"短い休憩のあと、講演者は次の話題に進んだ。"},
     {"en":"despair","pos":"動","ja":"絶望する","ex":"Even after losing his job, he never despaired of finding a better one.","exja":"仕事を失ったあとも、彼はもっと良い仕事を見つける望みを決して捨てなかった。"},
     {"en":"philosophy","pos":"名","ja":"哲学","ex":"He studied philosophy at university and now teaches ethics at a high school.","exja":"彼は大学で哲学を学び、今は高校で倫理を教えている。"},
     {"en":"meanwhile","pos":"副","ja":"その間に","ex":"My father was cooking dinner; meanwhile, the children were setting the table.","exja":"父が夕食を作っていて、その間に子どもたちは食卓の準備をしていた。"},
@@ -154,7 +154,7 @@ EK.put("g2", {
   core: {
     "tuition": {"hint":"大学や塾に通うために、毎年払わなければならないお金","core":"もとは『見守る・教える』こと。教えてもらうことに対して払うお金→授業料。","tip":"tutor（家庭教師）と同じ語源で、ラテン語の『見守る』から。","pic":"💴"},
     "inflict": {"hint":"damage や pain を、相手にぶつけて負わせる","core":"相手に打撃を『ぶつけて負わせる』。inflict A on B（BにAを負わせる）の形で、被害・苦痛など悪いものに使う。","tip":"in（上に）＋flict（打つ）。conflict（衝突＝ぶつかり合い）と同じ仲間。","pic":"💥"},
-    "attribute": {"hint":"結果を見て『それは～から来た』と考える","core":"結果を『何かのところへ割りあてる』。attribute A to B＝AはBのおかげ（せい）だと考える。","tip":"at（～へ）＋tribute（割りあてる）。tribute（贈り物）と同じ仲間。"},
+    "attribute": {"hint":"結果を見て『それは～から来た』と考える","core":"結果を『何かのところへ割りあてる』。attribute A to B＝AはBのおかげ（せい）だと考える。","tip":"at（～へ）＋tribute（割りあてる）。tribute（貢ぎ物・賛辞）と同じ仲間。"},
     "therapy": {"hint":"時間をかけて、心や体をもとの元気な状態へ戻す方法","core":"時間をかけて心や体を『いやし、元に戻していく』方法。physical therapy（理学療法）、music therapy（音楽療法）。","tip":"セラピー・セラピスト（therapist）というカタカナ語。","pic":"💆"},
     "voyage": {"hint":"海の上を何日もかけて、遠くへ進んでいく","core":"船や宇宙船で『長い距離を進む旅』。trip より長く、遠い所へ行くイメージ。","tip":"ボイジャー（Voyager）は宇宙を長く旅する探査機の名前。","pic":"🚢🌊"},
     "arguably": {"hint":"反対する人がいても、理由を挙げてそう主張できる","core":"argue（理由を挙げて主張する）＋-ably（～できるように）。『そう主張できる』→最上級と使い、ほぼ確実にそう言える。","tip":"argue（論じる）の副詞形。the best などの最上級とよくいっしょに出る。"},
