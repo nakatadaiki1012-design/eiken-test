@@ -27,10 +27,10 @@ EK.put("p2", {
     { en: "sponsor", pos: "動", ja: "後援する", ex: "A local bank sponsors the town's summer music festival every year.", exja: "地元の銀行が毎年、町の夏の音楽祭を後援している。" },
     { en: "properly", pos: "副", ja: "きちんと・適切に", ex: "If you don't sleep properly, you can't do your best at school.", exja: "きちんと眠らないと、学校で全力を出せない。" },
     { en: "champion", pos: "名", ja: "優勝者", ex: "After years of hard training, he became the national tennis champion.", exja: "何年もの厳しい練習の末、彼はテニスの全国チャンピオンになった。" },
-    { en: "pardon", pos: "動", ja: "許す", ex: "Pardon me, but could you tell me the way to the station?", exja: "すみませんが、駅までの道を教えていただけますか。" },
+    { en: "pardon", pos: "動", ja: "（罪・失礼を）許す", ex: "Pardon me, but could you tell me the way to the station?", exja: "すみませんが、駅までの道を教えていただけますか。" },
     { en: "ceremony", pos: "名", ja: "式・儀式", ex: "The opening ceremony of the new library will be held on Sunday.", exja: "新しい図書館の開館式は日曜日に行われる。" },
     { en: "shape", pos: "動", ja: "形づくる", ex: "The experiences you have as a child shape the person you become.", exja: "子どものころの経験が、どんな人になるかを形づくる。" },
-    { en: "generally", pos: "副", ja: "一般に", ex: "Generally, people in this town go to bed early and get up early.", exja: "一般に、この町の人々は早寝早起きだ。" },
+    { en: "generally", pos: "副", ja: "たいてい・一般的に", ex: "Generally, people in this town go to bed early and get up early.", exja: "一般に、この町の人々は早寝早起きだ。" },
     { en: "source", pos: "名", ja: "源・出どころ", ex: "Fish is a good source of protein for people of all ages.", exja: "魚はあらゆる年代の人にとってよいたんぱく質源だ。" },
     { en: "industry", pos: "名", ja: "産業", ex: "The tourism industry is very important to the economy of this island.", exja: "観光産業はこの島の経済にとってとても重要だ。" },
     { en: "agency", pos: "名", ja: "代理店", ex: "We booked our trip to Hawaii through a travel agency near the station.", exja: "私たちは駅の近くの旅行代理店でハワイ旅行を予約した。" },
@@ -66,7 +66,7 @@ EK.put("p2", {
     { en: "massive", pos: "形", ja: "大規模な・どっしりした", ex: "A massive storm hit the coast and damaged many houses.", exja: "大規模な嵐が海岸を襲い、多くの家が被害を受けた。" },
     { en: "process", pos: "動", ja: "処理する・加工する", ex: "This factory processes fresh fish into canned food.", exja: "この工場は新鮮な魚を缶詰に加工している。" },
     { en: "level", pos: "名", ja: "水準・レベル", ex: "The water level of the river rose quickly after the heavy rain.", exja: "大雨のあと、川の水位が急に上がった。" },
-    { en: "allow", pos: "動", ja: "許可する", ex: "My parents don't allow me to use my phone after ten p.m.", exja: "両親は午後10時以降に私がスマホを使うのを許してくれない。" },
+    { en: "allow", pos: "動", ja: "（～するのを）許す", ex: "My parents don't allow me to use my phone after ten p.m.", exja: "両親は午後10時以降に私がスマホを使うのを許してくれない。" },
     { en: "shock", pos: "名", ja: "衝撃・ショック", ex: "The news of the accident was a big shock to everyone in town.", exja: "その事故の知らせは町のみんなにとって大きなショックだった。" },
     { en: "attack", pos: "動", ja: "攻撃する・襲う", ex: "The bear attacked the farmer's chickens during the night.", exja: "そのクマは夜の間に農家のニワトリを襲った。" },
     { en: "religious", pos: "形", ja: "宗教の", ex: "Christmas is a religious holiday, but many people celebrate it just for fun.", exja: "クリスマスは宗教的な祝日だが、多くの人がただ楽しみとして祝う。" },
@@ -199,7 +199,7 @@ EK.put("p2", {
     "envy": {
       hint: "人の 持っているものを 見て「いいなあ」と 思う",
       core: "相手の よいところを 見て『自分にも ほしい』と 思う 気持ち。envy 人 で『人が うらやましい』。",
-      tip: "in（上に）＋vy（見る）。じっと 見つめてしまう 気持ち。形容詞は envious。",
+      tip: "ラテン語の in（～を）＋vid（見る＝video と同じ）から。じっと 見てしまう 気持ち。",
       pic: "😒✨"
     },
     "basic": {
@@ -299,7 +299,7 @@ EK.put("p2", {
       pic: "🏆"
     },
     "pardon": {
-      hint: "相手の あやまちを なかったことに してあげる",
+      hint: "相手の あやまちを とがめずに 見のがしてあげる",
       core: "罪や 失礼を『とがめずに 見のがす』。Pardon me. は『失礼ですが』、Pardon? は『もう一度 言って』。",
       tip: "par（すっかり）＋don（与える＝donate と同じ）。すっかり 与えて 帳消しにする。",
       pic: "🙏"
@@ -317,7 +317,7 @@ EK.put("p2", {
       pic: "🏺"
     },
     "generally": {
-      hint: "細かい 例外は おいておいて「たいていは」",
+      hint: "細かい 例外は おいておいて「ほとんどの 場合は」",
       core: "ひとつ ひとつでなく『全体を ざっと 見ると』。例文は 町の人は たいてい 早寝早起き。",
       tip: "general（全体の・ふつうの）＋ly。Generally speaking（ふつうに言えば）の形でも。",
       pic: "🌐"
@@ -479,7 +479,7 @@ EK.put("p2", {
       pic: "🪐"
     },
     "certainly": {
-      hint: "たのまれごとに「もちろん、いいですよ」",
+      hint: "たのまれごとに「ええ、いいですよ」と 快く 答える",
       core: "certain（たしかな）＋ly。うたがいなく。たのみへの 返事では『もちろん』。例文は 箱運びを 手伝う。",
       tip: "Sure. の ていねいな言い方。店員が 使う『Certainly, sir.』で 覚える。",
       pic: "👌"
@@ -767,7 +767,7 @@ EK.put("p2", {
       pic: "✍️📄"
     },
     "pole": {
-      hint: "地面に 立てた 長い ぼう。地球の 軸の はしも",
+      hint: "地面に 立てた 長い ぼう。北と 南の いちばん はしも",
       core: "まっすぐ 立った『長い ぼう』。電柱・旗の さお。地球の 軸の はし → 北極・南極（the North Pole）。",
       tip: "陸上の『ポール（棒高とび）』。the North Pole＝北極。",
       pic: "🎌🧭"

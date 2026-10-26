@@ -10,7 +10,7 @@ EK.put("p2", {
     {en: "fascinating", pos: "形", ja: "とても興味深い", ex: "The museum tour was fascinating, so we stayed there all day.", exja: "博物館の見学はとても興味深かったので、私たちは一日中そこにいた。" },
     {en: "cure", pos: "動", ja: "（病気を）治す", ex: "Scientists are trying to find a new way to cure this disease.", exja: "科学者たちはこの病気を治す新しい方法を見つけようとしている。" },
     {en: "share", pos: "動", ja: "共有する", ex: "My sister and I share a bedroom in our small apartment.", exja: "姉と私は小さなアパートで寝室を共有している。" },
-    {en: "excuse", pos: "動", ja: "大目に見る", ex: "Please excuse me for being late. The train was delayed.", exja: "遅れたことをお許しください。電車が遅れたのです。" },
+    {en: "excuse", pos: "動", ja: "（失礼を）許す", ex: "Please excuse me for being late. The train was delayed.", exja: "遅れたことをお許しください。電車が遅れたのです。" },
     {en: "entirely", pos: "副", ja: "完全に", ex: "The new library was built entirely by local volunteers.", exja: "新しい図書館は完全に地元のボランティアの手で建てられた。" },
     {en: "hunger", pos: "名", ja: "空腹", ex: "Many children in the world still suffer from hunger every day.", exja: "世界の多くの子どもたちは、今も毎日飢えに苦しんでいる。" },
     {en: "tropical", pos: "形", ja: "熱帯の", ex: "Many kinds of tropical fish live in the warm sea around the island.", exja: "その島のまわりの暖かい海には、多くの種類の熱帯魚がすんでいる。" },
@@ -23,7 +23,7 @@ EK.put("p2", {
     {en: "address", pos: "名", ja: "住所", ex: "Please write your name and address on this card.", exja: "このカードにお名前とご住所を書いてください。" },
     {en: "store", pos: "動", ja: "たくわえる", ex: "Squirrels store nuts in the ground to eat during the winter.", exja: "リスは冬の間に食べるために、木の実を地面にたくわえる。" },
     {en: "critical", pos: "形", ja: "重大な", ex: "Clean water is critical for the health of the people in the village.", exja: "きれいな水はその村の人々の健康にとって重大なものだ。" },
-    {en: "smooth", pos: "形", ja: "なめらかな", ex: "The baby's skin felt soft and smooth.", exja: "その赤ちゃんの肌はやわらかくてなめらかだった。" },
+    {en: "smooth", pos: "形", ja: "なめらかな", ex: "The baby's skin felt as soft and smooth as silk.", exja: "その赤ちゃんの肌は絹のようにやわらかくてなめらかだった。" },
     {en: "tap", pos: "動", ja: "軽くたたく", ex: "Someone tapped me on the shoulder while I was waiting for the bus.", exja: "バスを待っていると、だれかが私の肩を軽くたたいた。" },
     {en: "regularly", pos: "副", ja: "定期的に", ex: "You should visit the dentist regularly to keep your teeth healthy.", exja: "歯を健康に保つために、定期的に歯医者に行くべきだ。" },
     {en: "freely", pos: "副", ja: "自由に", ex: "Students can freely use the computers in the library after school.", exja: "生徒は放課後、図書館のコンピューターを自由に使える。" },
@@ -100,7 +100,7 @@ EK.put("p2", {
     {en: "crop", pos: "名", ja: "作物", ex: "Rice is the most important crop in this part of Japan.", exja: "米は日本のこの地方で最も重要な作物だ。" },
     {en: "plain", pos: "形", ja: "飾りのない", ex: "She wore a plain white shirt to the interview.", exja: "彼女は面接に飾りのない白いシャツを着ていった。" },
     {en: "vivid", pos: "形", ja: "鮮やかな", ex: "I still have vivid memories of my first trip abroad.", exja: "私は初めての海外旅行のことを今も鮮やかに覚えている。" },
-    {en: "absolutely", pos: "副", ja: "まったくそのとおり", ex: "\"Do you think we can win?\" \"Absolutely! We have trained so hard.\"", exja: "「勝てると思う？」「もちろん！あんなに練習したんだから。」" },
+    {en: "absolutely", pos: "副", ja: "絶対に", ex: "I'm absolutely sure that I locked the door this morning.", exja: "今朝ドアに鍵をかけたことは絶対に確かだ。" },
     {en: "bake", pos: "動", ja: "（オーブンで）焼く", ex: "My mother baked a chocolate cake for my birthday.", exja: "母は私の誕生日にチョコレートケーキを焼いてくれた。" },
     {en: "rent", pos: "動", ja: "賃借りする", ex: "We rented a car and drove around the island for three days.", exja: "私たちは車を借りて、3日間島をドライブして回った。" },
     {en: "reception", pos: "名", ja: "受付", ex: "Please leave your key at the reception when you go out.", exja: "外出するときは鍵を受付に預けてください。" },
@@ -184,9 +184,9 @@ EK.put("p2", {
       pic: "🤩"
     },
     "cure": {
-      hint: "医者や 薬が 病気を なくす",
+      hint: "医者や 薬の 力で、かぜや けがを すっかり よくする",
       core: "病気を『すっかり 取りのぞいて 元気に もどす』。人や 薬が 主語。例文は この病気を なくす 新しい方法。",
-      tip: "もとは『世話・手当て』（care と 近い）。heal は 傷が 自然に治る。",
+      tip: "名詞も cure（治療法）。heal は 傷が 自然に 治る。",
       pic: "💊"
     },
     "share": {
@@ -342,7 +342,7 @@ EK.put("p2", {
     "rest": {
       hint: "動くのを やめて、体を 楽にする",
       core: "動くのを『止めて 体を 楽にする』。名詞では『休み』と『残り（the rest）』。例文は つかれたら しばらく 止まって。",
-      tip: "『レストラン』は もとは 元気を とりもどす 店。restroom は トイレ。",
+      tip: "restroom（休む部屋）は トイレの こと。名詞 the rest は『残り』。",
       pic: "🛌"
     },
     "spicy": {
@@ -364,7 +364,7 @@ EK.put("p2", {
       pic: "📢"
     },
     "force": {
-      hint: "風や 水が 押してくる、とても 強い パワー",
+      hint: "風や 水が ぐいぐい 押してくる パワー",
       core: "ものを 動かす『強い 押す力』。動詞では『力ずくで ～させる』。例文は 窓を 割るほどの 風。",
       tip: "スター・ウォーズの『フォース』。動詞 force 人 to ～（むりに～させる）も よく出る。",
       pic: "💨"
@@ -544,7 +544,7 @@ EK.put("p2", {
       pic: "😤"
     },
     "fairly": {
-      hint: "fair（フェア）＋-ly。だれにも かたよらず",
+      hint: "審判のように、だれの 味方も しないで",
       core: "fair（ずるくない）＋ly →『だれにも かたよらず』。もう1つ『かなり』の 意味も ある。例文は 生徒全員を 平等に。",
       tip: "『フェアプレー』の フェア。反対は unfairly（不公平に）。",
       pic: "⚖️"
@@ -574,13 +574,13 @@ EK.put("p2", {
       pic: "🏆"
     },
     "photograph": {
-      hint: "photo-（光）＋-graph（かく）",
+      hint: "カメラで パチリ。アルバムに はるもの",
       core: "photo（光）＋graph（書く）→『光で かいた 絵』。カメラで とった もの。例文は ハワイの 家族の それ。",
       tip: "graph は『書く』。グラフ、autograph（サイン）と 同じ。photographer は 写真家。",
       pic: "📷"
     },
     "upload": {
-      hint: "up（上へ）＋load（荷を 積む）。ネットの 上へ",
+      hint: "スマホの 写真を ネットの 上へ 送る",
       core: "up（上へ）＋load（荷を のせる）→ 自分の データを ネットの『上へ 送る』。例文は バンドの 動画を。",
       tip: "反対は download（下へ）。load は トラックに『荷を積む』こと。",
       pic: "⬆️"
@@ -592,7 +592,7 @@ EK.put("p2", {
       pic: "😲"
     },
     "download": {
-      hint: "down（下へ）＋load（荷）。ネットから 手元へ",
+      hint: "ネットの 上から 自分の スマホへ 取りこむ",
       core: "down（下へ）＋load（荷）→ ネットの 上から 自分の 機械へ『下ろす』。例文は アプリを 無料で。",
       tip: "反対は upload（上へ 送る）。up と down の 向きで 覚える。",
       pic: "⬇️"
@@ -737,7 +737,7 @@ EK.put("p2", {
     },
     "absolutely": {
       hint: "「100％ そう！」と 強く うなずく 返事",
-      core: "absolute（完全な）＋ly →『どこにも うたがいなく』。会話の 返事で『もちろん！』。例文は 勝てるか？への 返事。",
+      core: "absolute（完全な）＋ly →『どこにも うたがいなく 100％』。例文は 鍵を かけたと 言いきる。返事の Absolutely! は『もちろん』。",
       tip: "Absolutely not!（絶対に ちがう）の 形もある。会話問題で よく出る。",
       pic: "💯"
     },
@@ -772,7 +772,7 @@ EK.put("p2", {
       pic: "🏃"
     },
     "convenience": {
-      hint: "コンビニの もとになった 語",
+      hint: "手間が かからず 楽ちん、という よさ",
       core: "convenient（都合が いい）の 名詞形 →『手間が かからない よさ』。例文は ネットで 買い物する わけ。",
       tip: "コンビニは convenience store。形容詞 convenient と セットで。",
       pic: "🏪"
@@ -784,7 +784,7 @@ EK.put("p2", {
       pic: "🤝"
     },
     "single": {
-      hint: "1人・1つ だけ。「シングル」ベッド",
+      hint: "ほかに 何もなく、ぽつんと 1つだけ",
       core: "ほかに なく『1つ だけ』。not a ～ で『1つも ～ない』と 強める。人なら 独身。例文は ミスが 1つも ない。",
       tip: "『シングルルーム』は 1人部屋。not a single ～ は 強い 否定。",
       pic: "☝️"
@@ -816,7 +816,7 @@ EK.put("p2", {
     "forgive": {
       hint: "相手の あやまちを もう 責めない",
       core: "相手の『悪かったことを 水に流す』。例文は カップを 割って ごめんね、いい？ forgive 人 for ～ の形。",
-      tip: "for＋give。forget（忘れる）と つづりが にていて 意味も 近い感じ。",
+      tip: "過去形は forgave。Please forgive me.（どうか 許して）の 場面で。",
       pic: "🕊️"
     },
     "invest": {
