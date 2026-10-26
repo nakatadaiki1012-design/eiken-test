@@ -15,7 +15,7 @@ EK.put("p1", {
     { en: "administer", pos: "動", ja: "（薬・試験を）施す", ex: "The nurse administered the medicine to the patient every six hours as the doctor ordered.", exja: "看護師は医師の指示どおり、6時間ごとに患者に薬を投与した。" },
     { en: "apathy", pos: "名", ja: "無関心・無気力", ex: "Political apathy among young people has led to very low turnout in recent elections.", exja: "若者の政治的無関心のせいで、最近の選挙では投票率がとても低くなっている。" },
     { en: "admissible", pos: "形", ja: "容認できる", ex: "The judge ruled that the recording was not admissible as evidence in the trial.", exja: "裁判官は、その録音は裁判の証拠として認められないと判断した。" },
-    { en: "preclude", pos: "動", ja: "（前もって）妨げる", ex: "His serious knee injury precluded him from taking part in the national championship.", exja: "ひざの重いけがのせいで、彼は全国選手権に出場できなくなった。" },
+    { en: "preclude", pos: "動", ja: "妨げる・排除する", ex: "His serious knee injury precluded him from taking part in the national championship.", exja: "ひざの重いけがのせいで、彼は全国選手権に出場できなくなった。" },
     { en: "outage", pos: "名", ja: "停電", ex: "The storm caused a power outage that left thousands of homes without electricity overnight.", exja: "嵐による停電で、何千もの家庭が一晩中電気のない状態になった。" },
     { en: "truncate", pos: "動", ja: "切り詰める", ex: "Because of the heavy rain, the organizers had to truncate the festival to just one day.", exja: "大雨のため、主催者は祭りを1日だけに短縮しなければならなかった。" },
     { en: "envision", pos: "動", ja: "心に描く", ex: "The mayor envisions a city where people can travel everywhere by bicycle safely.", exja: "市長は、人々が自転車でどこへでも安全に移動できる都市を思い描いている。" },
