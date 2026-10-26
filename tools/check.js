@@ -91,5 +91,6 @@ for (const g of Object.keys(data)) for (const w of (data[g].words || []).concat(
   const k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').trim();
   if (owner[k] && owner[k] !== g) err(g, w.en + ' は ' + owner[k] + ' にもある'); owner[k] = owner[k] || g;
 }
+for (const g of Object.keys(data)) { const m = {}; for (const w of data[g].idioms || []) { if (m[w.ja]) err(g, '熟語の意味が同じ：' + m[w.ja] + ' / ' + w.en + '（' + w.ja + '）'); m[w.ja] = w.en; } }
 for (const g of Object.keys(data)) { const m = {}; for (const w of data[g].words || []) { if (m[w.ja]) err(g, '意味が同じ：' + m[w.ja] + ' / ' + w.en + '（' + w.ja + '）'); m[w.ja] = w.en; } }
 if (bad) { console.log('まちがい ' + bad + ' 件'); process.exitCode = 1; } else console.log('まちがいなし');
