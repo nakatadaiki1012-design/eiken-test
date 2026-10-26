@@ -16,7 +16,7 @@ EK.put("p1", {
     { en: "sell out", ja: "売り切れる", ex: "Tickets for the concert [sold out] within ten minutes of going on sale.", exja: "そのコンサートのチケットは、発売から10分以内に売り切れた。" },
     { en: "have a say in ~", ja: "～に発言権がある", ex: "Students should [have a say in] the rules that affect their school life.", exja: "生徒は、自分たちの学校生活に関わる規則について発言権を持つべきだ。" },
     { en: "by and large", ja: "概して", ex: "[By and large], the new system has worked well since it was introduced last year.", exja: "概して、新しいシステムは昨年導入されて以来うまく機能している。" },
-    { en: "take stock of ~", ja: "（状況を）見極める", ex: "After a year in business, we need to [take stock of] what has gone well and what has not.", exja: "開業から1年たったので、何がうまくいき何がうまくいかなかったかを見極める必要がある。" },
+    { en: "take stock of ~", ja: "（状況を）見極める", ex: "After a year in business, we need to [take stock of] what has worked and what has not.", exja: "開業から1年たったので、何がうまくいき何がうまくいかなかったかを見極める必要がある。" },
     { en: "pick up on ~", ja: "～を感じ取る", ex: "She quickly [picked up on] the tension between her two friends at dinner.", exja: "彼女は夕食の席で、2人の友人の間の気まずさをすぐに感じ取った。" },
     { en: "step up ~", ja: "～を強化する", ex: "Police have [stepped up] security around the stadium before the final match.", exja: "決勝戦を前に、警察はスタジアム周辺の警備を強化した。" },
     { en: "plow through ~", ja: "～を苦労して進める", ex: "I had to [plow through] a huge pile of reports before the meeting on Monday.", exja: "月曜の会議の前に、山のような報告書を苦労して読み進めなければならなかった。" },
@@ -27,7 +27,7 @@ EK.put("p1", {
     { en: "hit on ~", ja: "（考えを）ふと思いつく", ex: "While he was taking a shower, he [hit on] a brilliant idea for a new app.", exja: "シャワーを浴びているときに、彼は新しいアプリのすばらしいアイデアを思いついた。" },
     { en: "in its infancy", ja: "まだ初期の段階で", ex: "When my father started his company, online shopping was still [in its infancy].", exja: "父が会社を始めたころ、ネット通販はまだ始まったばかりだった。" },
     { en: "make headway", ja: "進展する", ex: "Scientists are finally [making headway] in the fight against the rare disease.", exja: "科学者たちは、その珍しい病気との闘いでようやく前進しつつある。" },
-    { en: "weed out ~", ja: "～をふるい落とす", ex: "The first interview is designed to [weed out] candidates who are not suitable for the job.", exja: "一次面接は、その仕事に向かない候補者をふるい落とすためのものだ。" },
+    { en: "weed out ~", ja: "（不要なものを）取り除く", ex: "The first interview is designed to [weed out] candidates who are not suitable for the job.", exja: "一次面接は、その仕事に向かない候補者をふるい落とすためのものだ。" },
     { en: "flare up", ja: "（急に）激しくなる", ex: "Fighting [flared up] again along the border last week after a short period of peace.", exja: "しばらく平和が続いたあと、先週国境沿いで再び戦闘が激しくなった。" },
     { en: "read up on ~", ja: "～について下調べする", ex: "Before visiting Kyoto, I [read up on] the history of its famous temples.", exja: "京都を訪れる前に、有名なお寺の歴史についてよく調べておいた。" },
     { en: "be conducive to ~", ja: "～に好都合である", ex: "A quiet and well-lit room [is conducive to] good study habits.", exja: "静かで明るい部屋は、よい勉強習慣を身につけるのに好都合だ。" },
@@ -496,7 +496,7 @@ EK.put("p1", {
       pic: "🎚️"
     },
     "cater to ~": {
-      hint: "お客の ほしい ものを、料理の ように 用意して 出す",
+      hint: "相手が ほしがる ものを、料理の ように 用意して 出す",
       core: "cater（食事を用意する）＋to（～に向けて）→ ある人たちに合わせて必要なものを用意する → その人たち向けにサービスする。",
       tip: "ケータリング（出張料理）と同じ語。",
       pic: "🍱"
