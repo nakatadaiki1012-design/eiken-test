@@ -292,7 +292,7 @@ EK.put("p1", {
       tip: "scold より かたく 強い語。reprimand・reproach と 並べて 覚える。"
     },
     "misplace": {
-      hint: "mis（まちがって）＋place（置く）",
+      hint: "さっきまで あったのに、どこに 置いたか 思い出せない",
       core: "物を『まちがった 場所に 置いて』どこか わからなくなる。なくした（lose）とは 少しちがう。",
       tip: "mis（誤って）＋place（置く）。misunderstand の mis と同じ。",
       pic: "👓❓"
@@ -398,7 +398,7 @@ EK.put("p1", {
       pic: "📏"
     },
     "itemize": {
-      hint: "item（ひとつの 品目）＋ize（～にする）",
+      hint: "レシートの 明細のように、1行ずつ 分けて 並べる",
       core: "まとめて 書くのではなく『1つずつの 品目に 分けて 並べる』こと。レシートや 経費の 明細。",
       tip: "item（アイテム）＋ize。レシートに 商品が 1行ずつ 並ぶ 場面。",
       pic: "🧾"
@@ -410,7 +410,7 @@ EK.put("p1", {
       pic: "↔️"
     },
     "abstinence": {
-      hint: "abs（離れて）＋tain（保つ）。欲しい物から 距離を",
+      hint: "abs（離れて）＋ten（保つ）。欲しい物から 距離を",
       core: "お酒・食べ物などの 楽しみから『自分を 離して おく』こと。自分の意思で 断つ。",
       tip: "abs（離れて）＋ten（保つ）。abstain（控える）の名詞。obtain の tain と同じ。",
       pic: "🚫🍷"
@@ -484,7 +484,7 @@ EK.put("p1", {
     "engender": {
       hint: "gen は「生まれる」。感情や 状況を 作り出す",
       core: "ある 感情・状況を『生ませる』イメージ。信頼・不信・恐れ などを 世の中に 生む。",
-      tip: "en（中に）＋gender（生む）。generate（発生させる）と同じ gen。",
+      tip: "en（中に）＋gen（生む）。generate（発生させる）と同じ gen。",
       pic: "🌱"
     },
     "fathom": {
@@ -806,7 +806,7 @@ EK.put("p1", {
       pic: "🍚"
     },
     "disposable": {
-      hint: "dispose（処分する）＋able。1回 使ったら",
+      hint: "紙コップや わりばしの ように、1回 使ったら おしまい",
       core: "使ったら『すぐ 処分できる』イメージ。紙コップ・ひげそり。disposable income は自由に使えるお金。",
       tip: "dispose of（処分する）の形容詞。カタカナの「ディスポ」とも 言う。",
       pic: "🥤"
@@ -898,7 +898,7 @@ EK.put("p1", {
     "founder": {
       hint: "船が 水を かぶって 底へ しずむ イメージ",
       core: "船が『底へ しずんで しまう』イメージ。計画・交渉が うまくいかず だめになる。",
-      tip: "fund（底）の仲間。名詞 founder（創立者）とは 別物と 区別する。",
+      tip: "ラテン語 fundus（底）から。名詞 founder（創立者）とは 別物と 区別する。",
       pic: "🚢⬇️"
     },
     "levy": {
@@ -910,7 +910,7 @@ EK.put("p1", {
     "onslaught": {
       hint: "息つく ひまも なく、次々と 激しく おそいかかる",
       core: "敵が『どっと 激しく おそいかかる』イメージ。批判・質問・広告などの 大量の 攻めにも。",
-      tip: "on（向かって）＋slaught（打つ）。slaughter（大量に殺す）と 同じ 仲間。",
+      tip: "an onslaught of criticism（批判の嵐）の形でも 出る。",
       pic: "⚔️💥"
     },
     "obliterate": {
@@ -980,7 +980,7 @@ EK.put("p1", {
       pic: "🐑🌱"
     },
     "omnipresent": {
-      hint: "omni（すべて）＋present（いる）。どこを 向いても",
+      hint: "どこへ 行っても 目に 入る、空気のような 存在",
       core: "『すべての 場所に 存在する』イメージ。神さま、スマホ、防犯カメラなど どこでも 目に入る。",
       tip: "omni（すべて）＋present（存在する）。ubiquitous と ほぼ 同じ。",
       pic: "📹🌍"
