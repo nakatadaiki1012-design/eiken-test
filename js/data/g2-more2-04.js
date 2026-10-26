@@ -23,7 +23,7 @@ EK.put("g2", {
     { en: "wrestle", pos: "動", ja: "格闘する・取り組む", ex: "Scientists have been wrestling with the problem of plastic waste in the ocean for years.", exja: "科学者たちは何年も海のプラスチックごみの問題に取り組んできた。" },
     { en: "paralyze", pos: "動", ja: "まひさせる", ex: "The heavy snow paralyzed the city's transportation system for two days.", exja: "大雪で、市の交通網は2日間まひした。" },
     { en: "clog", pos: "動", ja: "詰まらせる", ex: "Hair and food waste can easily clog the pipes in your kitchen sink.", exja: "髪の毛や食べかすで、台所の流しの排水管はすぐに詰まってしまう。" },
-    { en: "pledge", pos: "動", ja: "固く誓う", ex: "The mayor pledged to reduce the amount of garbage in the city by half.", exja: "市長は市のごみの量を半分に減らすと固く誓った。" },
+    { en: "pledge", pos: "動", ja: "公約する・誓約する", ex: "The mayor pledged to reduce the amount of garbage in the city by half.", exja: "市長は市のごみの量を半分に減らすと固く誓った。" },
     { en: "eavesdrop", pos: "動", ja: "盗み聞きする", ex: "I didn't mean to eavesdrop, but I heard everything they said in the next room.", exja: "盗み聞きするつもりはなかったが、隣の部屋で彼らが言ったことが全部聞こえた。" },
     { en: "tug", pos: "動", ja: "ぐいと引く", ex: "My little brother tugged at my sleeve because he wanted me to buy him ice cream.", exja: "弟はアイスを買ってほしくて、私のそでをぐいっと引っぱった。" },
     { en: "nudge", pos: "動", ja: "ひじでつつく", ex: "My friend nudged me during the meeting because I was falling asleep.", exja: "会議中にうとうとしていたので、友だちが私をひじでつついた。" },
