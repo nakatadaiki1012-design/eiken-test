@@ -1,7 +1,7 @@
 EK.put("g2", {
   words: [
     { en: "virtually", pos: "副", ja: "事実上・ほぼ", ex: "Virtually everyone in the town came to watch the fireworks last night.", exja: "昨夜は町のほぼ全員が花火を見に来た。" },
-    { en: "evidently", pos: "副", ja: "どうやら～らしい", ex: "Evidently, the store had closed early, because all the lights were off.", exja: "明かりが全部消えていたので、どうやら店は早く閉まったらしい。" },
+    { en: "evidently", pos: "副", ja: "明らかに・どうやら", ex: "Evidently, the store had closed early, because all the lights were off.", exja: "明かりが全部消えていたので、どうやら店は早く閉まったらしい。" },
     { en: "reproduce", pos: "動", ja: "繁殖する・再現する", ex: "Some fish travel thousands of kilometers to reproduce in the river where they were born.", exja: "生まれた川で繁殖するために、何千キロも旅をする魚もいる。" },
     { en: "grieve", pos: "動", ja: "深く悲しむ", ex: "The whole village grieved for the old man who had helped so many people.", exja: "村じゅうが、多くの人を助けてきたその老人の死を深く悲しんだ。" },
     { en: "presume", pos: "動", ja: "推定する", ex: "Since he didn't answer the phone, I presumed that he was already asleep.", exja: "彼が電話に出なかったので、もう寝ているのだろうと推定した。" },
@@ -138,7 +138,7 @@ EK.put("g2", {
     { en: "counsel", pos: "動", ja: "相談に乗る", ex: "The school nurse counsels students who are worried about their health.", exja: "保健の先生は、健康について悩んでいる生徒の相談に乗っている。" },
     { en: "await", pos: "動", ja: "待ち受ける", ex: "Many serious difficulties await the new government after the election.", exja: "選挙のあと、多くの深刻な困難が新政府を待ち受けている。" },
     { en: "gene", pos: "名", ja: "遺伝子", ex: "Scientists have discovered a gene that may be linked to the disease.", exja: "科学者たちは、その病気に関係しているかもしれない遺伝子を発見した。" },
-    { en: "naked", pos: "形", ja: "裸の・むき出しの", ex: "You cannot see these tiny insects with the naked eye.", exja: "これらの小さな虫は肉眼では見えない。" },
+    { en: "naked", pos: "形", ja: "裸の・ありのままの", ex: "You cannot see these tiny insects with the naked eye.", exja: "これらの小さな虫は肉眼では見えない。" },
     { en: "terrorism", pos: "名", ja: "テロ行為", ex: "World leaders met to discuss how to fight terrorism together.", exja: "世界の指導者たちは、どうやって協力してテロと戦うかを話し合うために集まった。" },
     { en: "absorb", pos: "動", ja: "吸収する", ex: "Dark clothes absorb more heat from the sun than white ones.", exja: "黒っぽい服は、白い服よりも太陽の熱を多く吸収する。" },
     { en: "excess", pos: "名", ja: "過剰・超過", ex: "Eating an excess of sugar can lead to serious health problems.", exja: "砂糖の過剰な摂取は、深刻な健康問題につながることがある。" },
@@ -290,7 +290,7 @@ EK.put("g2", {
     "counsel": { hint: "悩みをもつ人の話を聞き、専門家として導く", core: "『いっしょに考えて、助ける』。悩みを聞き、専門の立場からアドバイスする。", tip: "counselor（カウンセラー）の動詞。council（議会）とつづりがちがう。" },
     "await": { hint: "for をつけずに目的語をとる、かたい言い方", core: "『～に向かって待つ』。人が結果を待つ、困難や喜びが先で待ちかまえている。", tip: "a＋wait。wait for ～ と同じだが for がいらない。", pic: "⏳" },
     "gene": { hint: "親から子へ伝わる、体の設計図の小さな単位", core: "親から子へ『受けつがれる体の設計図』。目や髪の色などを決める情報。", tip: "genetic（遺伝の）・genome（ゲノム）の仲間。発音はジーン。", pic: "🧬" },
-    "naked": { hint: "おおうものが何もない、そのままの", core: "『何もおおっていない』。服を着ていない、道具を使わない。with the naked eye（肉眼で）。", tip: "with the naked eye（肉眼で）はよく出る。発音はネイキッド。" },
+    "naked": { hint: "体や中身をおおうものが、何もない状態", core: "『何もおおっていない』。服を着ていない、道具を使わない。with the naked eye（肉眼で）。", tip: "with the naked eye（肉眼で）はよく出る。発音はネイキッド。" },
     "terrorism": { hint: "暴力で人々をこわがらせ、政治的な目的をとげようとすること", core: "『恐怖（terror）』を使って人々をおどし、要求を通そうとする暴力。", tip: "terror（恐怖）＋ism。terrible（ひどい）と同じ仲間。" },
     "absorb": { hint: "スポンジが水をすいこむように", core: "外のものを『すいこんで、中にとりこむ』。水・熱・知識をとりこむ。be absorbed in ～（夢中になる）。", tip: "be absorbed in ～＝～に夢中。心が中にすいこまれるイメージ。", pic: "🧽" },
     "excess": { hint: "ちょうどよい量をこえて、出すぎた分", core: "決まった線を『外へこえて出た分』。多すぎる量。in excess of ～（～をこえて）。", tip: "ex（外へ）＋cess（行く）。exceed（こえる）と同じ仲間。excessive（過度の）。" },
