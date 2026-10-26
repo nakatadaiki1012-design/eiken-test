@@ -45,7 +45,7 @@ EK.put("p1", {
     { en: "abide", pos: "動", ja: "（規則を）守る", ex: "All members must abide by the club's rules or they will lose their membership.", exja: "全会員はクラブの規則を守らなければならず、さもないと会員資格を失う。" },
     { en: "itemize", pos: "動", ja: "項目別に書く", ex: "Please itemize all your travel expenses so the office can pay you back.", exja: "会社が払い戻せるよう、出張費をすべて項目別に書いてください。" },
     { en: "leeway", pos: "名", ja: "（自由な）余地", ex: "The new manager gives employees a lot of leeway in deciding how to do their work.", exja: "新しい部長は、仕事のやり方を決めるうえで社員に大きな自由の余地を与えている。" },
-    { en: "abstinence", pos: "名", ja: "（飲酒などを）断つこと・節制・禁欲", ex: "The doctor recommended complete abstinence from alcohol until his liver had recovered.", exja: "医師は肝臓が回復するまで、酒を完全に断つことを勧めた。" },
+    { en: "abstinence", pos: "名", ja: "（酒などを）断つこと", ex: "The doctor recommended complete abstinence from alcohol until his liver had recovered.", exja: "医師は肝臓が回復するまで、酒を完全に断つことを勧めた。" },
     { en: "subservient", pos: "形", ja: "従属的な", ex: "In the past, women were often expected to be subservient to their husbands.", exja: "昔は、女性は夫に従属的であることを求められることが多かった。" },
     { en: "creed", pos: "名", ja: "信条", ex: "The school welcomes students of every race and creed from around the world.", exja: "その学校は世界中のあらゆる人種と信条の生徒を受け入れている。" },
     { en: "bribe", pos: "動", ja: "賄賂を贈る", ex: "The businessman was arrested for trying to bribe a city official to win the contract.", exja: "その実業家は契約を勝ち取るために市の職員に賄賂を贈ろうとして逮捕された。" },
