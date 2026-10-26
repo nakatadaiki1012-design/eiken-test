@@ -251,7 +251,7 @@
       (al.next ? '<i class="togo">あと <i>' + fmt(al.next[0] - G.score) + '</i> 点で ' + al.next[2] + ' ' + al.next[3] + '</i>' : '') + '</span></div>' +
       '<div class="ladder">' + ladder + '</div>' +
       '<div class="score2">' + fmt(G.score) + ' <small>点</small>' + (rec && G.score > 0 ? ' <span class="newrec">🏆 ベスト更新！</span>' : old ? ' <small class="old">ベスト ' + fmt(old.score) + '</small>' : '') + '</div>' +
-      '<div class="tstats">正解 <b>' + G.ok + '</b>・ミス <b>' + G.miss + '</b>（正答率 ' + acc + '%）・最大コンボ <b>' + G.maxCombo + '</b>・' + Math.floor(sec / 60) + '分' + (sec % 60) + '秒</div>';
+      '<div class="tstats"><span>正解 <b>' + G.ok + '</b>・ミス <b>' + G.miss + '</b>（正答率 ' + acc + '%）</span>・<span>最大コンボ <b>' + G.maxCombo + '</b></span>・<span>' + Math.floor(sec / 60) + '分' + (sec % 60) + '秒</span></div>';
     if (G.missed.length) {
       html += '<h3>✕ まちがえた 問題（復習に 入りました）</h3><div class="rk-list">' + G.missed.map(function (q) {
         return '<div class="row">' + '<div class="t">' + q.recap + '</div>' + (q.say ? A().sayBtn(q.say) : '') + '</div>';

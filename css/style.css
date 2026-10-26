@@ -323,3 +323,4 @@ body.rk-on { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .tbar.hurry, .spd.fast, .rk.boost .meter2 i, .count, .slidein, .shake, .arrive .ae { animation: none !important; }
 }
+.tstats span { white-space: nowrap; }

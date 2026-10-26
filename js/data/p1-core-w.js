@@ -69,7 +69,7 @@ EK.put("p1", {
       tip: "形容詞 assertive（自己主張の強い）。アサーティブ＝自分の意見をはっきり言う態度。"
     },
     "bolster": {
-      hint: "bolster は、もともと「長いまくら・クッション」",
+      hint: "もとは名詞で「長いまくら・クッション」のこと",
       core: "まくらを当てて『下から支えて強くする』イメージ。自信・経済・主張などを支えて強める。",
       tip: "名詞 bolster＝長いまくら。弱いところにクッションを入れて支える絵で。"
     },
@@ -106,7 +106,7 @@ EK.put("p1", {
     "concede": {
       hint: "cede は「ゆずる・退く」。負けを…",
       core: "相手に一歩『ゆずる』イメージ。言い争いの負けや、いやな事実をしぶしぶ受け入れる。",
-      tip: "con＋cedere（退く・ゆずる）。名詞 concession（譲歩）。敗北を認める演説は concession speech。"
+      tip: "con＋cedere（ゆずる）。名詞 concession（譲歩）。敗北宣言は concession speech。"
     },
     "condemn": {
       hint: "damn と同じ仲間。悪いことをした相手に向ける強い言葉",
