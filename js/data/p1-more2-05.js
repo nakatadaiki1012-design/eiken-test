@@ -36,7 +36,7 @@ EK.put("p1", {
     { en: "slant", pos: "動", ja: "傾ける・偏らせる", ex: "Critics accused the newspaper of slanting its reports to favor the ruling party.", exja: "批評家たちは、その新聞が与党に有利になるよう記事を偏らせていると非難した。" },
     { en: "spearhead", pos: "動", ja: "陣頭に立って進める", ex: "The young mayor spearheaded a campaign to clean up the polluted river.", exja: "若い市長は、汚れた川をきれいにする運動の陣頭に立った。" },
     { en: "stammer", pos: "動", ja: "どもる", ex: "When the teacher suddenly asked him a question, the shy boy began to stammer.", exja: "先生に急に質問されると、その内気な少年はどもり始めた。" },
-    { en: "swamp", pos: "動", ja: "（大量に）押し寄せる", ex: "After the store announced the sale, it was swamped with orders from all over the country.", exja: "その店がセールを発表すると、全国から注文が殺到した。" },
+    { en: "swamp", pos: "動", ja: "殺到して圧倒する", ex: "After the store announced the sale, it was swamped with orders from all over the country.", exja: "その店がセールを発表すると、全国から注文が殺到した。" },
     { en: "trudge", pos: "動", ja: "重い足取りで歩く", ex: "The tired hikers trudged through the deep snow for hours before reaching the hut.", exja: "疲れた登山者たちは、山小屋に着くまで何時間も深い雪の中を重い足取りで歩いた。" },
     { en: "waver", pos: "動", ja: "（決心が）揺らぐ", ex: "Even when others criticized her, she never wavered in her support for the plan.", exja: "ほかの人に批判されても、彼女のその計画への支持が揺らぐことはなかった。" },
     { en: "writhe", pos: "動", ja: "身もだえする", ex: "The injured player lay on the field, writhing in pain, until the medical staff arrived.", exja: "けがをした選手は、医療スタッフが来るまで痛みに身もだえしながらフィールドに倒れていた。" },
@@ -1058,7 +1058,7 @@ EK.put("p1", {
     },
     "humanitarian": {
       hint: "国も 宗教も 問わず、戦地で けが人を 助け続けた 医師",
-      core: "人間（human）として の 苦しみを 減らす ために 尽くす 人。形容詞では「人道的な」。",
+      core: "同じ 人間（human）として、人々の 苦しみを 減らす ために 尽くす 人。形容詞では「人道的な」。",
       tip: "human（人間）＋-itarian（主義の 人）。humanitarian aid（人道支援）で よく出る。",
       pic: "🤲❤️",
       scene: "難民キャンプで、白衣の 女性が 列に 並ぶ 子どもに 一人ずつ 水と パンを 手渡す。",
