@@ -936,7 +936,7 @@ EK.put("p1", {
       pair: "example は「一つの例」、epitome は「その性質を完全に表す見本」。"
     },
     "segregation": {
-      hint: "greg は「群れ」。群れから人を分けておくこと",
+      hint: "greg は「群れ」。昔のアメリカの、肌の色ごとの水飲み場",
       core: "人を『群れから引き離して』別々にしておくイメージ。とくに人種などで学校や席を分けること。",
       tip: "se（離して）＋grex（群れ）。congregation（集会）と同じ greg。",
       pic: "🚧",
@@ -1599,7 +1599,7 @@ EK.put("p1", {
       pair: "consist of と同じ意味。comprise は of をつけない。"
     },
     "inflame": {
-      hint: "in＋flame（炎）。感情に炎を入れる",
+      hint: "in＋flame（炎）。壇上の演説で、客席から怒りの声が次々に",
       core: "気持ちや対立に『炎をつけて大きくする』イメージ。怒りや緊張をさらに強める。体が炎症を起こす意味も。",
       tip: "in＋flame（炎）。名詞 inflammation（炎症）。",
       pic: "🔥",

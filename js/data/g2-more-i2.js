@@ -449,7 +449,7 @@ EK.put("g2", {
       pair: "turn to は 人を たよる。turn into は「～に 変わる」。"
     },
     "keep pace with ~": {
-      hint: "pace は『歩く速さ』。となりの人と 足なみを そろえる",
+      hint: "pace は『歩く速さ』。最新のスマホに、祖父は…",
       core: "keep（たもつ）＋pace（速さ）＋with（～と いっしょに）→ ～と同じ速さを たもつ → 置いていかれない。",
       tip: "マラソンの ペースメーカー。keep up with ~ と 同じ意味。",
       pic: "👟👟",
@@ -672,7 +672,7 @@ EK.put("g2", {
       pair: "get along は「うまく やっていく・仲良くする」。get by は「最低限 なんとか」。"
     },
     "play a role in ~": {
-      hint: "劇の 配役のように、全体の 中で 担当する 部分",
+      hint: "ハチがいないと、果物の多くは実らない",
       core: "play（演じる）＋a role（役）＋in（～の中で）→ ～の中で ある役を 演じる → ～に 関わり はたす。",
       tip: "ロールプレイング（role-playing）の role＝役。play a part in も 同じ。",
       pic: "🎭",
@@ -1050,7 +1050,7 @@ EK.put("g2", {
       pair: "instead of は「～の 代わりに」（選ばない）。in exchange for は「ひきかえに」。"
     },
     "agree to ~": {
-      hint: "人の 意見 ではなく、提案や 計画に『はい』と 言う",
+      hint: "長い話し合いの末、全員が新しいルール表にサイン",
       core: "agree（同じ 気持ちになる）＋to（～に向かって）→ 提案や 条件に 向けて『OK』を 出す。agree with 人 と 区別。",
       tip: "agree with 人（人と 同意見）、agree to 提案（提案を のむ）。前置詞で 区別。",
       pic: "✅",

@@ -814,7 +814,7 @@ EK.put("p2", {
       fam: ["bicycle（自転車）","recycle（再利用する）"]
     },
     "financial": {
-      hint: "会社や 家の「お金まわり」の 話",
+      hint: "赤字の帳簿を前に、社長が頭をかかえる",
       core: "finance（お金の やりくり）＋ial。お金の 出入りに 関わる。例文は 会社の お金の 問題で 店を 閉める。",
       tip: "finance（財政・資金）の 形容詞。financial support＝金銭的な 援助。",
       pic: "💹",
