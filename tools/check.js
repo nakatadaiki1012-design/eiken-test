@@ -62,6 +62,17 @@ for (const g of Object.keys(data)) {
     (d.words || []).concat(d.idioms || []).forEach(w => {
       const c = core[w.en]; if (!c) return err(g, 'core: ' + w.en + ' がない');
       if (!isStr(c.hint) || !isStr(c.core) || !isStr(c.tip)) err(g, 'core: ' + w.en + ' の hint/core/tip');
+      if (c.scene != null && (!isStr(c.scene) || c.scene.length > 70)) err(g, 'core: ' + w.en + ' の scene（70字まで）');
+      if (c.flow != null && (!Array.isArray(c.flow) || c.flow.length < 2 || c.flow.length > 4 || c.flow.some(x => !isStr(x) || x.length > 20))) err(g, 'core: ' + w.en + ' の flow（2〜4 個・各20字まで）');
+      if (c.pair != null && (!isStr(c.pair) || c.pair.length > 60)) err(g, 'core: ' + w.en + ' の pair（60字まで）');
+      if (c.fam != null && (!Array.isArray(c.fam) || c.fam.length > 4 || c.fam.some(x => !isStr(x)))) err(g, 'core: ' + w.en + ' の fam');
+      if (c.parts != null) {
+        if (!Array.isArray(c.parts) || c.parts.length < 2 || c.parts.some(x => !Array.isArray(x) || x.length !== 2 || !isStr(x[0]) || !isStr(x[1]) || x[1].length > 12)) err(g, 'core: ' + w.en + ' の parts の形');
+        else if (!/ /.test(w.en.trim().replace(/\s*~.*$/, ''))) { // 単語：部品の文字が 単語の中に あるか
+          const word = w.en.toLowerCase();
+          c.parts.forEach(x => { const t = x[0].toLowerCase().replace(/[-‐]/g, ''); if (t && !word.includes(t)) err(g, 'core: ' + w.en + ' の parts「' + x[0] + '」が 単語の中にない'); });
+        }
+      }
       if (c.pic != null && (typeof c.pic !== 'string' || [...c.pic].length > 8)) err(g, 'core: ' + w.en + ' の pic');
       if (c.hint && c.hint.toLowerCase().includes((w.en || '').replace(/\s*~.*$/, '').toLowerCase())) err(g, 'core: ' + w.en + ' の hint に英語そのもの');
       if (c.hint && c.hint.length > 40) err(g, 'core: ' + w.en + ' の hint が長い（' + c.hint.length + '字）');

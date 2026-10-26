@@ -107,6 +107,7 @@
     if (sec === 'mock') return mockStart(g);
     if (sec === 'rocket' && window.EKGAME) return EKGAME.menu(g);
     if (sec === 'list') return wordList(g, p[2] || 'w');
+    if (sec === 'parts') return partsPage(g);
     gradeHome(g);
   }
 
@@ -151,6 +152,7 @@
       tile('#/' + g.id + '/read', '📖', '長文', '解いた ' + c.rDone + ' / ' + g.d.reading.length) +
       tile('#/' + g.id + '/write', '✍️', '英作文', '書いた ' + c.wrDone + ' / ' + g.d.writing.length) +
       tile('#/' + g.id + '/mock', '🏁', 'ミニ模試', '穴うめ 10 ＋ 長文 1') +
+      tile('#/' + g.id + '/parts', '🧩', '部品で覚える', '同じ部品の 単語を まとめて') +
       '<button class="tile wide rocket" data-go="#/' + g.id + '/rocket"><span class="ic">🚀</span><b>英単語ロケット</b><span>単語・熟語・穴うめを どんどん 正解して 宇宙へ</span></button>' +
       '</div><h3>' + g.name + ' の 筆記試験</h3><div class="card"><ul class="parts">' +
       g.parts.map(function (p) { return '<li><b>' + esc(p[0]) + '</b><span>' + esc(p[1]) + '</span></li>'; }).join('') +
@@ -246,15 +248,31 @@
   function mc(right, wrong) { var opts = shuffle([right].concat(wrong)); return { opts: opts, a: opts.indexOf(right) }; }
 
   // 🧠 コアの意味 と 🔑 覚え方（まちがえたときは 大きく、正解のときは 小さく）
-  // en をわたすと、熟語なら out / up などの イメージ図も つける
-  function coreBox(c, wrong, en) {
+  // 🧠 イメージ解説：コアの意味・🎬 場面・🧩 部品・➡️ 意味の広がり・前置詞の図・⚖️ ちがい・👪 仲間・🔑 覚え方
+  // full：まちがえた時・覚えるカード・一覧は ぜんぶ。正解の時は コア・部品・広がり だけ見せて 残りは「もっと見る」
+  function partsHTML(c, en) {
+    if (!c.parts || !c.parts.length) return '';
+    var idiom = / /.test(String(en).replace(/\s*~.*$/, '').trim());
+    return '<div class="parts2">' + c.parts.map(function (x) {
+      return '<span class="pb"><b class="en">' + esc(x[0]) + '</b><small>' + esc(x[1]) + '</small></span>';
+    }).join('<span class="op">' + (idiom ? '×' : '＋') + '</span>') + '<span class="op">＝</span><span class="pb res"><b class="en">' + esc(String(en).replace(/\s*~(ing)?/g, ' ～').trim()) + '</b></span></div>';
+  }
+  function flowHTML(c) {
+    if (!c.flow || !c.flow.length) return '';
+    return '<div class="flow2">' + c.flow.map(function (f, i) { return '<span class="fl' + (i ? '' : ' first') + '">' + esc(f) + '</span>'; }).join('<span class="ar">→</span>') + '</div>';
+  }
+  function coreBox(c, wrong, en, full) {
     var fig = en && window.EKFIG ? EKFIG.particle(en) : '';
     if (!c && !fig) return '';
     c = c || {};
-    return '<div class="core' + (wrong ? ' big' : '') + '">' +
-      (c.core ? '<div class="core-h">🧠 コアの意味</div><div class="core-t">' + (c.pic ? '<span class="pic">' + esc(c.pic) + '</span>' : '') + esc(c.core) + '</div>' : '') +
-      fig +
-      (c.tip ? '<div class="core-h tip">🔑 覚え方</div><div>' + esc(c.tip) + '</div>' : '') + '</div>';
+    var head = (c.core ? '<div class="core-h">🧠 コアの意味</div><div class="core-t">' + (c.pic ? '<span class="pic">' + esc(c.pic) + '</span>' : '') + esc(c.core) + '</div>' : '') +
+      (en ? partsHTML(c, en) : '') + flowHTML(c);
+    var more = (c.scene ? '<div class="scene2"><span class="core-h">🎬 イメージの場面</span>' + esc(c.scene) + '</div>' : '') + fig +
+      (c.pair ? '<div class="pair2"><span class="core-h">⚖️ にている語との ちがい</span>' + esc(c.pair) + '</div>' : '') +
+      (c.fam && c.fam.length ? '<div class="fam2"><span class="core-h">👪 なかまの語</span>' + c.fam.map(function (f) { return '<span class="fc en">' + esc(f) + '</span>'; }).join('') + '</div>' : '') +
+      (c.tip ? '<div class="core-h tip">🔑 覚え方</div><div>' + esc(c.tip) + '</div>' : '');
+    var open = wrong || full;
+    return '<div class="core' + (wrong ? ' big' : '') + '">' + head + (more ? (open ? more : '<details class="more"><summary>🎬 場面・ちがい・覚え方を 見る</summary>' + more + '</details>') : '') + '</div>';
   }
   // えらんだ まちがいの 選択肢が、本当は 何の意味か
   function pickedBox(html) { return html ? '<div class="picked">👆 ' + html + '</div>' : ''; }
@@ -279,7 +297,7 @@
         picked: function (k) { var o = wordByJa(list, q.opts[k]); return o && '「' + esc(o.ja) + '」は <b class="en">' + esc(o.en) + '</b> の意味'; } };
     }
     q.id = wid(g.id, w); q.hint = hint; q.recap = recap;
-    q.explain = function (ok) { return q.head + coreBox(c, !ok) + ex; };
+    q.explain = function (ok) { return q.head + coreBox(c, !ok, w.en) + ex; };
     return q;
   }
   function formOf(w) { return (w.ex.match(/\[([^\]]+)\]/) || [])[1]; }
@@ -337,7 +355,7 @@
         return '<div class="row"><div class="t"><span class="en" style="font-size:18px;font-weight:600">' + esc(w.en) + '</span> ' + (w.pos ? '<span class="tag">' + w.pos + '</span> ' : '') + esc(w.ja) +
           (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') +
           '<small class="en">' + bracket(w.ex) + '</small><small>' + esc(w.exja) + '</small>' +
-          (c || t === 'i' ? '<details class="ld"><summary>🧠 イメージと 覚え方</summary>' + coreBox(c, false, t === 'i' ? w.en : null) + '</details>' : '') + '</div>' + st + sayBtn(w.en) + '</div>';
+          (c || t === 'i' ? '<details class="ld"><summary>🧠 イメージと 覚え方</summary>' + coreBox(c, false, w.en, true) + '</details>' : '') + '</div>' + st + sayBtn(w.en) + '</div>';
       }).join('');
     view((t === 'i' ? '熟語' : '単語') + 'の一覧 ' + g.name, html, g.color, '#/' + g.id + (t === 'i' ? '/idiom' : '/word'));
   }
@@ -355,7 +373,7 @@
     var html = '<div class="prog"><span>' + (st.i + 1) + ' / ' + st.list.length + '</span><div class="meter"><i style="width:' + Math.round(st.i / st.list.length * 100) + '%"></i></div></div>' +
       '<div class="qbox scard"><div class="qkind">' + (st.t === 'i' ? '熟語' : '単語・' + esc(w.pos)) + ' ' + sayBtn(w.en) + '</div>' +
       '<div class="qword"' + (st.t === 'i' ? ' style="font-size:28px"' : '') + '>' + esc(w.en) + '</div>' +
-      (open ? '<div class="sja">' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + '</div>' + coreBox(c, true, st.t === 'i' ? w.en : null) +
+      (open ? '<div class="sja">' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + '</div>' + coreBox(c, true, w.en, true) +
         '<div class="ex">' + bracket(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>'
         : (c ? '<div class="hintx">💡 ' + esc(c.hint) + '</div>' : '') + '<p class="note">意味を 思い出してから めくろう</p>') + '</div>' +
       '<div class="btns">' + (open ? '<button class="btn grow" data-sagain>🔁 もう一度</button><button class="btn main grow" data-snext>覚えた →</button>'
@@ -377,6 +395,37 @@
     var qs = shuffle(st.all).map(function (w) { return st.t === 'i' ? idiomQ(g, w, pref.imode) : wordQ(g, w, pref.dir); });
     startQuiz((st.t === 'i' ? '📗 熟語 ' : '📘 単語 ') + g.name, qs, g.color, st.parent);
     quiz.again = studyQuiz;
+  }
+
+  // ---------- 🧩 部品で覚える：同じ部品（語根・接頭辞）を もつ 単語を まとめて 見る ----------
+  function partsGroups(g) {
+    var map = {};
+    g.d.words.forEach(function (w) {
+      var c = g.core[w.en]; if (!c || !c.parts) return;
+      c.parts.forEach(function (x) {
+        var k = x[0].toLowerCase().replace(/[-‐]/g, '');
+        if (k.length < 2) return;
+        var m = map[k] = map[k] || { k: k, means: {}, ws: [] };
+        var mean = x[1].replace(/（[^）]*）/g, '').trim() || x[1];
+        m.means[mean] = (m.means[mean] || 0) + 1;
+        if (m.ws.indexOf(w) < 0) m.ws.push(w);
+      });
+    });
+    return Object.keys(map).map(function (k) {
+      var m = map[k]; m.mean = Object.keys(m.means).sort(function (a, b) { return m.means[b] - m.means[a]; })[0]; return m;
+    }).filter(function (m) { return m.ws.length >= 2; }).sort(function (a, b) { return b.ws.length - a.ws.length || (a.k < b.k ? -1 : 1); });
+  }
+  function partsPage(g) {
+    var gs = partsGroups(g);
+    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ部品の 単語を まとめて見ると、知らない単語の 意味も 想像できるように なります。（' + g.name + ' の単語から、2 語以上ある 部品 ' + gs.length + ' 個）</p>' +
+      (gs.length ? gs.map(function (m) {
+        return '<details class="pg"><summary><b class="en">' + esc(m.k) + '</b> <span>' + esc(m.mean) + '</span><span class="tag">' + m.ws.length + ' 語</span></summary><div class="pw">' +
+          m.ws.map(function (w) {
+            var c = g.core[w.en];
+            return '<div class="row"><div class="t"><span class="en" style="font-weight:600">' + esc(w.en) + '</span> ' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + partsHTML(c, w.en) + '</div>' + sayBtn(w.en) + '</div>';
+          }).join('') + '</div></details>';
+      }).join('') : '<div class="card">部品の データを 準備中です。</div>');
+    view('🧩 部品 ' + g.name, html, g.color, '#/' + g.id);
   }
 
   // ---------- 大問1 穴うめ ----------
