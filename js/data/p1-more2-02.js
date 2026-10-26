@@ -123,7 +123,7 @@ EK.put("p1", {
     { en: "reticent", pos: "形", ja: "口が重い", ex: "The actor was reticent about his private life and refused to answer personal questions.", exja: "その俳優は私生活について口が重く、個人的な質問には答えなかった。" },
     { en: "scenic", pos: "形", ja: "景色のよい", ex: "We took the scenic route along the coast instead of the faster highway.", exja: "私たちは速い高速道路ではなく、海岸沿いの景色のよい道を通った。" },
     { en: "sloppy", pos: "形", ja: "ずさんな", ex: "The manager criticized the sloppy work that had caused so many mistakes in the report.", exja: "部長は、報告書に多くの誤りを生んだずさんな仕事ぶりを批判した。" },
-    { en: "stoic", pos: "形", ja: "禁欲的な", ex: "He remained stoic throughout his long illness and never complained to his family.", exja: "彼は長い闘病の間ずっと感情を表さず耐え、家族に不満を言うことはなかった。" },
+    { en: "stoic", pos: "形", ja: "動じない・平然と耐える", ex: "He remained stoic throughout his long illness and never complained to his family.", exja: "彼は長い闘病の間ずっと感情を表さず耐え、家族に不満を言うことはなかった。" },
     { en: "succinct", pos: "形", ja: "簡潔な", ex: "Her succinct explanation helped the whole class understand the difficult theory in minutes.", exja: "彼女の簡潔な説明のおかげで、クラス全員が難しい理論を数分で理解できた。" },
     { en: "tacit", pos: "形", ja: "暗黙の", ex: "There was a tacit agreement among the staff that nobody would talk about the incident.", exja: "その出来事についてはだれも話さないという暗黙の了解が職員の間にあった。" },
     { en: "treacherous", pos: "形", ja: "裏切りの・危険な", ex: "The mountain road becomes treacherous in winter when it is covered with ice.", exja: "その山道は冬に氷で覆われると非常に危険になる。" },
