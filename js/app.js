@@ -259,7 +259,8 @@
   }
   function flowHTML(c) {
     if (!c.flow || !c.flow.length) return '';
-    return '<div class="flow2">' + c.flow.map(function (f, i) { return '<span class="fl' + (i ? '' : ' first') + '">' + esc(f) + '</span>'; }).join('<span class="ar">→</span>') + '</div>';
+    // 矢印は 次の 札と いっしょに 折り返す
+    return '<div class="flow2">' + c.flow.map(function (f, i) { return (i ? '<span class="fw"><span class="ar">→</span>' : '<span class="fw">') + '<span class="fl' + (i ? '' : ' first') + '">' + esc(f) + '</span></span>'; }).join('') + '</div>';
   }
   function coreBox(c, wrong, en, full) {
     var fig = en && window.EKFIG ? EKFIG.particle(en) : '';
@@ -373,7 +374,7 @@
     var html = '<div class="prog"><span>' + (st.i + 1) + ' / ' + st.list.length + '</span><div class="meter"><i style="width:' + Math.round(st.i / st.list.length * 100) + '%"></i></div></div>' +
       '<div class="qbox scard"><div class="qkind">' + (st.t === 'i' ? '熟語' : '単語・' + esc(w.pos)) + ' ' + sayBtn(w.en) + '</div>' +
       '<div class="qword"' + (st.t === 'i' ? ' style="font-size:28px"' : '') + '>' + esc(w.en) + '</div>' +
-      (open ? '<div class="sja">' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + '</div>' + coreBox(c, true, w.en, true) +
+      (open ? '<div class="sja">' + esc(w.ja) + '</div>' + coreBox(c, true, w.en, true) +
         '<div class="ex">' + bracket(w.ex) + ' ' + sayBtn(w.ex) + '</div><div class="exja">' + esc(w.exja) + '</div>'
         : (c ? '<div class="hintx">💡 ' + esc(c.hint) + '</div>' : '') + '<p class="note">意味を 思い出してから めくろう</p>') + '</div>' +
       '<div class="btns">' + (open ? '<button class="btn grow" data-sagain>🔁 もう一度</button><button class="btn main grow" data-snext>覚えた →</button>'
@@ -405,7 +406,8 @@
       c.parts.forEach(function (x) {
         var k = x[0].toLowerCase().replace(/[-‐]/g, '');
         if (k.length < 2) return;
-        var m = map[k] = map[k] || { k: k, means: {}, ws: [] };
+        var m = map[k] = map[k] || { k: k, means: {}, ws: [], pos: [0, 0, 0] };
+        var i = c.parts.indexOf(x); m.pos[i === 0 ? 0 : i === c.parts.length - 1 ? 2 : 1]++;
         var mean = x[1].replace(/（[^）]*）/g, '').trim() || x[1];
         m.means[mean] = (m.means[mean] || 0) + 1;
         if (m.ws.indexOf(w) < 0) m.ws.push(w);
@@ -417,13 +419,19 @@
   }
   function partsPage(g) {
     var gs = partsGroups(g);
-    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ部品の 単語を まとめて見ると、知らない単語の 意味も 想像できるように なります。（' + g.name + ' の単語から、2 語以上ある 部品 ' + gs.length + ' 個）</p>' +
-      (gs.length ? gs.map(function (m) {
+    var kind = function (m) { var p = m.pos; return p[1] >= p[0] && p[1] >= p[2] ? 1 : p[0] >= p[2] ? 0 : 2; }; // 0 頭・1 まん中・2 おしり
+    var sec = [['🌱 語根（意味の 中心になる 部品）', 1], ['⬅️ 頭に つく 部品（接頭辞）', 0], ['➡️ おしりに つく 部品（接尾辞・品詞を 決める）', 2]];
+    var group = function (m) {
         return '<details class="pg"><summary><b class="en">' + esc(m.k) + '</b> <span>' + esc(m.mean) + '</span><span class="tag">' + m.ws.length + ' 語</span></summary><div class="pw">' +
           m.ws.map(function (w) {
             var c = g.core[w.en];
             return '<div class="row"><div class="t"><span class="en" style="font-weight:600">' + esc(w.en) + '</span> ' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + partsHTML(c, w.en) + '</div>' + sayBtn(w.en) + '</div>';
           }).join('') + '</div></details>';
+    };
+    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ部品の 単語を まとめて見ると、知らない単語の 意味も 想像できるように なります。（' + g.name + ' の単語から、2 語以上ある 部品 ' + gs.length + ' 個）</p>' +
+      (gs.length ? sec.map(function (sc) {
+        var list = gs.filter(function (m) { return kind(m) === sc[1]; });
+        return list.length ? '<h3>' + sc[0] + '　<small class="note">' + list.length + ' 個</small></h3>' + list.map(group).join('') : '';
       }).join('') : '<div class="card">部品の データを 準備中です。</div>');
     view('🧩 部品 ' + g.name, html, g.color, '#/' + g.id);
   }

@@ -372,3 +372,4 @@ body.rk-on { overflow: hidden; }
 .pg summary span:not(.tag) { flex: 1; }
 .pw { margin-top: 8px; }
 .pw .row { margin-bottom: 6px; }
+.fw { display: inline-flex; align-items: center; gap: 4px; }
