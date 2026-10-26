@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>英検ラボ</title>
+<meta name="description" content="英検準2級・2級・準1級の 単語・熟語・穴うめ・長文・英作文を、解いて・聞いて・くり返して 身につけるアプリ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <button class="back" id="back" type="button" aria-label="もどる" hidden>‹</button>
+  <h1 class="brand" id="title">英検ラボ</h1>
+  <button class="pill" id="review" type="button" title="今日の復習">🔁 <b id="dueN">0</b></button>
+  <button class="pill" id="theme" type="button" title="明るさを切りかえる" aria-label="明るさを切りかえる">🌓</button>
+</header>
+<main id="main" tabindex="-1"></main>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="js/data/p2-words.js"></script>
+<script src="js/data/p2-test.js"></script>
+<script src="js/data/g2-words.js"></script>
+<script src="js/data/g2-test.js"></script>
+<script src="js/data/p1-words.js"></script>
+<script src="js/data/p1-test.js"></script>
+<script src="js/grades.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
