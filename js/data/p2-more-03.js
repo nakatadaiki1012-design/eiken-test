@@ -12,7 +12,7 @@ EK.put("p2", {
     {en: "share", pos: "動", ja: "共有する", ex: "My sister and I share a bedroom in our small apartment.", exja: "姉と私は小さなアパートで寝室を共有している。" },
     {en: "excuse", pos: "動", ja: "（失礼を）許す", ex: "Please excuse me for being late. The train was delayed.", exja: "遅れたことをお許しください。電車が遅れたのです。" },
     {en: "entirely", pos: "副", ja: "完全に", ex: "The new library was built entirely by local volunteers.", exja: "新しい図書館は完全に地元のボランティアの手で建てられた。" },
-    {en: "hunger", pos: "名", ja: "空腹", ex: "Many children in the world still suffer from hunger every day.", exja: "世界の多くの子どもたちは、今も毎日飢えに苦しんでいる。" },
+    {en: "hunger", pos: "名", ja: "空腹・飢え", ex: "Many children in the world still suffer from hunger every day.", exja: "世界の多くの子どもたちは、今も毎日飢えに苦しんでいる。" },
     {en: "tropical", pos: "形", ja: "熱帯の", ex: "Many kinds of tropical fish live in the warm sea around the island.", exja: "その島のまわりの暖かい海には、多くの種類の熱帯魚がすんでいる。" },
     {en: "indoor", pos: "形", ja: "屋内の", ex: "On rainy days, the children play in the indoor pool.", exja: "雨の日には、子どもたちは屋内プールで遊ぶ。" },
     {en: "whistle", pos: "動", ja: "口笛を吹く", ex: "My father always whistles a happy song while he cooks.", exja: "父は料理をしながら、いつも楽しい歌を口笛で吹く。" },
@@ -244,7 +244,7 @@ EK.put("p2", {
       pic: "🥄"
     },
     "alike": {
-      hint: "like（～のような）の 仲間。2つが そっくり",
+      hint: "双子を 見くらべても 見分けが つかない",
       core: "2つ以上が『同じように 見える』。名詞の前には 置かず、look alike の形が 多い。例文は 見分けられない 双子。",
       tip: "like（～に似た）と 同じ 仲間の語。similar は 名詞の前にも 置ける。",
       pic: "👯"
@@ -322,7 +322,7 @@ EK.put("p2", {
       pic: "🤕"
     },
     "warmth": {
-      hint: "warm（あたたかい）の 名詞の形",
+      hint: "寒い夜、たき火の そばで 感じる ぽかぽか",
       core: "warm の 名詞形 →『ぽかぽかした あたたかさ』。人の心の やさしさにも 使う。例文は たき火の ぬくもり。",
       tip: "warm＋th。long→length、wide→width と 同じ 名詞の作り方。",
       pic: "🔥"
@@ -388,7 +388,7 @@ EK.put("p2", {
       pic: "🧹"
     },
     "entrance": {
-      hint: "enter（入る）の 名詞の形。建物の 入るところ",
+      hint: "駅の「正面の ○○で 10時に 待ち合わせ」",
       core: "enter（入る）＋場所 →『入るための 場所』。入学も entrance。例文は 駅の正面の そこで 待ち合わせ。",
       tip: "enter の 名詞。entrance exam は 入学試験。反対は exit（出口）。",
       pic: "🚪"
@@ -424,7 +424,7 @@ EK.put("p2", {
       pic: "🏅"
     },
     "handle": {
-      hint: "hand（手）で うまく あつかう",
+      hint: "割れやすい グラスを、手で 気をつけて…",
       core: "hand（手）で『うまく つかんで あつかう』。もの にも 問題 にも 使う。例文は 割れやすい グラスを 注意して。",
       tip: "名詞は『取っ手・ハンドル』。車の ハンドルは 英語では steering wheel。",
       pic: "🫳"
@@ -472,7 +472,7 @@ EK.put("p2", {
       pic: "📰"
     },
     "disadvantage": {
-      hint: "dis-（反対）＋「得になること」",
+      hint: "田舎ぐらしの「ここが 困る」という 点",
       core: "dis（反対）＋advantage（よい点）→ 損になる 点。例文は 田舎ぐらしで バスが 少ないこと。",
       tip: "advantage（利点）の 反対。a disadvantage of ～ ing で よく出る。",
       pic: "👎"
@@ -502,7 +502,7 @@ EK.put("p2", {
       pic: "🦄"
     },
     "lighten": {
-      hint: "light（軽い）＋-en。重さを へらす",
+      hint: "本を 何冊か 出して、かばんを…",
       core: "light（軽い）＋en（～にする）→ 重さを へらす。気持ちを 楽にする 意味も。例文は 本を 出して かばんを。",
       tip: "-en は『～にする』。short→shorten、wide→widen と 同じ 作り方。",
       pic: "🪶"
@@ -538,7 +538,7 @@ EK.put("p2", {
       pic: "🪜"
     },
     "impatient": {
-      hint: "im-（～でない）＋がまん強い。待つのが つらい",
+      hint: "来ない 電車を 待ち続ける 乗客の 気持ち",
       core: "im（でない）＋patient（がまん強い）→ じっと 待てずに じりじり する。例文は 来ない電車に 乗客が。",
       tip: "patient（がまん強い）の 反対。patience（忍耐）と セットで。",
       pic: "😤"
@@ -556,7 +556,7 @@ EK.put("p2", {
       pic: "🥤"
     },
     "own": {
-      hint: "「自分の」と 同じ語。自分のものとして 持つ",
+      hint: "家や 店の『オーナー』が している こと",
       core: "形容詞 own（自分の）から →『自分のものとして 持っている』。例文は おじが 小さなホテルを 持つ。",
       tip: "owner（持ち主・オーナー）。my own room（自分の部屋）の own と 同じ。",
       pic: "🔑"
@@ -598,7 +598,7 @@ EK.put("p2", {
       pic: "⬇️"
     },
     "difficulty": {
-      hint: "difficult（むずかしい）の 名詞の形",
+      hint: "うまく いかず、苦労する ときの 名詞",
       core: "difficult の 名詞形 →『うまく いかない むずかしさ』。have difficulty ～ing の形で よく出る。",
       tip: "have difficulty ～ing は『～するのに 苦労する』。have trouble ～ing と 同じ。",
       pic: "🧗"
@@ -634,13 +634,13 @@ EK.put("p2", {
       pic: "💎"
     },
     "thought": {
-      hint: "think の 名詞の形。頭の中に うかんだ もの",
+      hint: "物語を 読んで、頭の中に うかんだ こと",
       core: "think の 名詞形 →『頭の中で 考えた こと』。例文は 物語に ついて 思ったことを 話す。",
       tip: "think の 過去形も thought。think－thought－thought と セットで。",
       pic: "💭"
     },
     "explanation": {
-      hint: "explain の 名詞の形。わけを わかりやすく",
+      hint: "先生が 黒板の 前で、問題の とき方を 話す",
       core: "explain（広げて わかるように する）の 名詞形。例文は 数学の問題の 先生の それが わかりやすい。",
       tip: "ex（外へ）＋plain（平らな）→ 平らに 広げて 見せる。plain は『はっきりした』。",
       pic: "🧑‍🏫"
@@ -676,7 +676,7 @@ EK.put("p2", {
       pic: "🔥"
     },
     "altogether": {
-      hint: "all（全部）＋together（いっしょに）。合計すると",
+      hint: "人数や 金額を 最後に まとめて 言う とき",
       core: "all（全部）を together（いっしょに）→ まとめて 数えると。もう1つ『まったく』の 意味も。例文は クラスの 人数。",
       tip: "all together（みんな いっしょに）と 区別。1語なら『合計で・まったく』。",
       pic: "🧮"
