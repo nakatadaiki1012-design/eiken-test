@@ -1090,7 +1090,7 @@ EK.put("p1", {
       tip: "con＋duc（導く）。conduct（指揮する）・introduce と 同じ duc。",
       pic: "🧭",
       scene: "窓から やわらかい 光、音は 時計の 針だけ。机に 向かうと 自然に ペンが 進む 部屋。",
-      flow: ["ある結果へ 導く", "be conducive to：～に 好都合"],
+      flow: ["ある結果へ 導く", "～に 好都合・役立つ"],
       parts: [["con", "一緒に"], ["duc", "導く"], ["ive", "～な"]],
       fam: ["conduct（導く・行う）", "introduce（紹介する）", "produce（生産する）"]
     },
