@@ -268,7 +268,7 @@ EK.put("g2", {
     "expedition": { hint: "ped（足）が入っている。遠くへ歩いて出かける", core: "目的をもって『遠くの土地へ出かけていく旅や人々』。南極への長い旅。", tip: "ex（外へ）＋ped（足）。pedal（ペダル）も足で動かすもの。", pic: "🧭🏔️" },
     "inflation": { hint: "in（中へ）＋flate（ふく）。風船がふくらむ", core: "物の値段が『風船のようにふくらんでいく』こと。同じお金で買えるものが減る。", tip: "inflate（ふくらませる）の名詞。反対は deflation（デフレ）。", pic: "🎈💸" },
     "literally": { hint: "literal（字のとおりの）＋ly", core: "『ことばの字のとおりに』。大げさではなく、本当にそのまま。", tip: "letter（文字）と同じ語源。会話では『本当に』と強めるためにも使う。", pic: "🔤" },
-    "halt": { hint: "兵隊の号令で『止まれ！』", core: "動いているものを『ぴたっと止める・止まる』。工場の生産を2日間止める。", tip: "come to a halt＝止まる。stop よりかたく、急に止まる感じ。", pic: "✋" },
+    "halt": { hint: "行進する兵隊に、隊長がかける号令の一つ", core: "動いているものを『ぴたっと止める・止まる』。工場の生産を2日間止める。", tip: "come to a halt＝止まる。stop よりかたく、急に止まる感じ。", pic: "✋" },
     "geographical": { hint: "geo（土地）＋graph（かく）。地図を思いうかべる", core: "『土地の位置や形にかかわる』ようす。山や海との位置関係で雪が多くなる。", tip: "geo（土地）＋graphy（かくこと）。geography（地理）の形容詞。", pic: "🗺️" },
     "intentionally": { hint: "intention（つもり・意図）＋al＋ly", core: "うっかりではなく『最初からそのつもりで』するようす。窓を割ったのは事故だった。", tip: "intend（～するつもり）の仲間。反対は accidentally（うっかり）。", pic: "😈" },
     "disguise": { hint: "帽子とめがねで、だれだかわからなくする", core: "本当の姿を『別の見た目でかくす』。帽子とめがねで顔をかくす、気持ちをかくす。", tip: "dis（はなれて）＋guise（姿）。in disguise＝変装して。", pic: "🥸" },
