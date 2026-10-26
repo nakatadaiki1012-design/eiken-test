@@ -312,7 +312,7 @@ EK.put("p1", {
       pic: "🐶"
     },
     "in hindsight": {
-      hint: "hind は『後ろ』、sight は『見ること』",
+      hint: "終わった 出来事を、くるりと ふり返って ながめる",
       core: "hind（後ろ）＋sight（見ること）→ 終わったあとに後ろをふり返って見る → 今思えば。",
       tip: "反対は foresight（先見の明）。fore＝前。",
       pic: "🔙"
