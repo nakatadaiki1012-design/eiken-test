@@ -253,7 +253,7 @@ EK.put("p2", {
     "program": { hint: "テレビで 決まった 時間に 流れる もの", core: "pro（前に）＋gram（書く）→ 前もって 書かれた 予定 → 放送の 中身・計画。", tip: "運動会の『プログラム（予定表）』。", pic: "📺" },
     "soldier": { hint: "ヘルメットに 迷彩服、軍隊で 訓練を 受ける 人", core: "軍隊で 戦う 人。army（陸軍）に いる 人。", tip: "昔の 金貨 solidus（給料）を もらう人 から できた 語。", pic: "🪖" },
     "tease": { hint: "兄が 私の 巻き毛を 見て、いつも ニヤニヤ…", core: "冗談で つついて 相手を 困らせ、おもしろがる。tease A about B。", tip: "兄弟が ちょっかいを 出す 場面で。いじめ（bully）より 軽い。", pic: "😜" },
-    "mostly": { hint: "全部では ないけれど 大部分", core: "most（ほとんど）＋ly。大部分は → 主として。", tip: "most から。almost（ほぼ）と 区別。" },
+    "mostly": { hint: "most＋ly。コンサートの客は20代が…", core: "most（ほとんど）＋ly。大部分は → 主として。", tip: "most から。almost（ほぼ）と 区別。" },
     "track": { hint: "足あとや 通った あとを たどる", core: "名詞 track は『通った あと・線路』。その あとを たどって 追う。", tip: "陸上の『トラック』（走路）。track down ～（つきとめる）。", pic: "👣" },
     "tourism": { hint: "旅行者が 来ることで 成り立つ 仕事", core: "tour（めぐる旅）＋ism → 旅行者を 迎える 産業。", tip: "tourist（観光客）・tour とセット。" },
     "knit": { hint: "毛糸と 2本の 棒で", core: "糸を 輪に して からませ、布を 作っていく。", tip: "カタカナ『ニット（帽）』。k は 読まない。", pic: "🧶" },

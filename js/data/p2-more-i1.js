@@ -94,7 +94,7 @@ EK.put("p2", {
     "as if ~": {"hint":"『～と同じに』と『もし…なら』を 合わせた 言い方","core":"as（～のように）＋if（もし～なら）→ もし～であるかのように。事実とちがうときは 過去形（仮定法）を使う。","tip":"as though も 同じ意味。He looks as if he is tired.（疲れているみたい）。","pic":"🎭"},
     "run into ~": {"hint":"into は『中へ ぶつかる』。走っていたら どーん","core":"run（走る）＋into（～の中へ・ぶつかって）→ 走っていて ぶつかる → 思いがけず 人に出会う・問題に ぶつかる。","tip":"bump into ～ も 同じ。run into trouble（困難にあう）でも 使う。","pic":"🏃💥"},
     "hang up": {"hint":"昔の 受話器は 上の フックに かけて 置いた","core":"hang（かける・つるす）＋up（上に）→ 受話器を 上のフックにかける → 通話を終わらせる。","tip":"Don't hang up.（切らないで）も よく聞く。ハンガー（hanger）は hang の 仲間。","pic":"☎️"},
-    "run away": {"hint":"後ろの語は『はなれて 遠くへ』。走って いなくなる","core":"run（走る）＋away（はなれて）→ 走って その場から はなれる → 逃げ去る・家出する。","tip":"run away from home は『家出する』。runaway は『逃亡者』。","pic":"🐈💨"},
+    "run away": {"hint":"away は『はなれて遠くへ』。男の子がさわろうとしたネコ","core":"run（走る）＋away（はなれて）→ 走って その場から はなれる → 逃げ去る・家出する。","tip":"run away from home は『家出する』。runaway は『逃亡者』。","pic":"🐈💨"},
     "be crowded with ~": {"hint":"人の群れで ぎゅうぎゅう。with の後ろに 何がいる？","core":"crowded（群衆でいっぱいの）＋with（～で）→ ～の群れで ぎっしり → 混み合っている。","tip":"crowd（群衆）が もと。クラウドファンディングの クラウド（大勢の人々）。","pic":"👥👥"},
     "get in touch with ~": {"hint":"相手と『ふれあう』状態に 入っていく","core":"get（～の状態になる）＋in touch（ふれあっている状態）＋with ～ → ～とつながった状態になる → 連絡する。","tip":"keep in touch with ～（連絡を取り合う＝続ける）と 区別。get は『始める』。","pic":"📞"},
     "be anxious about ~": {"hint":"胸が そわそわして 落ち着かない","core":"anxious（不安で落ち着かない）＋about（～のまわりのこと）→ ～のことで 落ち着かない。be anxious to ～ は『～したがる』。","tip":"worry about ～ と 近い。anxiety（不安）も 同じ仲間の語。","pic":"😰"},

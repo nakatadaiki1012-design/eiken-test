@@ -715,7 +715,7 @@ EK.put("p1", {
       tip: "merge（合わさる）の名詞。道路の合流の標識にも MERGE と書かれる。"
     },
     "misconception": {
-      hint: "mis（まちがって）＋concept（考え）",
+      hint: "mis は『まちがって』。金魚の記憶は3秒、は本当？",
       core: "まちがって『こうだと思いこんでいる』考え。多くの人が信じているまちがい。",
       tip: "mis（誤り）＋conception（考え）。a common misconception の形でよく出る。",
       pic: "❌💭"
@@ -732,7 +732,7 @@ EK.put("p1", {
       tip: "ギリシャ語 monos（ひとつ）＋pōlein（売る）。土地を買い占めるゲーム『モノポリー』。"
     },
     "negligence": {
-      hint: "neglect（おろそかにする）と同じ仲間",
+      hint: "裁判で事故の原因として問われる",
       core: "やるべき注意を『おろそかにして放っておく』こと。事故の原因としての不注意（過失）。",
       tip: "neglect の仲間。法律の言葉では『過失』。"
     },

@@ -275,7 +275,7 @@ EK.put("p1", {
       pic: "😌"
     },
     "tenant": {
-      hint: "ten は「保つ」。他人の家や部屋を借りて使う人",
+      hint: "ten は『保つ』。landlord（家主）と対になる人",
       core: "家主から借りた部屋を『持って使っている』人。お金を払って住んだり、店を出したりする側。反対は landlord。",
       tip: "ラテン語 tenere（保つ）。contain・maintain と同じ ten。ビルの「テナント」。",
       pic: "🏠"
@@ -350,7 +350,7 @@ EK.put("p1", {
       tip: "ad（～へ）＋monere（注意する）。monitor・summon と同じ mon。"
     },
     "precedent": {
-      hint: "pre（前に）＋cede（行く）。前に起きた同じような例",
+      hint: "pre（前に）＋cede（行く）。裁判の判決が後の裁判の…",
       core: "『先に起きた』出来事が、あとの判断のお手本になるイメージ。裁判や政治でよく使う。set a precedent＝先例を作る。",
       tip: "unprecedented（前例のない）とセットで。precede（先に行く）の仲間。",
       pic: "📚"
@@ -493,7 +493,7 @@ EK.put("p1", {
       pic: "😳"
     },
     "altruism": {
-      hint: "alter は「他の」。自分より他人を思う考え方",
+      hint: "alter は『他の』。egoism と対になる -ism",
       core: "自分のことより『他人のため』に動くイメージ。見返りを求めず人を助けようとする考え方。反対は egoism。",
       tip: "alter（他の）は alternative（代わりの）と同じ。",
       pic: "🫶"

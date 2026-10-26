@@ -132,7 +132,7 @@ EK.put("p1", {
     { en: "misconception", pos: "名", ja: "誤解", ex: "It is a common misconception that goldfish can only remember things for a few seconds.", exja: "金魚は数秒しか物事を覚えていられないというのは、よくある誤解だ。" },
     { en: "momentum", pos: "名", ja: "勢い", ex: "The campaign gained momentum after a famous singer shared it on social media.", exja: "有名な歌手がSNSで紹介したあと、その運動は勢いを増した。" },
     { en: "monopoly", pos: "名", ja: "独占", ex: "For decades, the state-owned company had a monopoly on electricity supply in the region.", exja: "何十年もの間、その国営企業がその地域の電力供給を独占していた。" },
-    { en: "negligence", pos: "名", ja: "怠慢", ex: "The court found that the accident had been caused by the driver's negligence.", exja: "裁判所は、その事故は運転手の不注意によって起きたと判断した。" },
+    { en: "negligence", pos: "名", ja: "不注意・過失・怠慢", ex: "The court found that the accident had been caused by the driver's negligence.", exja: "裁判所は、その事故は運転手の不注意によって起きたと判断した。" },
     { en: "outbreak", pos: "名", ja: "発生", ex: "Schools were closed for two weeks following an outbreak of flu in the area.", exja: "その地域でインフルエンザが発生したことを受けて、学校は2週間休校になった。" },
     { en: "paradox", pos: "名", ja: "逆説", ex: "It is a paradox that people often feel lonelier in big cities full of people.", exja: "人であふれた大都市で、かえって孤独を感じることが多いというのは逆説的だ。" },
     { en: "perception", pos: "名", ja: "認識", ex: "Advertising can have a strong influence on our perception of what is healthy to eat.", exja: "広告は、何が健康的な食べ物かという私たちの認識に強い影響を与えることがある。" },

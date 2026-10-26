@@ -611,7 +611,7 @@ EK.put("p2", {
       pic: "🗳️"
     },
     "employee": {
-      hint: "-ee は「～される人」。会社に やとわれている 人",
+      hint: "-ee は『～される人』。employer と対になる語",
       core: "会社に『やとわれている（employ される）人』。例文は 東京オフィスに 500人。",
       tip: "employ（やとう）＋ee（される人）。employer は『やとう人』。",
       pic: "👔"

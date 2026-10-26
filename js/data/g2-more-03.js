@@ -268,7 +268,7 @@ EK.put("g2", {
     "furthermore": { hint: "話をもっと先へ進めて、もう一つ足す", core: "further（さらに先へ）＋more。前の内容に『さらに先の情報を重ねる』。", tip: "moreover、in addition と同じ。英作文の2つ目の理由で使える。" },
     "unaware": { hint: "そのことを知らず、頭に入っていない", core: "un（ない）＋aware（気づいている）。目の前のことに『気がついていない』状態。be unaware of ～。", tip: "aware の反対。awareness（意識）も覚えよう。", pic: "🙈" },
     "isolate": { hint: "まわりから切りはなして、ひとりにする", core: "isola（島）から。まわりから離して『島のようにひとりぼっちにする』。", tip: "insulate（絶縁する）も同じ『島』の語源。名詞 isolation。", pic: "🏝️" },
-    "regional": { hint: "国全体ではなく、ある一部の土地の", core: "region（地方）の形容詞。国全体ではなく『ある範囲の土地』の。", tip: "region＋-al。local よりも広い範囲をさすことが多い。", pic: "🗾" },
+    "regional": { hint: "region＋-al。天気予報やニュースでよく聞く", core: "region（地方）の形容詞。国全体ではなく『ある範囲の土地』の。", tip: "region＋-al。local よりも広い範囲をさすことが多い。", pic: "🗾" },
     "cultivate": { hint: "土を手入れして、作物を大きくする", core: "土地を『手入れして育てる』。心や能力を手入れする→養う。", tip: "culture（文化）と同じ語源。心をたがやしたものが文化。", pic: "🌾🚜" },
     "participant": { hint: "イベントや活動に加わっている人", core: "participate＋-ant（人）。全体の『一部（part）になる人』。", tip: "part（部分）が入っている。participate の『人』の形。", pic: "🏃" },
     "exclusive": { hint: "ほかの人をしめ出して、そこだけのもの", core: "ex（外へ）＋clude（閉じる）。ほかを『外にしめ出す』→そこだけの、一部の人だけの。", tip: "exclude（除外する）の形容詞。include（含む）の反対。", pic: "🔒" },

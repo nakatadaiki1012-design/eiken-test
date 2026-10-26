@@ -206,7 +206,7 @@ EK.put("p2", {
     "flavor": { hint: "アイスの「バニラ・チョコ・いちご」の ちがい", core: "食べものの『その ものらしい 味と かおり』。種類としての『○○味』にも 使う。", tip: "カタカナの『フレーバー』。イギリスでは flavour と 書く。", pic: "🍨" },
     "application": { hint: "今月末までに 書類を 送って 出す もの", core: "何かに『ぴたっと あてる』こと。自分を 学校や 仕事に あてる→申し込み、知識を あてる→応用。", tip: "スマホの『アプリ』は この語の 略。application form＝申込用紙。", pic: "📝" },
     "historical": { hint: "江戸時代の 文書が 並ぶ 博物館", core: "『歴史に 関する』。historical documents（歴史の 資料）。", tip: "history＋ical。historic は『歴史的に 重要な』で 少し ちがう。", pic: "📜" },
-    "success": { hint: "やってみたことが うまく いった 結果", core: "ねらいどおりに『うまく いくこと』。a great success（大成功）。", tip: "succeed（成功する）の 名詞。形容詞は successful。", pic: "🏆" },
+    "success": { hint: "succeed の名詞。a great ～ の形でよく使う", core: "ねらいどおりに『うまく いくこと』。a great success（大成功）。", tip: "succeed（成功する）の 名詞。形容詞は successful。", pic: "🏆" },
     "strike": { hint: "バットが ボールに、台風が 町に、いきおいよく ぶつかる", core: "『いきおいよく ぶつかる』。人が ものを 打つ、災害が 町を おそう、考えが ふと 頭に うかぶ。", tip: "野球の『ストライク』。過去形 struck。be struck by ～（～に 打たれる）。", pic: "⚡" },
     "army": { hint: "国を 守る 兵士の 大きな 集まり", core: "『武器を 持った 人たちの 大集団』。とくに 陸の 部隊。比ゆ的に『大勢』にも。", tip: "arms（武器）と 同じ 仲間。navy（海軍）と セットで 覚える。", pic: "🪖" },
     "highly": { hint: "high に ly。高さ ではなく『ていど』が うんと 上", core: "高さ ではなく『ていどが 高く』。highly recommend（強く すすめる）、highly skilled（とても 上手な）。", tip: "high（高い）＋ly。highly は『ていど』、high は『高さ』で 使い分け。" },

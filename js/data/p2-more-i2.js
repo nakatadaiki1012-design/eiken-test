@@ -24,7 +24,7 @@ EK.put("p2", {
     { en: "give back ~", ja: "～を返す", ex: "Please [give back] the book to the library by Friday.", exja: "金曜日までにその本を図書館に返してください。" },
     { en: "care for ~", ja: "～を大切に世話する", ex: "The nurses [care for] the old people at the nursing home every day.", exja: "看護師たちは毎日施設のお年寄りの世話をしている。" },
     { en: "along with ~", ja: "～といっしょに", ex: "He sent a birthday card [along with] a small present.", exja: "彼は小さなプレゼントといっしょに誕生日カードを送った。" },
-    { en: "ahead of ~", ja: "～より前に・先に", ex: "We finished the project two days [ahead of] the deadline.", exja: "私たちはしめ切りより2日前に計画を終えた。" },
+    { en: "ahead of ~", ja: "～より前に・先に", ex: "We finished the project two days [ahead of] the deadline.", exja: "私たちはしめ切りより2日早くプロジェクトを終えた。" },
     { en: "prefer ~ to ...", ja: "…より～を好む", ex: "I [prefer] summer [to] winter because I love swimming.", exja: "泳ぐのが大好きなので、私は冬より夏が好きだ。" },
     { en: "right away", ja: "ただちに", ex: "The doctor told him to go to the hospital [right away].", exja: "医者は彼にただちに病院へ行くように言った。" },
     { en: "keep away from ~", ja: "～に近づかない", ex: "Children should [keep away from] the river after heavy rain.", exja: "大雨のあと、子どもは川に近づいてはいけない。" },
