@@ -40,11 +40,11 @@ EK.put("g2", {
     { en: "contribute to ~", ja: "～に貢献する・一因となる", ex: "Volunteers from all over the country [contributed to] cleaning up the beach after the storm.", exja: "嵐のあと、全国から来たボランティアが海岸の清掃に貢献した。" },
     { en: "as of ~", ja: "～の時点で・～現在", ex: "[As of] today, more than five hundred people have signed up for the marathon.", exja: "今日の時点で、500人以上がそのマラソンに申し込んでいる。" },
     { en: "at any rate", ja: "とにかく・いずれにせよ", ex: "I'm not sure if the store is open, but [at any rate] let's go and check.", exja: "その店が開いているかわからないが、とにかく行って確かめてみよう。" },
-    { en: "on top of ~", ja: "～の上さらに", ex: "[On top of] losing his wallet, he missed the last train home last night.", exja: "昨夜、彼は財布をなくしたうえに、家に帰る終電にも乗り遅れた。" },
+    { en: "on top of ~", ja: "～のうえ（さらに）", ex: "[On top of] losing his wallet, he missed the last train home last night.", exja: "昨夜、彼は財布をなくしたうえに、家に帰る終電にも乗り遅れた。" },
     { en: "refer to ~", ja: "～に言及する・参照する", ex: "In his speech, the mayor [referred to] the need for more parks in the city.", exja: "演説の中で、市長は市にもっと公園が必要だということに言及した。" },
     { en: "in need", ja: "困っている", ex: "The charity collects warm clothes for families [in need] every winter.", exja: "その慈善団体は毎年冬に、困っている家庭のために暖かい服を集めている。" },
     { en: "bring out ~", ja: "～を引き出す・世に出す", ex: "A good coach knows how to [bring out] the best in each player.", exja: "良いコーチは、それぞれの選手の最高の力を引き出す方法を知っている。" },
-    { en: "as a whole", ja: "全体としての・まとめて", ex: "Some parts of the movie were boring, but [as a whole] it was very enjoyable.", exja: "その映画にはつまらない部分もあったが、全体としてはとても楽しめた。" },
+    { en: "as a whole", ja: "まとまり全体として", ex: "Some parts of the movie were boring, but [as a whole] it was very enjoyable.", exja: "その映画にはつまらない部分もあったが、全体としてはとても楽しめた。" },
     { en: "on account of ~", ja: "～のせいで・～の理由で", ex: "The baseball game was put off [on account of] the heavy rain.", exja: "大雨のせいで野球の試合は延期された。" },
     { en: "call on ~", ja: "（人）を訪問する・～に求める", ex: "The president [called on] all citizens to save water during the dry season.", exja: "大統領は乾季の間に水を節約するよう全国民に求めた。" },
     { en: "remind ~ of ...", ja: "～に…を思い出させる", ex: "This song always [reminds] me [of] the summer I spent with my grandparents.", exja: "この歌を聞くといつも、祖父母と過ごした夏を思い出す。" },
@@ -148,7 +148,7 @@ EK.put("g2", {
       pic: "😒⬇️"
     },
     "be composed of ~": {
-      hint: "いくつかの 部品を 組み合わせて できあがっている",
+      hint: "委員会や チームの『中身の メンバー』を 説明する 場面",
       core: "compose（いっしょに置いて組み立てる）の受け身＋of（～から）→ ～を組み合わせて できている。",
       tip: "com-（いっしょに）＋pose（置く）。作曲家 composer は 音を 組み立てる人。",
       pic: "🧩"
@@ -232,7 +232,7 @@ EK.put("g2", {
     "for instance": {
       hint: "説明のあとに 具体的な ひとつを 出す合図",
       core: "for（～として）＋instance（ひとつの例）→ ひとつの例として。for example と 同じ はたらき。",
-      tip: "インスタント（instant）とは別の語。instance＝『場合・実例』。"
+      tip: "instance＝『実例・場合』。in this instance（この場合は）も ある。"
     },
     "be accustomed to ~": {
       hint: "custom は『習慣』。毎日 くり返して 体に しみこむ",
@@ -289,7 +289,7 @@ EK.put("g2", {
     "to some extent": {
       hint: "extent は『広がりの はば』。全部では なく 一部",
       core: "to（～まで）＋some extent（ある はば）→ ある はばまでは → ある程度・いくぶん。",
-      tip: "extend（のばす）の 名詞。to a great extent（大いに）も ある。"
+      tip: "extend（のばす）と 同じ仲間。to a great extent（大いに）も ある。"
     },
     "turn to ~": {
       hint: "こまったとき、体の 向きを くるっと 相手へ 向ける",
@@ -369,7 +369,7 @@ EK.put("g2", {
       pic: "📣"
     },
     "remind ~ of ...": {
-      hint: "mind は『心』。re- で もう一度 心へ",
+      hint: "古い 歌を 聞いたとたん、あの夏が 頭に よみがえる",
       core: "re-（再び）＋mind（心に置く）→ 人の心に もう一度 置く。of の後ろが 頭に よみがえる 中身。",
       tip: "リマインダー（reminder）＝ 予定を 思い出させる アプリ機能。",
       pic: "🎵💭"
@@ -387,7 +387,7 @@ EK.put("g2", {
       pic: "🙅"
     },
     "no doubt": {
-      hint: "doubt は『うたがい』。それが ゼロ",
+      hint: "話し手が 自信を もって 言い切る 予想",
       core: "no（ない）＋doubt（うたがい）→ うたがいが ない → 確かに・おそらく きっと。話し手の 強い 予想。",
       tip: "There is no doubt that ~（～は まちがいない）の 短い 形。",
       pic: "💯"
@@ -405,9 +405,9 @@ EK.put("g2", {
       pic: "🎈💥"
     },
     "hand over ~": {
-      hint: "手から 手へ、相手の 方へ わたす",
+      hint: "リレーで 次の 走者に バトンを",
       core: "hand（手でわたす）＋over（向こう側へ）→ 自分の手から 相手の手へ うつす → 権利や 物を ゆずり わたす。",
-      tip: "リレーの バトンを わたす 場面。鍵や 店を 次の人に まかせる時にも。",
+      tip: "鍵や 店・権限を 次の人に ゆずる 時にも 使う。",
       pic: "🔑🤲"
     },
     "resort to ~": {
@@ -516,7 +516,7 @@ EK.put("g2", {
       pic: "🌤️"
     },
     "in other words": {
-      hint: "同じ 中身を 別の ことばで 言い直す 合図",
+      hint: "前の 文と 同じ 中身が、後ろで 形を 変えて 出てくる",
       core: "in（～を使って）＋other words（ほかの ことば）→ ほかの ことばで 言うと → つまり。",
       tip: "長文で 筆者が 大事なことを 言い直す 目印。直後を よく読もう。"
     },
@@ -575,9 +575,9 @@ EK.put("g2", {
       pic: "👨‍👦"
     },
     "be devoted to ~": {
-      hint: "devote は『ささげる』。自分の 時間を すべて ささげる",
+      hint: "朝から 晩まで 研究室に こもる 科学者",
       core: "devote（ささげる）の受け身＋to（～へ）→ 自分を ～に ささげている → 一つのことに 心も 時間も 注ぐ。",
-      tip: "de-（はなれて）＋vote（誓う）。to の後ろは 名詞か ～ing。",
+      tip: "vow（誓い）と 同じ語源。to の後ろは 名詞か ～ing。",
       pic: "❤️‍🔥"
     },
     "catch on": {
@@ -615,7 +615,7 @@ EK.put("g2", {
       tip: "almost や about と 近い。数学の『≒（ニアリーイコール）』の 感覚。"
     },
     "in search of ~": {
-      hint: "search は『さがす』。何かを 求めて 旅に 出る",
+      hint: "宝の 地図を 手に、島から 島へ 旅する 冒険者",
       core: "in（～の状態で）＋search（さがすこと）＋of → ～を さがしている 状態で → ～を 求めて。",
       tip: "ネットの 検索＝search。宝を 求めて 冒険に 出る 場面。",
       pic: "🔍"
@@ -629,7 +629,7 @@ EK.put("g2", {
     "be out of the question": {
       hint: "そもそも 話し合いの テーブルにも のせられない",
       core: "out of（～の外に）＋the question（話し合う 問題）→ 検討の 外に ある → 考えるまでもなく ありえない。",
-      tip: "no question（もちろん）と 正反対の 意味に なるので 注意。",
+      tip: "without question（疑いなく）と 混同しないよう 注意。",
       pic: "❌"
     },
     "be committed to ~": {
@@ -639,7 +639,7 @@ EK.put("g2", {
       pic: "🤞"
     },
     "in exchange for ~": {
-      hint: "こちらを 出して、あちらを 受けとる 物々交換",
+      hint: "お金を 使わず、卵を わたして お米を もらう",
       core: "in（～の形で）＋exchange（とりかえ）＋for（～と ひきかえに）→ ～と ひきかえに。物や 労働を 取りかえる。",
       tip: "両替所＝exchange、為替レート＝exchange rate。",
       pic: "🔁"

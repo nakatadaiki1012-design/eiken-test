@@ -54,7 +54,7 @@ EK.put("p1", {
     { en: "hand in hand", ja: "密接に結びついて", ex: "Poverty and poor health often go [hand in hand] in many developing countries.", exja: "多くの発展途上国では、貧困と健康の悪化がしばしば密接に結びついている。" },
     { en: "size up ~", ja: "～を見定める", ex: "The boxer took a moment to [size up] his opponent before the fight began.", exja: "そのボクサーは試合が始まる前に、少し時間をとって相手を見定めた。" },
     { en: "break off ~", ja: "（関係などを）断つ", ex: "The two countries [broke off] diplomatic relations after the border incident.", exja: "国境での事件のあと、両国は外交関係を断絶した。" },
-    { en: "die out", ja: "絶滅する", ex: "Experts warn that many local languages are in danger of [dying out] this century.", exja: "専門家は、多くの地方の言語が今世紀中に消滅するおそれがあると警告している。" },
+    { en: "die out", ja: "絶滅する・すたれる", ex: "Experts warn that many local languages are in danger of [dying out] this century.", exja: "専門家は、多くの地方の言語が今世紀中に消滅するおそれがあると警告している。" },
     { en: "in the nick of time", ja: "ぎりぎり間に合って", ex: "The firefighters arrived [in the nick of time] to save the family from the burning house.", exja: "消防士たちはぎりぎり間に合って、燃える家から家族を救い出した。" },
     { en: "fade away", ja: "しだいに消えていく", ex: "The sound of the drums slowly [faded away] as the parade moved down the street.", exja: "パレードが通りを進んでいくにつれ、太鼓の音はだんだん消えていった。" },
     { en: "sign off on ~", ja: "～を承認する", ex: "The director must [sign off on] the budget before we can start the project.", exja: "計画を始める前に、部長が予算を承認しなければならない。" },
@@ -128,7 +128,7 @@ EK.put("p1", {
       tip: "root はルーツ（根・起源）と同じ語。汚職を根こそぎにする場面で。"
     },
     "talk down to ~": {
-      hint: "高い ところから、下に いる 相手へ 向かって しゃべる",
+      hint: "大人の客に、幼稚園児に話すような口調で",
       core: "talk（話す）＋down（下へ）＋to（～に向かって）→ 上から下の相手に話しかける → 相手を下に見た話し方をする。",
       tip: "look down on（見下す）の『話す』版。大人を子ども扱いする口調の場面で。"
     },
@@ -173,18 +173,18 @@ EK.put("p1", {
       pic: "🔨"
     },
     "keep a low profile": {
-      hint: "背を 低く かがめて、人の 目に 入らない ように する",
+      hint: "騒ぎのあと、帽子とマスクで人前に出ない俳優",
       core: "profile は横から見た姿・輪郭。low（低い）輪郭を keep（保つ）→ 姿を低くして人目につかない。",
       tip: "プロフィール（profile）はもとは『横顔・輪郭』。物陰で身をかがめる場面で。"
     },
     "pull off ~": {
-      hint: "無理そうな ことを、ぐいっと 力ずくで 成しとげる",
+      hint: "ぴったりくっついたシールを、一気にはがし取る",
       core: "pull（ぐいっと引く）＋off（はがれて離れる）→ 固くくっついたものを力ずくではがし取る → 難しいことを見事にやりとげる。",
       tip: "誰もが無理だと思った大逆転を決める場面で。",
       pic: "💪"
     },
     "at the discretion of ~": {
-      hint: "ルールで 決めず、その人に 決める 権利を まかせる",
+      hint: "規則には書かれていない。部長が「いいよ」と言えば決まり",
       core: "discretion は『よく見分ける力・自由に決める権利』。at（～の点で）→ その人の判断にまかせて決まる。",
       tip: "discreet（慎重な）と同じ『見分ける』仲間。決めるのは店長しだいの場面で。"
     },
@@ -195,7 +195,7 @@ EK.put("p1", {
       pic: "🚪"
     },
     "sell out": {
-      hint: "棚の 商品が 全部 お店の 外へ 出ていって 空っぽ",
+      hint: "人気ライブの発売開始、10分後のチケットサイト",
       core: "sell（売る）＋out（出きってなくなる）→ 売って売って在庫が全部出ていく → 全部売れてなくなる。",
       tip: "ライブの『ソールドアウト』と同じ。人気チケットが一瞬でなくなる場面で。",
       pic: "🎫"
@@ -336,7 +336,7 @@ EK.put("p1", {
       pic: "🏚️"
     },
     "make do with ~": {
-      hint: "理想の ものは ないが、手元の もので なんとか する",
+      hint: "花びんがない。テーブルには空きびんが1本",
       core: "make do（なんとかやっていく）＋with（～を使って）→ 足りないけれど手元のもので済ませる。",
       tip: "カップがなくてマグで代用、の場面で。make do without（～なしで済ます）も。"
     },
@@ -399,7 +399,7 @@ EK.put("p1", {
       pic: "📏"
     },
     "stand in for ~": {
-      hint: "いない 人の 場所に、かわりに 立って いる",
+      hint: "急に休んだ主役の舞台に、別の人が上がる",
       core: "stand（立つ）＋in（その場所に）＋for（～のために）→ 本人の場所に代わりに立つ → 代理を務める。",
       tip: "映画の撮影で俳優の代わりに立つ人を stand-in（スタンドイン）という。"
     },
@@ -432,7 +432,7 @@ EK.put("p1", {
       pic: "🍫"
     },
     "die out": {
-      hint: "最後の 1つまで いなくなり、完全に 消える",
+      hint: "話す人が1人もいなくなった、ある島の言葉",
       core: "die（死ぬ）＋out（すっかり・最後まで）→ 最後の一つまで死んで消える → 種・言語・習慣が絶える。",
       tip: "die down は弱まるだけ、こちらは全部消える。恐竜の場面で。",
       pic: "🦖"
@@ -450,13 +450,13 @@ EK.put("p1", {
       pic: "🌫️"
     },
     "sign off on ~": {
-      hint: "書類の いちばん 下に 名前を 書いて、OKを 出す",
+      hint: "部長が書類の最後の欄に、ペンを走らせる",
       core: "sign（署名する）＋off（終わりにする）＋on（～について）→ 書類に署名して手続きを終わらせる → 正式に認める。",
       tip: "サイン（sign）をして書類にゴーを出す上司の場面で。",
       pic: "✍️"
     },
     "lag behind ~": {
-      hint: "グループの 後ろを、のろのろ ついて いく",
+      hint: "マラソンで、先頭集団の背中がどんどん小さく",
       core: "lag（のろのろ遅れる）＋behind（～の後ろに）→ 集団の後ろについていけない → 発展や成績で後れている。",
       tip: "時差ぼけ jet lag、ゲームの『ラグ』（反応の遅れ）と同じ lag。",
       pic: "🐢"
@@ -478,7 +478,7 @@ EK.put("p1", {
       pic: "✂️"
     },
     "on a whim": {
-      hint: "深く 考えず、その場の 思いつき だけで",
+      hint: "旅の予定も立てず、駅で目に入った電車に飛び乗る",
       core: "whim は『ふと心にうかぶ思いつき』。on（～にもとづいて）→ 思いつきにのって → 計画なしで衝動的に。",
       tip: "ふらっと店に入って衝動買いする場面で。",
       pic: "🎲"
@@ -641,7 +641,7 @@ EK.put("p1", {
       tip: "lieutenant（中尉）は『上官の場所をあずかる人』。同じ lieu。"
     },
     "with the exception of ~": {
-      hint: "例の 中に 入れず、1つだけ 外に 出して おく",
+      hint: "「年中無休」と言いたいが、月曜だけは",
       core: "exception（外に取り出されたもの）は except の名詞形。with（～があって）→ ～という例外つきで。",
       tip: "except（～以外）と同じ。ex（外へ）＋cept（取る）が語源。"
     },
@@ -666,7 +666,7 @@ EK.put("p1", {
       tip: "メニューを見て『これにする』と指さす場面で。"
     },
     "churn out ~": {
-      hint: "機械が かき回しながら、次々と 外へ はき出す",
+      hint: "バター作りの器を、休まずぐるぐる回し続ける",
       core: "churn（バター作りの器でかき回す）＋out（外へ）→ 機械的にどんどん外へ出す → 質より量で大量に作り出す。",
       tip: "工場のベルトコンベアからおもちゃが次々出てくる場面で。",
       pic: "🏭"
@@ -695,7 +695,7 @@ EK.put("p1", {
       pic: "🌘"
     },
     "tear down ~": {
-      hint: "建物を 引きさいて、地面へ くずし落とす",
+      hint: "新しいモールを建てる前、古いスタジアムに重機が",
       core: "tear（引きさく）＋down（下へ）→ 建物を引きさいて下にくずす → 建物などをこわしてなくす。",
       tip: "tear（涙）と同じつづりだが発音はテア。紙をビリッとやぶるのが tear。",
       pic: "🏗️"
@@ -707,7 +707,7 @@ EK.put("p1", {
       pic: "🔌"
     },
     "settle for ~": {
-      hint: "一番 ほしい ものは あきらめて、そこで 落ち着く",
+      hint: "庭付きの家は予算オーバー。ため息まじりに小さな部屋を",
       core: "settle（落ち着く）＋for（～と引きかえに）→ 本当はもっとほしいが～で落ち着く → 不満でも～で妥協する。",
       tip: "settle on（前向きに決める）と区別。for は『しかたなく』。"
     },
@@ -730,7 +730,7 @@ EK.put("p1", {
       pic: "🎟️"
     },
     "in compliance with ~": {
-      hint: "決まりに『はい』と 合わせて、きちんと 守る",
+      hint: "工場の壁に貼られた、国の安全基準のチェック表",
       core: "comply（従う）の名詞 compliance＋in（～の状態で）＋with（～に）→ 規則にきちんと合わせた状態で。",
       tip: "企業の『コンプライアンス（法令順守）』と同じ語。",
       pic: "📋"
