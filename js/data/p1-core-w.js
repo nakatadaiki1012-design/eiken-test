@@ -828,7 +828,7 @@ EK.put("p1", {
       tip: "substance（実質）＋ate（～にする）＝実体のあるものにする。",
       scene: "「ぼくは見た」と言う少年が、スマホに残った動画を再生して、みんなに本当だと見せた。",
       flow: ["中身（証拠）を入れる", "主張を裏づける", "立証する"],
-      parts: [["substanti", "実体（substance）"], ["ate", "～にする"]],
+      parts: [["substanti", "実体・中身"], ["ate", "～にする"]],
       fam: ["substance（物質・実体）", "substantial（かなりの）"],
       pair: "prove は広く「証明する」、substantiate は「証拠を示して裏づける」。"
     },
