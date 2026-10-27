@@ -10,3 +10,19 @@ EK.put = function (id, o) {
     else d[k] = v;
   });
 };
+
+// 下の級でも 出る語を 下の級へ 移す（外部の 級別リストで たしかめた語。データの ファイルは そのまま）
+// EK.move("g2", "p2", ["disaster", ...])：単語・熟語と その core を 移す
+EK.move = function (from, to, list) {
+  var A = EK.data[from], B = EK.data[to]; if (!A || !B) return;
+  list.forEach(function (en) {
+    ['words', 'idioms'].forEach(function (k) {
+      var arr = A[k] || [], i = arr.findIndex(function (w) { return w.en === en; });
+      if (i < 0) return;
+      (B[k] = B[k] || []).push(arr.splice(i, 1)[0]);
+      ['core', 'icore'].forEach(function (ck) {
+        if (A[ck] && A[ck][en]) { (B[ck] = B[ck] || {})[en] = A[ck][en]; delete A[ck][en]; }
+      });
+    });
+  });
+};

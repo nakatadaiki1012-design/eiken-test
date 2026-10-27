@@ -36,7 +36,7 @@ EK.put("g2", {
     { en: "regard A as B", ja: "AをBとみなす", ex: "Many people [regard] him [as] the best player in the history of the team.", exja: "多くの人が、彼をチーム史上最高の選手とみなしている。" },
     { en: "see to it that ~", ja: "必ず～するよう取り計らう", ex: "Please [see to it that] all the windows are closed before you leave the classroom.", exja: "教室を出る前に、必ず窓が全部閉まっているようにしてください。" },
     { en: "side with ~", ja: "～の側につく", ex: "When the two friends argued, most of the class [sided with] Ken.", exja: "2人の友人が言い争ったとき、クラスのほとんどはケンの側についた。" },
-    { en: "stay away from ~", ja: "～に近づかない", ex: "Doctors say we should [stay away from] fast food if we want to stay healthy.", exja: "健康でいたいならファストフードに近づかない方がいい、と医者は言う。" },
+    { en: "stay away from ~", ja: "～から離れている・避ける", ex: "Doctors say we should [stay away from] fast food if we want to stay healthy.", exja: "健康でいたいならファストフードに近づかない方がいい、と医者は言う。" },
     { en: "take a chance", ja: "いちかばちかやってみる", ex: "Even though I wasn't confident, I decided to [take a chance] and enter the contest.", exja: "自信はなかったが、いちかばちかコンテストに出てみることにした。" },
     { en: "take down ~", ja: "～を書き留める", ex: "The students [took down] every word the professor said about the final test.", exja: "学生たちは、期末試験について教授が言ったことを一言残らず書き留めた。" },
     { en: "take pride in ~", ja: "～を誇りに思う", ex: "The farmers [take pride in] growing the sweetest strawberries in the country.", exja: "その農家の人々は、国でいちばん甘いイチゴを育てていることを誇りに思っている。" },

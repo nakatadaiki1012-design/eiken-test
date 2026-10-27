@@ -43,7 +43,7 @@ EK.put("g2", {
     { en: "sort out ~", ja: "（問題など）を解決する", ex: "It took the two friends a whole week to [sort out] their misunderstanding.", exja: "2人の友人が誤解を解決するのにまる1週間かかった。" },
     { en: "put aside ~", ja: "（お金など）を蓄える", ex: "She [puts aside] a little money every month to travel abroad next year.", exja: "彼女は来年海外旅行をするため、毎月少しずつお金を蓄えている。" },
     { en: "on a regular basis", ja: "定期的に", ex: "You should check your car's tires [on a regular basis] to drive safely.", exja: "安全に運転するため、車のタイヤを定期的に点検するべきだ。" },
-    { en: "participate in ~", ja: "～に参加する", ex: "More than two hundred students [participated in] the speech contest this year.", exja: "今年は200人以上の生徒がスピーチコンテストに参加した。" },
+    { en: "participate in ~", ja: "～に加わる・参加する", ex: "More than two hundred students [participated in] the speech contest this year.", exja: "今年は200人以上の生徒がスピーチコンテストに参加した。" },
     { en: "for the time being", ja: "当分の間", ex: "The museum will be closed [for the time being] because of repairs to the roof.", exja: "その博物館は屋根の修理のため、当分の間休館する。" },
     { en: "call for ~", ja: "～を必要とする・求める", ex: "This difficult situation [calls for] quick and careful action by the government.", exja: "この困難な状況は、政府による素早く慎重な対応を必要としている。" },
     { en: "at the cost of ~", ja: "～と引きかえに", ex: "He finished the project on time, but only [at the cost of] his health.", exja: "彼は期限どおりにプロジェクトを終えたが、それは健康と引きかえだった。" },

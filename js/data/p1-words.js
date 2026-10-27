@@ -155,7 +155,7 @@ EK.put("p1", {
     { en: "turmoil", pos: "名", ja: "混乱", ex: "The sudden resignation of the president threw the company into turmoil.", exja: "社長の突然の辞任で、会社は大混乱に陥った。" },
     { en: "vulnerability", pos: "名", ja: "弱さ", ex: "Hackers took advantage of a vulnerability in the software to steal customer data.", exja: "ハッカーはソフトウェアの弱点を突いて顧客データを盗んだ。" },
     { en: "drawback", pos: "名", ja: "欠点", ex: "The main drawback of living in the countryside is the lack of public transportation.", exja: "田舎に住むことの主な欠点は、公共交通機関が少ないことだ。" },
-    { en: "inquiry", pos: "名", ja: "調査", ex: "The government launched an official inquiry into the causes of the train crash.", exja: "政府は列車衝突事故の原因について公式の調査を開始した。" },
+    { en: "inquiry", pos: "名", ja: "問い合わせ・調査", ex: "The government launched an official inquiry into the causes of the train crash.", exja: "政府は列車衝突事故の原因について公式の調査を開始した。" },
     { en: "obligation", pos: "名", ja: "義務", ex: "You are under no obligation to buy anything after the free trial period ends.", exja: "無料お試し期間が終わった後、何かを購入する義務は一切ありません。" },
     { en: "prosperity", pos: "名", ja: "繁栄", ex: "The opening of the new port brought prosperity to the once-poor fishing town.", exja: "新しい港の開港は、かつて貧しかった漁師町に繁栄をもたらした。" },
     { en: "testimony", pos: "名", ja: "証言", ex: "The jury listened carefully to the testimony of the only witness to the robbery.", exja: "陪審員は強盗事件の唯一の目撃者の証言に注意深く耳を傾けた。" },

@@ -138,7 +138,7 @@ EK.put("g2", {
     {"en":"collaborate","pos":"動","ja":"共同で取り組む","ex":"The two universities collaborated on research into new cancer treatments.","exja":"その二つの大学は新しいがん治療の研究に共同で取り組んだ。"},
     {"en":"remarkably","pos":"副","ja":"著しく","ex":"The patient recovered remarkably quickly after the operation, surprising the doctors.","exja":"患者は手術後、著しく早く回復し、医者たちを驚かせた。"},
     {"en":"elite","pos":"形","ja":"えり抜きの","ex":"Only elite athletes are allowed to join this special training program.","exja":"えり抜きの選手だけがこの特別な訓練プログラムに参加できる。"},
-    {"en":"complicated","pos":"形","ja":"複雑な","ex":"The instructions for this machine are too complicated to understand.","exja":"この機械の説明書は複雑すぎて理解できない。"},
+    {"en":"complicated","pos":"形","ja":"入り組んだ・複雑な","ex":"The instructions for this machine are too complicated to understand.","exja":"この機械の説明書は複雑すぎて理解できない。"},
     {"en":"simultaneously","pos":"副","ja":"同時に","ex":"The movie will be released simultaneously in Japan and the United States.","exja":"その映画は日本とアメリカで同時に公開される。"},
     {"en":"content","pos":"形","ja":"満足して","ex":"My grandfather is content with his simple, quiet life in the countryside.","exja":"祖父は田舎での質素で静かな生活に満足している。"},
     {"en":"confusion","pos":"名","ja":"混乱","ex":"There was some confusion about the time of the meeting.","exja":"会議の時間について、少し混乱があった。"},
