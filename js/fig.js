@@ -70,5 +70,6 @@
     var k = particleOf(en); if (!k) return '';
     return '<div class="pimg">' + svg(k) + '<div><b class="en">' + k + '</b> の イメージ<br><span>' + P[k][1] + '</span></div></div>';
   }
-  window.EKFIG = { particle: particle, particleOf: particleOf, svg: svg, list: Object.keys(P) };
+  function raw(inner) { return '<svg class="pfig" viewBox="0 0 120 72" aria-hidden="true">' + inner + '</svg>'; }
+  window.EKFIG = { particle: particle, particleOf: particleOf, svg: svg, raw: raw, h: { arrow: arrow, head: head, dot: dot, box: box, line: line }, list: Object.keys(P) };
 })();

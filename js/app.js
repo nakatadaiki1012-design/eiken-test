@@ -431,16 +431,30 @@
   }
   function partsPage(g) {
     var gs = partsGroups(g);
-    var kind = function (m) { var p = m.pos; return p[1] >= p[0] && p[1] >= p[2] ? 1 : p[0] >= p[2] ? 0 : 2; }; // 0 頭・1 まん中・2 おしり
-    var sec = [['🌱 語根（意味の 中心になる 部品）', 1], ['⬅️ 頭に つく 部品（接頭辞）', 0], ['➡️ おしりに つく 部品（接尾辞・品詞を 決める）', 2]];
-    var group = function (m) {
-        return '<details class="pg"><summary><b class="en">' + esc(m.k) + '</b> <span>' + esc(m.mean) + '</span><span class="tag">' + m.ws.length + ' 語</span></summary><div class="pw">' +
-          m.ws.map(function (w) {
-            var c = g.core[w.en];
-            return '<div class="row"><div class="t"><span class="en" style="font-weight:600">' + esc(w.en) + '</span> ' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + partsHTML(c, w.en) + '</div>' + sayBtn(w.en) + '</div>';
-          }).join('') + '</div></details>';
+    var pfx = {}; (window.EKPFX ? EKPFX.families : []).forEach(function (f) { f.forms.forEach(function (k) { pfx[k] = 1; }); });
+    // 頭の 部品は 仲間で まとめて 出す。仲間に ない 先頭の 部品（bio・geo など）は 語根の ほうへ
+    var kind = function (m) { var p = m.pos, k = p[1] >= p[0] && p[1] >= p[2] ? 1 : p[0] >= p[2] ? 0 : 2; return k === 0 && !pfx[m.k] ? 1 : k === 0 ? -1 : k; }; // 1 語根・2 おしり・-1 頭（仲間で 出す）
+    var sec = [['🌱 語根（意味の 中心になる 部品）', 1], ['➡️ おしりに つく 部品（接尾辞・品詞を 決める）', 2]];
+    var rows = function (ws) {
+      return ws.map(function (w) {
+        var c = g.core[w.en];
+        return '<div class="row"><div class="t"><span class="en" style="font-weight:600">' + esc(w.en) + '</span> ' + esc(w.ja) + (c && c.pic ? ' <span class="pic">' + esc(c.pic) + '</span>' : '') + partsHTML(c, w.en) + '</div>' + sayBtn(w.en) + '</div>';
+      }).join('');
     };
-    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ部品の 単語を まとめて見ると、知らない単語の 意味も 想像できるように なります。（' + g.name + ' の単語から、2 語以上ある 部品 ' + gs.length + ' 個）</p>' +
+    var group = function (m) {
+      return '<details class="pg"><summary><b class="en">' + esc(m.k) + '</b> <span>' + esc(m.mean) + '</span><span class="tag">' + m.ws.length + ' 語</span></summary><div class="pw">' + rows(m.ws) + '</div></details>';
+    };
+    // 頭に つく 部品は「意味の にた 仲間」で まとめる（in- im- il- ir- など）
+    var fams = window.EKPFX ? EKPFX.groups(g.d.words, function (en) { return g.core[en]; }) : [];
+    var famCard = function (x) {
+      var f = x.f, forms = f.forms.filter(function (k) { return x.used[k]; });
+      return '<div class="pfam"><div class="pf-h">' + x.svg + '<div><div class="pf-t">' + (f.pic ? '<span class="pic">' + f.pic + '</span> ' : '') + esc(f.title) + '</div>' +
+        '<div class="pf-f">' + forms.map(function (k) { return '<span class="fc en">' + esc(k) + '-</span>'; }).join('') + '</div></div></div>' +
+        '<p class="pf-i">🖼️ ' + esc(f.image) + '</p><p class="pf-c">' + esc(f.core) + '</p>' + (f.note ? '<p class="note">' + esc(f.note) + '</p>' : '') +
+        '<details class="pg"><summary><span>この 仲間の 単語</span><span class="tag">' + x.ws.length + ' 語</span></summary><div class="pw">' + rows(x.ws.map(function (y) { return y.w; })) + '</div></details></div>';
+    };
+    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ イメージの 部品を まとめて 見ると、知らない 単語の 意味も 想像できるように なります。（' + g.name + ' の 単語から）</p>' +
+      (fams.length ? '<h3>⬅️ 頭に つく 部品（接頭辞）を イメージで まとめる　<small class="note">' + fams.length + ' 仲間</small></h3>' + fams.map(famCard).join('') : '') +
       (gs.length ? sec.map(function (sc) {
         var list = gs.filter(function (m) { return kind(m) === sc[1]; });
         return list.length ? '<h3>' + sc[0] + '　<small class="note">' + list.length + ' 個</small></h3>' + list.map(group).join('') : '';

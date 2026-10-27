@@ -378,3 +378,14 @@ body.rk-on { overflow: hidden; }
 .c-plum { --c: #8a4f9e; --cs: rgba(138, 79, 158, .14); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .c-gold { --c: #e3c15a; } :root:not([data-theme="light"]) .c-plum { --c: #d3a5e6; } }
 :root[data-theme="dark"] .c-gold { --c: #e3c15a; } :root[data-theme="dark"] .c-plum { --c: #d3a5e6; }
+
+/* 頭に つく 部品の 仲間 */
+.pfam { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; margin-bottom: 12px; }
+.pf-h { display: flex; gap: 12px; align-items: center; }
+.pf-h .pfig { width: 116px; height: 70px; }
+.pf-t { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+.pf-f { display: flex; flex-wrap: wrap; gap: 4px; }
+.pf-f .fc { padding: 0 8px; border: 1px solid var(--line); border-radius: 4px; font-size: 15px; font-weight: 600; color: var(--c, var(--accent)); }
+.pf-i { margin: 10px 0 4px; font-size: 14px; }
+.pf-c { margin: 4px 0; font-size: 14px; line-height: 1.7; }
+.pfam .pg { margin: 10px 0 0; background: var(--bg, transparent); }
