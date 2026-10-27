@@ -43,3 +43,12 @@ EK.share = function (from, to, list) {
     });
   });
 };
+
+// 同じ語が 書き方ちがいで 2 つ入ったときに、片方を はずす
+EK.drop = function (grade, list) {
+  var A = EK.data[grade]; if (!A) return;
+  list.forEach(function (en) {
+    ['words', 'idioms'].forEach(function (k) { if (A[k]) A[k] = A[k].filter(function (w) { return w.en !== en; }); });
+    ['core', 'icore'].forEach(function (ck) { if (A[ck]) delete A[ck][en]; });
+  });
+};

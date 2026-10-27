@@ -99,10 +99,18 @@ for (const g of Object.keys(data)) {
 }
 const owner = {};
 for (const g of Object.keys(data)) for (const w of (data[g].words || []).concat(data[g].idioms || [])) {
-  const k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').trim();
+  const k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').replace(/[\-‐.]/g, '').trim();
   if ((data[g].shared || {})[w.en]) continue; // 下の級へ 写した語（EK.share）は 重なってよい
   if (owner[k] && owner[k] !== g) err(g, w.en + ' は ' + owner[k] + ' にもある'); owner[k] = owner[k] || g;
 }
+// 単語どうしで「seat belt / seatbelt」「e-mail / email」のような 書き方ちがいの 重なり（熟語は のぞく）
+{ const seenW = {};
+  for (const g of Object.keys(data)) for (const w of data[g].words || []) {
+    if ((data[g].shared || {})[w.en]) continue;
+    const k = (w.en || '').toLowerCase().replace(/[\s\-‐.]/g, '');
+    if (seenW[k] && seenW[k] !== g + ':' + w.en) err(g, w.en + ' は ' + seenW[k] + ' と 同じ語（書き方ちがい）');
+    seenW[k] = seenW[k] || g + ':' + w.en;
+  } }
 for (const g of Object.keys(data)) { const m = {}; for (const w of data[g].idioms || []) { if (m[w.ja]) err(g, '熟語の意味が同じ：' + m[w.ja] + ' / ' + w.en + '（' + w.ja + '）'); m[w.ja] = w.en; } }
 for (const g of Object.keys(data)) { const m = {}; for (const w of data[g].words || []) { if (m[w.ja]) err(g, '意味が同じ：' + m[w.ja] + ' / ' + w.en + '（' + w.ja + '）'); m[w.ja] = w.en; } }
 if (bad) { console.log('まちがい ' + bad + ' 件'); process.exitCode = 1; } else console.log('まちがいなし');
