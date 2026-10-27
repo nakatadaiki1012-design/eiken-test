@@ -23,7 +23,7 @@ for (const g of Object.keys(data)) {
   (d.words || []).forEach((w, i) => {
     const k = 'words[' + i + '] ' + w.en;
     if (!isStr(w.en) || !isStr(w.ja) || !isStr(w.ex) || !isStr(w.exja)) err(g, k + ': 欠けている項目');
-    if (!['名', '動', '形', '副'].includes(w.pos)) err(g, k + ': pos');
+    if (!['名', '動', '形', '副', '前', '接', '代'].includes(w.pos)) err(g, k + ': pos');
     if (w.ja && w.ja.length > 12) err(g, k + ': ja が長い（' + w.ja.length + '字）');
     const key = (w.en || '').toLowerCase(); if (seen.has(key)) err(g, k + ': 重複'); seen.add(key);
   });
