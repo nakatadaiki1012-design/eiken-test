@@ -99,7 +99,8 @@ for (const g of Object.keys(data)) {
 }
 const owner = {};
 for (const g of Object.keys(data)) for (const w of (data[g].words || []).concat(data[g].idioms || [])) {
-  const k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').replace(/[\-‐.]/g, '').trim();
+  let k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').replace(/[\-‐.]/g, '').trim();
+  if (/~/.test(w.en) && !/\s/.test(k)) k = w.en.toLowerCase(); // 「keep ~ing」が 単語 keep と 重ならないように
   if ((data[g].shared || {})[w.en]) continue; // 下の級へ 写した語（EK.share）は 重なってよい
   if (owner[k] && owner[k] !== g) err(g, w.en + ' は ' + owner[k] + ' にもある'); owner[k] = owner[k] || g;
 }
