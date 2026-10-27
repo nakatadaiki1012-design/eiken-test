@@ -91,26 +91,127 @@
       core: 'postpone（後ろに 置く→のばす）、postwar（戦後の）、retrospect（うしろを 見る→回想）、background（うしろの 景色）。' }
   ];
 
+
+  // ---- 語根：意味の 中心に なる 部品を「意味の 仲間」で まとめる（形が ちがっても 同じ 意味なら 同じ 仲間）----
+  var ROOTS = [
+    { id: 'see', title: '見る', forms: ['spect', 'spec', 'spic', 'vis', 'vid', 'view', 'scope'], pic: '👀',
+      image: '目を 向けて じっと 見る。', core: 'respect（re＋spect＝ふり返って 見る→うやまう）、inspect（中を 見る→調べる）、visible（見える）、video（見る もの）、telescope（遠くを 見る 道具）。', note: 'spect・spec・spic は 同じ 仲間（ラテン語 specere＝見る）。vis・vid は 別の 形（videre＝見る）。' },
+    { id: 'carry', title: '運ぶ', forms: ['port', 'fer', 'lat'], pic: '📦',
+      image: '荷物を もって 運んで いく。', core: 'transport（向こうへ 運ぶ）、export（外へ 運び出す）、import（中へ 運びこむ）、transfer（向こうへ 運ぶ→うつす）、prefer（前へ 運ぶ→好む）、offer（〜へ 運ぶ→さし出す）。', note: 'port（ラテン語 portare）と fer（ferre）は どちらも「運ぶ」。airport の port（港）とは 別の 語です。' },
+    { id: 'pull', title: '引く・導く', forms: ['tract', 'duct', 'duc', 'duce'], pic: '🧲',
+      image: '手前へ 引き寄せる。ひっぱって 連れて いく。', core: 'attract（〜へ 引く→引きつける）、extract（外へ 引き出す）、product（前へ 導く→生み出す）、introduce（中へ 導く→紹介する）、educate（外へ 導く→教育する）。' },
+    { id: 'say', title: '言う・声・ことば', forms: ['dict', 'voc', 'vok', 'loqu', 'log', 'logy', 'phon', 'lingu'], pic: '🗣️',
+      image: '口に 出す・声を 出す・ことばに する。', core: 'predict（前もって 言う→予言する）、dictionary（ことばの 本）、advocate（〜へ 声を 上げる→主張する）、vocal（声の）、dialog（ことばを かわす）、biology（命の 学問）。', note: '-logy は「〜学」。 phone は ギリシャ語で「音・声」です。' },
+    { id: 'write', title: '書く', forms: ['graph', 'scrib', 'script', 'writ'], pic: '✍️',
+      image: 'ペンで 書きとめる。', core: 'paragraph（そばに 書く→段落）、photograph（光で 書く→写真）、autograph（自分で 書く→サイン）、describe（下に 書く→書き表す）、script（書いた もの→台本）。' },
+    { id: 'hold', title: '持つ・保つ', forms: ['tain', 'tin', 'ten'], mean: /持|保/, pic: '🤲',
+      image: '手に しっかり 持って はなさない。', core: 'contain（いっしょに 持つ→ふくむ）、maintain（手で 保つ→続ける）、entertain（あいだで 持つ→楽しませる）、container（入れ物）。' },
+    { id: 'take', title: '取る・つかむ', forms: ['cept', 'ceive', 'ceipt', 'cap', 'capt', 'cip'], pic: '🙌',
+      image: '手を のばして つかみ取る。', core: 'accept（〜へ 取る→受け入れる）、receive（もどして 取る→受け取る）、concept（いっしょに つかむ→考え）、except（外へ 取る→のぞく）、capture（つかまえる）。' },
+    { id: 'throw', title: '投げる', forms: ['ject'], pic: '🎯',
+      image: '勢いよく 投げ出す。', core: 'project（前へ 投げる→計画・投影）、object（向かって 投げる→反対する・物）、reject（もどして 投げる→断る）、inject（中へ 投げこむ→注入）、subject（下に 投げる→主題）。' },
+    { id: 'send', title: '送る', forms: ['miss', 'mit'], mean: /送|^$/, pic: '📨',
+      image: 'ある 場所から 別の 場所へ 送り出す。', core: 'admit（〜へ 送る→入れる→認める）、permit（通して 送る→許す）、submit（下に 送る→提出する）、commit（いっしょに 送る→ゆだねる）、mission（送られた 仕事→使命）。' },
+    { id: 'come', title: '来る・進む', forms: ['vent', 'ven', 'cess', 'ceed', 'ced', 'gress', 'grad'], pic: '🚶',
+      image: '一歩ずつ 近づいて 来る・進んで いく。', core: 'adventure（〜へ 来る こと→冒険）、invent（中へ 来る→見つける→発明）、event（外へ 来る→出来事）、process（前へ 進む→過程）、success（次へ 進む→成功）、exceed（外へ 出る→こえる）。' },
+    { id: 'turn', title: '回る・向く', forms: ['vers', 'vert', 'volv', 'volu'], pic: '🔄',
+      image: 'くるっと 向きを かえる。', core: 'convert（いっしょに 向きを かえる→変える）、reverse（うしろへ 向ける→逆）、universe（1 つに 向かう もの→宇宙）、anniversary（年ごとに 回る→記念日）。' },
+    { id: 'stand', title: '立つ', forms: ['sist', 'stat', 'stit', 'stan'], pic: '🧍',
+      image: 'しっかり 立って うごかない。', core: 'insist（上に 立つ→言いはる）、consist（いっしょに 立つ→成り立つ）、resist（向かって 立つ→さからう）、assist（そばに 立つ→助ける）、status（立つ 状態→地位）。' },
+    { id: 'make', title: '作る・する', forms: ['fact', 'fect', 'fic', 'fici', 'fac'], pic: '🔨',
+      image: '手を 動かして 作り出す。', core: 'factory（作る 場所→工場）、perfect（すっかり 作る→完全な）、effect（外へ 作り出す→結果・効果）、artificial（技で 作った→人工の）、sufficient（下から 作る→十分な）。' },
+    { id: 'build', title: '組み立てる', forms: ['struct', 'stru'], pic: '🏗️',
+      image: '部品を 積んで 組み立てる。', core: 'construct（いっしょに 組み立てる→建設する）、structure（組み立てた もの→構造）、instruct（中に 組みこむ→教える）、destruct（組み立ての 反対→こわす）。' },
+    { id: 'put', title: '置く', forms: ['pos', 'pose', 'pon', 'posit'], pic: '📍',
+      image: 'ある 場所に そっと 置く。', core: 'compose（いっしょに 置く→組み立てる）、purpose（前に 置く→目的）、propose（前へ 置く→提案する）、expose（外に 置く→さらす）、position（置かれた 所→位置）、oppose（向かい合って 置く→反対する）。' },
+    { id: 'press', title: '押す', forms: ['press', 'puls', 'pel'], pic: '👇',
+      image: 'ぐっと 力を かけて 押す。', core: 'express（外へ 押し出す→表現する）、impress（中に 押す→印象を 与える）、pressure（押す 力→圧力）、compel（いっしょに 駆りたてる→無理に させる）。' },
+    { id: 'fold', title: '折る・重ねる', forms: ['plic', 'ply', 'plex', 'ploy'], pic: '📄',
+      image: '紙のように 折って 重ねる。', core: 'complicate（いっしょに 折る→入り組む）、apply（〜へ 重ねる→あてはめる）、reply（折り返す→返事）、employ（中に 折りこむ→雇う）。' },
+    { id: 'break', title: '破る・こわす', forms: ['rupt', 'frag', 'fract'], pic: '💥',
+      image: 'ぽきっと 割れる・破れる。', core: 'interrupt（あいだで 破る→じゃまする）、erupt（外へ 破れ出る→噴火する）、bankrupt（店の 台が こわれる→破産）。' },
+    { id: 'close', title: '閉じる', forms: ['clus', 'clud', 'clos'], pic: '🚪',
+      image: '戸を ぱたんと 閉める。', core: 'conclusion（全部 閉じる→結論）、include（中に 閉じこめる→ふくむ）、exclude（外に 閉め出す→のぞく）、disclose（閉じたのを 開く→あかす）。' },
+    { id: 'choose', title: '選ぶ・集める', forms: ['lect'], pic: '🧺',
+      image: '多くの 中から 選んで 集める。', core: 'collect（いっしょに 集める）、select（わきへ 選ぶ→選び出す）、elect（外へ 選ぶ→選挙で 選ぶ）、intellect（あいだを 選ぶ→知性）。' },
+    { id: 'sit', title: 'すわる', forms: ['sid', 'sess', 'sed'], pic: '🪑',
+      image: 'どっかりと すわる。', core: 'president（前に すわる 人→大統領）、resident（住んで すわる 人→住民）、session（すわって 行う→会）、preside（前に すわる→議長を つとめる）。' },
+    { id: 'flow', title: '流れる', forms: ['flu', 'fus'], pic: '🌊',
+      image: 'さらさらと 流れこむ。', core: 'influence（中へ 流れこむ→影響）、fluent（流れる ような→流ちょうな）、confuse（いっしょに 流す→混乱させる）。' },
+    { id: 'life', title: '命・生きる', forms: ['bio', 'viv', 'vit', 'anim'], pic: '🌱',
+      image: '生きて 息を している。', core: 'biology（命の 学問→生物学）、survive（上を 生きる→生きのびる）、vital（命に かかわる→重要な）、animal（息を する もの→動物）、revive（もう一度 生きる→よみがえる）。' },
+    { id: 'form', title: '形', forms: ['form', 'morph'], pic: '🧩',
+      image: '形を つくる・形に する。', core: 'uniform（1 つの 形→制服）、transform（形を こえて かえる）、inform（心に 形を 与える→知らせる）、perform（すっかり 形に する→演じる）。' },
+    { id: 'run', title: '走る', forms: ['cur', 'cour', 'curs'], mean: /走/, pic: '🏃',
+      image: 'たっと 走って 流れる。', core: 'occur（〜へ 走る→出くわす→起こる）、current（走る もの→流れ・今の）、course（走る 道→進路・講座）、excursion（外へ 走る→遠足）。' },
+    { id: 'watch', title: '見守る・守る', forms: ['serv'], pic: '🛡️',
+      image: '目を はなさず 見守る。', core: 'observe（〜に 注意して 見守る→観察する）、conserve（いっしょに 守る→保存する）、reserve（うしろに 守る→取っておく）、preserve（前もって 守る→保存する）。' },
+    { id: 'stretch', title: 'のばす・向ける', forms: ['tend', 'tens', 'tent'], mean: /のばす|向け|のび/, pic: '↗️',
+      image: 'ぐーんと 手を のばして 向ける。', core: 'attend（〜へ 心を のばす→出席する）、extend（外へ のばす→広げる）、intend（〜へ のばす→〜する つもり）、tension（のばした 張り→緊張）、attention（心を 向ける→注意）。' },
+    { id: 'work', title: '働く', forms: ['labor', 'oper'], pic: '⚒️',
+      image: '手を 動かして 働く。', core: 'laboratory（働く 場所→実験室）、collaborate（いっしょに 働く→協力する）、operate（働かせる→操作する・手術する）。' },
+    { id: 'law', title: '法・正しさ', forms: ['leg', 'jud', 'jus', 'jur'], mean: /法|法律|判|正|裁|^$/, pic: '⚖️',
+      image: '決まりに 照らして 正しく 裁く。', core: 'legal（法の→合法の）、judge（正しく 言う→裁く）、justice（正しさ）、jury（誓った 人たち→陪審員）。' },
+    { id: 'body', title: '手・足', forms: ['manu', 'man', 'ped', 'pod'], mean: /手|足/, pic: '🖐️',
+      image: '手と 足の 動きから できた 部品。', core: 'manual（手の→手動の）、manufacture（手で 作る→製造）、pedal（足で ふむ もの）、pedestrian（足で 歩く 人→歩行者）、tripod（3 つの 足）。' },
+    { id: 'earth', title: '大地・世界', forms: ['geo', 'terr', 'mund'], pic: '🌍',
+      image: '足もとの 大地から 世界まで。', core: 'geography（大地を 書く→地理）、territory（土地→領土）、mundane（世の中の→ありふれた）。' },
+    { id: 'sound', title: '音・聞く', forms: ['aud', 'son', 'phon'], pic: '🔊',
+      image: '耳に 届く 音を 聞く。', core: 'audience（聞く 人たち→観客）、audio（聞こえる もの→音声）、sonic（音の）、microphone（小さい 音を ひろう もの）。' },
+    { id: 'born', title: '生まれる', forms: ['nat', 'gen'], mean: /生|産|種|^$/, pic: '🍼',
+      image: '生まれる・うみ出す。', core: 'nature（生まれた まま→自然）、native（生まれた 土地の）、national（生まれた 国の→国民の）、generate（生み出す）、generation（生まれた 世代）。' },
+    { id: 'people', title: '人びと・支配', forms: ['dem', 'pop', 'cracy', 'arch'], pic: '👥',
+      image: '人びとの 集まりと その まとめ方。', core: 'democracy（人びとの 支配→民主主義）、popular（人びとの→人気の）、population（人びと→人口）、monarchy（ひとりの 支配→君主制）。' }
+  ];
+
+  // ---- 後ろに つく 部品：はたらき（品詞）で 仲間に する ----
+  var SUFFIX = [
+    { id: 'noun', title: '「〜こと」にする（名詞）', forms: ['ation', 'ion', 'tion', 'ition', 'ment', 'ness', 'ity', 'ability', 'ibility', 'ence', 'ance', 'ency', 'ancy', 'ure', 'ism', 'ship', 'ization', 'ty', 'hood'], pic: '📝',
+      image: '動作や 状態を「こと・もの」の 名前に する。', core: 'inform → information（知らせる→知らせ）、move → movement（動く→動き）、kind → kindness（親切な→親切さ）、able → ability（できる→能力）、friend → friendship。', note: '名詞を つくる 部品は とても 多い。単語の おしりを 見ると「名詞だ」と 分かります。' },
+    { id: 'person', title: '「〜する人」', forms: ['er', 'or', 'ist', 'ian', 'ator', 'ent', 'ant', 'ee', 'eer', 'ess'], mean: /人|者|もの|^$/, pic: '🧑‍🏫',
+      image: 'その ことを する 人・もの。', core: 'pianist（ピアノを ひく 人）、musician（音楽を する 人）、assistant（助ける 人）、elevator（上げる もの）、refrigerator（冷やす もの）。' },
+    { id: 'full', title: 'いっぱい／ない（形容詞）', forms: ['ful', 'less', 'ous', 'ious'], pic: '⚖️',
+      image: '〜が いっぱい（-ful, -ous）か、〜が ない（-less）。', core: 'beautiful（美しさが いっぱい）、careful（注意が いっぱい）、famous（有名さが 多い）、careless（注意が ない）、helpless（助けが ない）。', note: '-ful と -less は 反対の 組み。care → careful ⇔ careless。' },
+    { id: 'able', title: '「〜できる」', forms: ['able', 'ible'], pic: '✅',
+      image: '〜することが できる・〜される ことが できる。', core: 'comfortable（心地よさを 感じる ことが できる）、available（手に 入れる ことが できる）、visible（見る ことが できる→見える）、responsible（答える ことが できる→責任のある）。' },
+    { id: 'adj', title: '「〜の・〜な」（形容詞）', forms: ['al', 'ial', 'ical', 'ual', 'ary', 'ory', 'ic', 'ive', 'ative', 'ent', 'ant', 'ish', 'ar'], mean: /^(?!.*(場所|集まり|人$|する人)).*$/, pic: '🏷️',
+      image: '名詞や 動詞に つけて 「〜の」「〜な」と 様子を 表す。', core: 'historical（歴史の）、typical（典型の）、creative（作り出す ような）、expensive（お金を かける ような→高い）、foolish（愚か者の ような）。' },
+    { id: 'verb', title: '「〜にする・〜する」（動詞）', forms: ['ate', 'ize', 'ise', 'ify', 'en'], mean: /する|にする|^$/, pic: '🔧',
+      image: '名詞や 形容詞を「〜にする」動詞に かえる。', core: 'realize（本当に する→気づく）、organize（組織に する）、simplify（かんたんに する）、activate（活動的に する）。', note: '-ize（アメリカ式）は -ise（イギリス式）とも 書きます。' },
+    { id: 'adv', title: '「〜に」（副詞）', forms: ['ly', 'ally', 'ably', 'ively', 'ently', 'ily', 'ibly', 'antly'], pic: '🎬',
+      image: '動き方や 様子を 説明する 副詞を つくる。', core: 'quick → quickly（すばやく）、dramatic → dramatically（劇的に）、comfortable → comfortably（心地よく）、impressive → impressively（印象的に）。' }
+  ];
+
   function norm(k) { return String(k).toLowerCase().replace(/[-‐]/g, ''); }
   function strip(m) { return String(m).replace(/（[^）]*）/g, '').trim(); }
   function figSVG(f) { return typeof f.fig === 'function' ? f.fig() : (f.fig && window.EKFIG ? EKFIG.svg(f.fig) : ''); }
 
+  // kind: 'prefix'（先頭の 部品だけ）・'root'（どこでも）・'suffix'（2 番目より 後ろ）
   // words: そのレベルの 単語、coreOf(en): コアデータ。2 語 以上 そろった 仲間だけ 返す
-  function groups(words, coreOf) {
-    var by = {};
+  function groups(words, coreOf, kind) {
+    var list = kind === 'root' ? ROOTS : kind === 'suffix' ? SUFFIX : FAMS, by = {};
     words.forEach(function (w) {
       var c = coreOf(w.en); if (!c || !c.parts || c.parts.length < 2) return;
-      var key = norm(c.parts[0][0]), m = strip(c.parts[0][1]);
-      for (var i = 0; i < FAMS.length; i++) {
-        var f = FAMS[i];
-        if (f.forms.indexOf(key) >= 0 && (!f.mean || f.mean.test(m))) { (by[f.id] = by[f.id] || []).push({ w: w, c: c, key: key }); return; }
-      }
+      var done = {};
+      c.parts.forEach(function (x, idx) {
+        if (kind === 'prefix' && idx > 0) return;
+        if (kind === 'suffix' && idx < 1) return;
+        var key = norm(x[0]), m = strip(x[1]);
+        for (var i = 0; i < list.length; i++) {
+          var f = list[i];
+          if (f.forms.indexOf(key) >= 0 && (!f.mean || f.mean.test(m))) {
+            if (!done[f.id]) { done[f.id] = 1; (by[f.id] = by[f.id] || []).push({ w: w, c: c, key: key }); }
+            return;
+          }
+        }
+      });
     });
-    return FAMS.filter(function (f) { return (by[f.id] || []).length >= 2; }).map(function (f) {
+    return list.filter(function (f) { return (by[f.id] || []).length >= 2; }).map(function (f) {
       var ws = by[f.id], used = {};
       ws.forEach(function (x) { used[x.key] = (used[x.key] || 0) + 1; });
       return { f: f, ws: ws, used: used, svg: figSVG(f) };
     });
   }
-  window.EKPFX = { groups: groups, families: FAMS };
+  function allForms() { var o = {}; [FAMS, ROOTS, SUFFIX].forEach(function (l) { l.forEach(function (f) { f.forms.forEach(function (k) { o[k] = 1; }); }); }); return o; }
+  window.EKPFX = { groups: groups, families: FAMS, roots: ROOTS, suffixes: SUFFIX, allForms: allForms };
 })();

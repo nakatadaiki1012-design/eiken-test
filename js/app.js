@@ -431,10 +431,10 @@
   }
   function partsPage(g) {
     var gs = partsGroups(g);
-    var pfx = {}; (window.EKPFX ? EKPFX.families : []).forEach(function (f) { f.forms.forEach(function (k) { pfx[k] = 1; }); });
-    // 頭の 部品は 仲間で まとめて 出す。仲間に ない 先頭の 部品（bio・geo など）は 語根の ほうへ
-    var kind = function (m) { var p = m.pos, k = p[1] >= p[0] && p[1] >= p[2] ? 1 : p[0] >= p[2] ? 0 : 2; return k === 0 && !pfx[m.k] ? 1 : k === 0 ? -1 : k; }; // 1 語根・2 おしり・-1 頭（仲間で 出す）
-    var sec = [['🌱 語根（意味の 中心になる 部品）', 1], ['➡️ おしりに つく 部品（接尾辞・品詞を 決める）', 2]];
+    var pfx = window.EKPFX ? EKPFX.allForms() : {};
+    // 仲間に まとめた 部品は、下の「1 つずつ」の 一覧からは はぶく
+    var kind = function (m) { if (pfx[m.k]) return -1; var p = m.pos; return p[1] >= p[0] && p[1] >= p[2] ? 1 : p[0] >= p[2] ? 1 : 2; }; // 1 語根など・2 おしり・-1 仲間で 出す
+    var sec = [['🔎 ほかの 部品（1 つずつ）', 1], ['🔎 ほかの おしりの 部品（1 つずつ）', 2]];
     var rows = function (ws) {
       return ws.map(function (w) {
         var c = g.core[w.en];
@@ -444,21 +444,23 @@
     var group = function (m) {
       return '<details class="pg"><summary><b class="en">' + esc(m.k) + '</b> <span>' + esc(m.mean) + '</span><span class="tag">' + m.ws.length + ' 語</span></summary><div class="pw">' + rows(m.ws) + '</div></details>';
     };
-    // 頭に つく 部品は「意味の にた 仲間」で まとめる（in- im- il- ir- など）
-    var fams = window.EKPFX ? EKPFX.groups(g.d.words, function (en) { return g.core[en]; }) : [];
-    var famCard = function (x) {
+    var famCard = function (x, tail) {
       var f = x.f, forms = f.forms.filter(function (k) { return x.used[k]; });
-      return '<div class="pfam"><div class="pf-h">' + x.svg + '<div><div class="pf-t">' + (f.pic ? '<span class="pic">' + f.pic + '</span> ' : '') + esc(f.title) + '</div>' +
-        '<div class="pf-f">' + forms.map(function (k) { return '<span class="fc en">' + esc(k) + '-</span>'; }).join('') + '</div></div></div>' +
+      var dash = function (k) { return tail ? '-' + k : (tail === false ? k : k); };
+      return '<div class="pfam"><div class="pf-h">' + (x.svg || '<div class="pf-pic">' + (f.pic || '') + '</div>') + '<div><div class="pf-t">' + (x.svg && f.pic ? '<span class="pic">' + f.pic + '</span> ' : '') + esc(f.title) + '</div>' +
+        '<div class="pf-f">' + forms.map(function (k) { return '<span class="fc en">' + esc(tail === 'pre' ? k + '-' : tail === 'suf' ? '-' + k : k) + '</span>'; }).join('') + '</div></div></div>' +
         '<p class="pf-i">🖼️ ' + esc(f.image) + '</p><p class="pf-c">' + esc(f.core) + '</p>' + (f.note ? '<p class="note">' + esc(f.note) + '</p>' : '') +
         '<details class="pg"><summary><span>この 仲間の 単語</span><span class="tag">' + x.ws.length + ' 語</span></summary><div class="pw">' + rows(x.ws.map(function (y) { return y.w; })) + '</div></details></div>';
     };
-    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ イメージの 部品を まとめて 見ると、知らない 単語の 意味も 想像できるように なります。（' + g.name + ' の 単語から）</p>' +
-      (fams.length ? '<h3>⬅️ 頭に つく 部品（接頭辞）を イメージで まとめる　<small class="note">' + fams.length + ' 仲間</small></h3>' + fams.map(famCard).join('') : '') +
+    var coreOf = function (en) { return g.core[en]; };
+    var P = window.EKPFX ? [EKPFX.groups(g.d.words, coreOf, 'prefix'), EKPFX.groups(g.d.words, coreOf, 'root'), EKPFX.groups(g.d.words, coreOf, 'suffix')] : [[], [], []];
+    var block = function (title, fams, tag) { return fams.length ? '<h3>' + title + '　<small class="note">' + fams.length + ' 仲間</small></h3>' + fams.map(function (x) { return famCard(x, tag); }).join('') : ''; };
+    var html = '<h2>🧩 部品で覚える</h2><p class="sub">英単語は「部品」の 組み合わせで できていることが 多い。同じ イメージの 部品を 仲間に まとめて 見ると、知らない 単語の 意味も 想像できるように なります。（' + g.name + ' の 単語から）</p>' +
+      block('⬅️ 頭に つく 部品（接頭辞）', P[0], 'pre') + block('🌱 語根（意味の 中心に なる 部品）', P[1], '') + block('➡️ おしりに つく 部品（品詞を 決める）', P[2], 'suf') +
       (gs.length ? sec.map(function (sc) {
         var list = gs.filter(function (m) { return kind(m) === sc[1]; });
         return list.length ? '<h3>' + sc[0] + '　<small class="note">' + list.length + ' 個</small></h3>' + list.map(group).join('') : '';
-      }).join('') : '<div class="card">部品の データを 準備中です。</div>');
+      }).join('') : '') + (P[0].length + P[1].length + P[2].length + gs.length ? '' : '<div class="card">部品の データを 準備中です。</div>');
     view('🧩 部品 ' + g.name, html, g.color, '#/' + g.id);
   }
 
