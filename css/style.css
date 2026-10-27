@@ -373,3 +373,8 @@ body.rk-on { overflow: hidden; }
 .pw { margin-top: 8px; }
 .pw .row { margin-bottom: 6px; }
 .fw { display: inline-flex; align-items: center; gap: 4px; }
+
+.c-gold { --c: #a57d06; --cs: rgba(184, 138, 18, .16); }
+.c-plum { --c: #8a4f9e; --cs: rgba(138, 79, 158, .14); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .c-gold { --c: #e3c15a; } :root:not([data-theme="light"]) .c-plum { --c: #d3a5e6; } }
+:root[data-theme="dark"] .c-gold { --c: #e3c15a; } :root[data-theme="dark"] .c-plum { --c: #d3a5e6; }

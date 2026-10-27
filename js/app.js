@@ -150,7 +150,7 @@
       tile('#/' + g.id + '/idiom', '📗', '熟語', '学習 ' + c.iSeen + '・定着 ' + c.iFix + ' / ' + g.d.idioms.length) +
       tile('#/' + g.id + '/cloze', '✏️', '大問1 穴うめ', '正解 ' + c.cOk + ' / ' + g.d.cloze.length) +
       tile('#/' + g.id + '/read', '📖', '長文', '解いた ' + c.rDone + ' / ' + g.d.reading.length) +
-      tile('#/' + g.id + '/write', '✍️', '英作文', '書いた ' + c.wrDone + ' / ' + g.d.writing.length) +
+      (Object.keys(g.write).length ? tile('#/' + g.id + '/write', '✍️', '英作文', '書いた ' + c.wrDone + ' / ' + g.d.writing.length) : '') +
       tile('#/' + g.id + '/mock', '🏁', 'ミニ模試', '穴うめ 10 ＋ 長文 1') +
       tile('#/' + g.id + '/parts', '🧩', '部品で覚える', '同じ部品の 単語を まとめて') +
       '<button class="tile wide rocket" data-go="#/' + g.id + '/rocket"><span class="ic">🚀</span><b>英単語ロケット</b><span>単語・熟語・穴うめを どんどん 正解して 宇宙へ</span></button>' +
