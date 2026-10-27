@@ -45,7 +45,7 @@ EK.put("p1", {
     {"en":"impoverished","pos":"形","ja":"貧困に陥った","ex":"The charity provides free meals to impoverished families living in the city's poorest areas.","exja":"その慈善団体は市の最も貧しい地域に住む貧困家庭に無料の食事を提供している。"},
     {"en":"cynical","pos":"形","ja":"冷笑的な","ex":"Many voters have become cynical about politicians who never keep their promises.","exja":"約束を守らない政治家に対して、多くの有権者は冷めた見方をするようになった。"},
     {"en":"latent","pos":"形","ja":"潜在的な","ex":"The coach believed every player had latent talent that could be developed with practice.","exja":"コーチは、練習で伸ばせる隠れた才能をどの選手も持っていると信じていた。"},
-    {"en":"marginal","pos":"形","ja":"ごくわずかな","ex":"The new law has had only a marginal effect on the number of traffic accidents.","exja":"新しい法律は交通事故の件数にごくわずかな効果しかもたらしていない。"},
+    {"en":"marginal","pos":"形","ja":"わずかな・周辺的な","ex":"The new law has had only a marginal effect on the number of traffic accidents.","exja":"新しい法律は交通事故の件数にごくわずかな効果しかもたらしていない。"},
     {"en":"duration","pos":"名","ja":"継続期間","ex":"Passengers must keep their seat belts fastened for the entire duration of the flight.","exja":"乗客は飛行中ずっとシートベルトを締めておかなければならない。"},
     {"en":"cost-effective","pos":"形","ja":"費用対効果の高い","ex":"Buying a used car can be a more cost-effective choice than buying a new one.","exja":"中古車を買うほうが新車を買うよりも費用対効果の高い選択になりうる。"},
     {"en":"phenomenal","pos":"形","ja":"並外れた","ex":"The singer's first album was a phenomenal success, selling ten million copies worldwide.","exja":"その歌手の最初のアルバムは並外れた成功を収め、世界で1000万枚売れた。"},

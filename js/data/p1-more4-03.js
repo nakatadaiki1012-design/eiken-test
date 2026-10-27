@@ -40,7 +40,7 @@ EK.put("p1", {
     { en: "inclusive", pos: "形", ja: "誰も排除しない・包括的な", ex: "The city aims to build an inclusive society where people with disabilities can live comfortably.", exja: "その市は、障害のある人も快適に暮らせる、誰も排除しない社会を築くことを目指している。" },
     { en: "premises", pos: "名", ja: "（建物を含む）敷地", ex: "Smoking is strictly prohibited anywhere on the school premises, including the parking lot.", exja: "駐車場を含め、学校の敷地内ではどこでも喫煙が固く禁じられている。" },
     { en: "unwavering", pos: "形", ja: "決して揺らがない", ex: "She thanked her parents for their unwavering support throughout her long career.", exja: "彼女は長い経歴を通して決して揺らぐことなく支えてくれた両親に感謝した。" },
-    { en: "negligible", pos: "形", ja: "ごくわずかな", ex: "The doctor said the side effects of the new medicine are negligible for most patients.", exja: "医師は、その新薬の副作用はほとんどの患者にとってごくわずかだと言った。" },
+    { en: "negligible", pos: "形", ja: "無視できるほどの", ex: "The doctor said the side effects of the new medicine are negligible for most patients.", exja: "医師は、その新薬の副作用はほとんどの患者にとってごくわずかだと言った。" },
     { en: "reap", pos: "動", ja: "（成果を）得る・刈り取る", ex: "Students who study hard now will reap the rewards of their efforts in the future.", exja: "今一生懸命勉強する生徒は、将来その努力の成果を得るだろう。" },
     { en: "sustainable", pos: "形", ja: "持続可能な", ex: "The island is trying to develop a sustainable form of tourism that protects its coral reefs.", exja: "その島はサンゴ礁を守る持続可能な形の観光を発展させようとしている。" },
     { en: "hibernation", pos: "名", ja: "冬眠", ex: "Bears eat huge amounts of food in autumn to prepare for their long hibernation.", exja: "クマは長い冬眠に備えて、秋に大量の食べ物を食べる。" },
