@@ -8,7 +8,7 @@ EK.put("g4", {
     {"en":"Are you sure?","ja":"本当に？（たしか？）","ex":"\"I can carry this box.\" \"[Are you sure?]\"","exja":"「この 箱、ぼくが 運べるよ。」「本当に？」"},
     {"en":"I'm sorry to hear that.","ja":"それを聞いて残念です。","ex":"\"My dog is sick.\" \"[I'm sorry to hear that.]\"","exja":"「うちの 犬が 病気なの。」「それは かわいそうに。」"},
     {"en":"That's great.","ja":"それはすごいね。","ex":"\"I won the race!\" \"[That's great!]\"","exja":"「レースで 1位に なったよ！」「それは すごいね！」"},
-    {"en":"That's nice.","ja":"それはすてきだね。","ex":"\"I have a new bike.\" \"[That's nice.]\"","exja":"「新しい 自転車を 買って もらったよ。」「それは すてきだね。」"},
+    {"en":"That's nice.","ja":"それはすてきだね。","ex":"\"I have a new bike.\" \"[That's nice.]\"","exja":"「新しい 自転車が あるんだ。」「それは すてきだね。」"},
     {"en":"Well done.","ja":"よくやった。","ex":"You finished the long race. [Well done!]","exja":"長い レースを 走りきったね。よく やった！"},
     {"en":"I hope so.","ja":"そうだといいな。","ex":"\"It will be sunny tomorrow.\" \"[I hope so.]\"","exja":"「あしたは 晴れるよ。」「そうだと いいな。」"},
     {"en":"Just a moment.","ja":"少々お待ちください。","ex":"\"Is Ken at home?\" \"Yes. [Just a moment.]\"","exja":"「ケンくんは 家に いますか。」「はい。少々 お待ちください。」"},

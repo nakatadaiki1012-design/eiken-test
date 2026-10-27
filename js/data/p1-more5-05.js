@@ -91,7 +91,7 @@ EK.put("p1", {
     {"en":"euphemistic","pos":"形","ja":"婉曲な","ex":"\"Passed away\" is a euphemistic way of saying that someone has died.","exja":"「亡くなった」は、人が死んだことを言う婉曲な言い方だ。"},
     {"en":"condensation","pos":"名","ja":"結露・凝縮","ex":"In winter, condensation forms on the windows when warm air inside meets the cold glass.","exja":"冬には、室内の暖かい空気が冷たいガラスに触れると窓に結露ができる。"},
     {"en":"colloquial","pos":"形","ja":"口語の","ex":"The textbook explains formal grammar but includes few colloquial expressions.","exja":"その教科書は正式な文法は説明しているが、口語の表現はほとんど載せていない。"},
-    {"en":"allusion","pos":"名","ja":"それとなく触れること","ex":"The speech contained an allusion to a famous poem that most listeners recognized.","exja":"そのスピーチには、ほとんどの聴衆が気づいた有名な詩へのそれとなくの言及が含まれていた。"},
+    {"en":"allusion","pos":"名","ja":"それとなく触れること","ex":"The speech contained an allusion to a famous poem that most listeners recognized.","exja":"そのスピーチには、ほとんどの聴衆が気づいた、有名な詩にそれとなく触れる部分があった。"},
     {"en":"huddle","pos":"動","ja":"身を寄せ合う","ex":"The campers huddled around the fire to keep warm on the cold night.","exja":"キャンプの人たちは、寒い夜に暖をとるため火の周りに身を寄せ合った。"},
     {"en":"topography","pos":"名","ja":"地形・地勢","ex":"The steep topography of the island makes it difficult to build roads and airports.","exja":"その島は地形が険しいので、道路や空港を建設するのが難しい。"},
     {"en":"surrealism","pos":"名","ja":"超現実主義","ex":"Dalí's melting clocks are one of the most famous images of surrealism.","exja":"ダリのとけた時計は、超現実主義の最も有名なイメージの一つだ。"},
