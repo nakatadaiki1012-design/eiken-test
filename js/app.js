@@ -242,8 +242,20 @@
     var pool = list.filter(function (y) { return y !== x && y[key] !== x[key] && (!same || same(y)); });
     if (pool.length < n) pool = list.filter(function (y) { return y !== x && y[key] !== x[key]; });
     var out = [], seenV = {}; seenV[x[key]] = 1;
-    shuffle(pool).forEach(function (y) { if (out.length < n && !seenV[y[key]]) { seenV[y[key]] = 1; out.push(y[key]); } });
+    shuffle(pool).forEach(function (y) { if (out.length < n && !seenV[y[key]] && !alike(y[key], [x[key]].concat(out))) { seenV[y[key]] = 1; out.push(y[key]); } });
+    shuffle(pool).forEach(function (y) { if (out.length < n && !seenV[y[key]]) { seenV[y[key]] = 1; out.push(y[key]); } }); // 足りないときだけ
     return out;
+  }
+  // 意味が ほとんど同じ 選択肢を 並べない（「たくさんの」と「たくさんの～（くだけて）」など）
+  function alike(v, others) {
+    var core = function (t) { return String(t).replace(/[（(][^）)]*[）)]|[～~・、。\s]/g, ''); };
+    var a = core(v);
+    return others.some(function (o) {
+      var b = core(o); if (!a || !b) return false;
+      if (a.indexOf(b) >= 0 || b.indexOf(a) >= 0) return true;
+      for (var i = 0; i + 4 <= a.length; i++) if (b.indexOf(a.substr(i, 4)) >= 0) return true;
+      return false;
+    });
   }
   function mc(right, wrong) { var opts = shuffle([right].concat(wrong)); return { opts: opts, a: opts.indexOf(right) }; }
 
