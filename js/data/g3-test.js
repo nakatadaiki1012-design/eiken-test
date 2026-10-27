@@ -212,7 +212,7 @@ EK.put("g3", {
         "Penguins are birds, but they cannot fly. Instead, they are very good swimmers. There are about 18 kinds of penguins in the world. The biggest kind is the emperor penguin. It can grow to more than one meter tall.",
         "Emperor penguins live in Antarctica, one of the coldest places on Earth. In winter, it can be colder than minus 40 degrees there. To stay warm, the penguins stand close together in large groups. They take turns standing in the middle of the group, where it is warmer.",
         "Emperor penguins have a special way of taking care of their eggs. In winter, the mother lays one egg. Then she goes to the sea to find food. The father keeps the egg on his feet under his warm body for about two months. During this time, he eats nothing at all.",
-        "When the baby penguin is born, the mother comes back from the sea. She gives food to the baby, and then the father goes to the sea to eat. After that, the mother and father take turns bringing food to their baby.",
+        "When the baby penguin is born, the mother comes back from the sea. She gives food to the baby, and then the father goes to the sea to eat. Baby penguins have soft gray feathers, and they stay close to their parents. After that, the mother and father take turns bringing food to their baby.",
         "Today, some scientists are worried about emperor penguins. The Earth is getting warmer, and the sea ice around Antarctica is melting. The penguins need this ice to raise their babies. Many people are now working to protect these amazing birds."
       ],
       qs: [
@@ -300,7 +300,7 @@ EK.put("g3", {
         "第一に、新しいことをたくさん学べるので、読書は楽しいです。",
         "第二に、家で本を読むとリラックスできます。"
       ],
-      words: 32 },
+      words: 33 },
 
     { type: "opinion", topic: "Which do you like better, summer or winter?",
       topicja: "あなたは夏と冬のどちらのほうが好きですか。",
