@@ -134,7 +134,7 @@
       var c = counts(g), all = g.d.words.length + g.d.idioms.length;
       html += '<button class="grade c-' + g.color + '" data-go="#/' + g.id + '"><div class="nm">' + g.name + '</div>' +
         '<div><div class="lv">' + g.level + '</div><div>単語 ' + g.d.words.length + '・熟語 ' + g.d.idioms.length + '・穴うめ ' + g.d.cloze.length +
-        '・長文 ' + g.d.reading.length + '・英作文 ' + g.d.writing.length + '</div></div><div aria-hidden="true">›</div>' +
+        '・長文 ' + g.d.reading.length + (g.d.writing.length ? '・英作文 ' + g.d.writing.length : '') + '</div></div><div aria-hidden="true">›</div>' +
         '<div class="bar">' + meter(c.wFix + c.iFix, all, '定着した 単語・熟語') + '</div></button>';
     });
     html += '</div><p class="note">記録は このブラウザの中だけに 残ります。英検の 問題の形・時間は 変わることがあるので、受ける前に 英検の 公式サイトで 確かめてください。</p>';
