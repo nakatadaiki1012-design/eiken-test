@@ -4,3 +4,4 @@ EK.move("p1", "p2", ["dress up","put down ~","inquiry","assault","conviction","w
 // 書き方ちがいで 重なった語を はずす（cellphone・seatbelt・e-mail を 残す）
 EK.drop("g3", ["cell phone", "seat belt"]);
 EK.drop("p2", ["email"]);
+EK.drop("p2", ["secondhand", "round-trip"]);
