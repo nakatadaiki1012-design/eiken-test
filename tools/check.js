@@ -100,6 +100,7 @@ for (const g of Object.keys(data)) {
 const owner = {};
 for (const g of Object.keys(data)) for (const w of (data[g].words || []).concat(data[g].idioms || [])) {
   const k = (w.en || '').toLowerCase().replace(/\s*~(ing)?/g, '').trim();
+  if ((data[g].shared || {})[w.en]) continue; // 下の級へ 写した語（EK.share）は 重なってよい
   if (owner[k] && owner[k] !== g) err(g, w.en + ' は ' + owner[k] + ' にもある'); owner[k] = owner[k] || g;
 }
 for (const g of Object.keys(data)) { const m = {}; for (const w of data[g].idioms || []) { if (m[w.ja]) err(g, '熟語の意味が同じ：' + m[w.ja] + ' / ' + w.en + '（' + w.ja + '）'); m[w.ja] = w.en; } }

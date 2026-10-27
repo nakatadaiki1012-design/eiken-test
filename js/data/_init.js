@@ -26,3 +26,20 @@ EK.move = function (from, to, list) {
     });
   });
 };
+
+// 上の級に 入っている語を、下の級でも 学べるように 写す（移さない。上の級にも 残る）
+// EK.share("p2", "g3", ["agree", ...])：単語・熟語と その core を 写す。shared に もとの級を 書いておく
+EK.share = function (from, to, list) {
+  var A = EK.data[from], B = EK.data[to]; if (!A || !B) return;
+  B.shared = B.shared || {};
+  list.forEach(function (en) {
+    ['words', 'idioms'].forEach(function (k) {
+      var w = (A[k] || []).filter(function (x) { return x.en === en; })[0];
+      if (!w || (B[k] || []).some(function (x) { return x.en === en; })) return;
+      (B[k] = B[k] || []).push(w);
+      var c = (A.core && A.core[en]) || (A.icore && A.icore[en]);
+      if (c) (B.core = B.core || {})[en] = c;
+      B.shared[en] = from;
+    });
+  });
+};
