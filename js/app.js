@@ -94,6 +94,7 @@
     quiz = null;
     var p = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
     cur.parts = p;
+    if (window.EKBATTLE && EKBATTLE.route(p)) return;
     if (p[0] === 'review') return reviewStart();
     var g = GR[p[0]];
     if (!g) return home();
@@ -137,7 +138,7 @@
         '・長文 ' + g.d.reading.length + (g.d.writing.length ? '・英作文 ' + g.d.writing.length : '') + '</div></div><div aria-hidden="true">›</div>' +
         '<div class="bar">' + meter(c.wFix + c.iFix, all, '定着した 単語・熟語') + '</div></button>';
     });
-    html += '</div><p class="note">記録は このブラウザの中だけに 残ります。英検の 問題の形・時間は 変わることがあるので、受ける前に 英検の 公式サイトで 確かめてください。</p>';
+    html += '</div><div style="height:12px"></div><button class="tile wide battle" data-go="#/battle"><span class="ic">🏆</span><b>クラス対戦</b><span>先生の 大画面で クラス全員が いっせいに ロケット対戦・クイズ大会</span></button><p class="note">記録は このブラウザの中だけに 残ります。英検の 問題の形・時間は 変わることがあるので、受ける前に 英検の 公式サイトで 確かめてください。</p>';
     view('英検ラボ', html, null, null);
   }
 
@@ -692,7 +693,8 @@
   window.EKAPP = {
     S: function () { return S; }, save: save, mark: mark, GR: GR, esc: esc, shuffle: shuffle, speak: speak, sayBtn: sayBtn, bracket: bracket, blankify: blankify,
     view: view, toast: toast, go: go, wordQ: wordQ, idiomQ: idiomQ, clozeQ: clozeQ, wid: wid, iid: iid, cid: cid, fixed: fixed,
-    sfx: function () { return S.sfx !== false; }
+    sfx: function () { return S.sfx !== false; },
+    grades: function () { return EK.grades; }, ORDER: EK.grades.map(function (g) { return g.id; })
   };
   if (S.theme) document.documentElement.dataset.theme = S.theme;
   window.addEventListener('hashchange', route);

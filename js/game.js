@@ -41,6 +41,15 @@
   }
 
   var G = null;
+  // 対戦：部屋の seed から 全員 同じ 順番の 問題を 作る
+  function rng(seed) {
+    return function () {
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function rshuffle(a, R) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(R() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function fever() { return G && G.feverUntil > Date.now(); }
   function mult() { var m = G.combo >= 50 ? 3 : G.combo >= 25 ? 2 : G.combo >= 10 ? 1.5 : 1; return m * (fever() ? 2 : 1); }
   function speedNow() { var el = (G.played) / 1000; return Math.min(RULE.cap, 1 + Math.max(0, el - RULE.calm) / RULE.ramp); }
@@ -76,33 +85,39 @@
   function nextItem() {
     // まちがえた 問題は 4 問あとに もう一度
     for (var r = 0; r < G.retry.length; r++) if (G.retry[r].at <= G.n) return G.retry.splice(r, 1)[0].it;
-    var kind = G.mode;
-    if (kind === 'mix') { var x = Math.random(); kind = x < 0.45 ? 'word' : x < 0.7 ? 'idiom' : 'cloze'; if (!G.pools[kind].length) kind = 'word'; }
+    var kind = G.mode, bt = !!G.battle, rnd = bt ? G.R : Math.random;
+    if (kind === 'mix') {
+      var x = rnd(); kind = x < 0.45 ? 'word' : x < 0.7 ? 'idiom' : 'cloze';
+      if (!G.pools[kind].all.length) kind = ['word', 'idiom', 'cloze'].filter(function (k) { return G.pools[k].all.length; })[0];
+    }
     var p = G.pools[kind], it;
-    if (!p.items.length) p.items = A().shuffle(p.all);
+    if (!p.items.length) p.items = bt ? rshuffle(p.all, G.R) : A().shuffle(p.all);
     it = p.items.pop();
     return it;
   }
   function makeQ(it) {
-    var g = G.g;
+    var g = it.g || G.g;
     if (it.k === 'word') return A().wordQ(g, it.w, G.combo >= 10 && Math.random() < 0.4 ? 'je' : 'ej');
     if (it.k === 'idiom') return A().idiomQ(g, it.w, Math.random() < 0.5 ? 'ex' : 'ja');
     return A().clozeQ(g, it.w, it.i);
   }
 
   // ---------- ゲーム ----------
-  function start(g, mode) {
+  function start(g, mode, bo) { // bo：クラス対戦の 設定（先生の 部屋から）。ふだんは なし
     quit();
-    var pools = {};
-    ['word', 'idiom', 'cloze'].forEach(function (k) { var all = poolOf(g, k); pools[k] = { all: all, items: A().shuffle(all) }; pools[k].length = all.length; });
+    var pools = {}, R = bo ? rng(bo.seed) : null;
+    ['word', 'idiom', 'cloze'].forEach(function (k) {
+      var all = bo ? (bo.pools[k] || []) : poolOf(g, k);
+      pools[k] = { all: all, items: bo ? rshuffle(all, R) : A().shuffle(all) }; pools[k].length = all.length;
+    });
     if (mode !== 'mix' && !pools[mode].all.length) { A().toast('問題が ありません'); return; }
-    G = { g: g, mode: mode, pools: pools, retry: [], n: 0, score: 0, combo: 0, maxCombo: 0, ok: 0, miss: 0, meter: 0, feverUntil: 0,
-      left: RULE.start * 1000, played: 0, last: 0, hints: RULE.hints, missed: [], missedIds: {}, startAt: 0, over: false, pauseUntil: 0, lastSky: 0 };
-    var el = document.createElement('div'); el.className = 'rk c-' + g.color; el.id = 'rk';
+    G = { g: g, battle: bo || null, R: R, mode: mode, pools: pools, retry: [], n: 0, score: 0, combo: 0, maxCombo: 0, ok: 0, miss: 0, meter: 0, feverUntil: 0,
+      left: (bo ? bo.dur * 1000 : RULE.start * 1000), total: bo ? bo.dur : RULE.start, played: 0, last: 0, hints: RULE.hints, missed: [], missedIds: {}, startAt: 0, over: false, pauseUntil: 0, lastSky: 0 };
+    var el = document.createElement('div'); el.className = 'rk c-' + (g ? g.color : 'warm'); el.id = 'rk';
     el.innerHTML = '<div class="rk-in">' +
       '<div class="hud"><button class="btn ghost" data-rkq title="やめる" aria-label="やめる">✕</button>' +
       '<div class="tbar" id="tbar"><i id="tfill"></i><span id="tsec"></span></div>' +
-      '<div class="hc" id="hcombo"></div><div class="hs"><small>' + esc(MODES.filter(function (m) { return m.id === mode; })[0].name) + '</small><b id="hscore">0</b></div></div>' +
+      '<div class="hc" id="hcombo"></div>' + (bo ? '<div class="hr" id="hrank"><small>いま</small><b>－</b></div>' : '') + '<div class="hs"><small>' + esc(MODES.filter(function (m) { return m.id === mode; })[0].name) + '</small><b id="hscore">0</b></div></div>' +
       '<div class="hud2"><span class="mlab">🔥</span><div class="meter2"><i id="hmeter"></i><span id="hmtext"></span></div><span class="spd" id="hspd"></span><span class="altv" id="halt">🛫 0 m</span></div>' +
       '<div class="sky sky0" id="sky"><span class="here" id="skyh"></span><span class="track"><i id="skyt"></i><span class="rkt" id="skyr">🚀</span></span><span class="nxt" id="skyn"></span></div>' +
       '<div class="rk-card" id="rkc"><div class="count" id="count">3</div></div>' +
@@ -116,6 +131,21 @@
       return { level: al.i + (al.next ? al.pct / 100 : 0), combo: G.combo, boost: fever(), started: G.startAt && !G.over };
     });
     if (window.LXFX) LXFX.unlock();
+    if (bo) { // 先生の 時計に あわせて 3・2・1（全員 いっせいに はじまる）
+      G.cd = setInterval(function () {
+        if (!G) return;
+        var rem = bo.startAt - bo.now();
+        if (rem > 0) { var n = Math.ceil(rem / 1000); if (n !== G.cdN) { G.cdN = n; $('#count').textContent = n; if (n <= 3) FX('beep'); } return; }
+        clearInterval(G.cd); FX('go');
+        var r = $('#rkc').getBoundingClientRect();
+        if (window.LXFX) LXFX.pop('LIFT OFF!', r.left + r.width / 2, r.top + r.height * 0.4, 'go');
+        G.startAt = Date.now(); G.last = performance.now();
+        ask();
+        G.raf = requestAnimationFrame(tick);
+      }, 100);
+      drawHud();
+      return;
+    }
     // 3・2・1
     var c = 3; FX('beep');
     G.cd = setInterval(function () {
@@ -143,6 +173,12 @@
     if (!G || G.over) return;
     G.raf = requestAnimationFrame(tick);
     var dt = Math.min(100, now - G.last); G.last = now;
+    if (G.battle) { // 時間は 先生の 時計で きまる（止まらない・速くならない）
+      G.played += dt; G.left = Math.max(0, G.battle.endAt - G.battle.now());
+      drawHud();
+      if (G.left <= 0) finish();
+      return;
+    }
     if (document.hidden || Date.now() < G.pauseUntil) { drawHud(); return; }
     G.played += dt;
     G.left -= dt * speedNow();
@@ -152,16 +188,16 @@
   function drawHud() {
     if (!G) return;
     var sec = G.left / 1000, al = altOf(G.score);
-    $('#tfill').style.width = Math.min(100, sec / RULE.start * 100) + '%';
+    $('#tfill').style.width = Math.min(100, sec / G.total * 100) + '%';
     $('#tfill').className = sec < 10 ? 'hurry' : '';
     $('#tbar').classList.toggle('hurry', sec < 10);
-    $('#tsec').textContent = '⛽ ' + sec.toFixed(1) + ' 秒';
+    $('#tsec').textContent = (G.battle ? '⏱ 残り ' + Math.ceil(sec) : '⛽ ' + sec.toFixed(1)) + ' 秒';
     $('#hscore').textContent = fmt(G.score);
     $('#hcombo').innerHTML = G.combo >= 2 ? '<b>' + G.combo + '</b> COMBO' + (mult() > 1 ? '<i>×' + mult() + '</i>' : '') : '';
     var f = fever();
     $('#hmeter').style.width = (f ? (G.feverUntil - Date.now()) / (RULE.feverSec * 1000) * 100 : G.meter * 100) + '%';
     $('#hmtext').textContent = f ? '🚀 BOOST ×2' : 'BOOST まで ' + Math.max(0, Math.ceil((1 - G.meter) * RULE.fever)) + ' 問';
-    var sp = speedNow(); $('#hspd').textContent = sp > 1.05 ? '⏩×' + sp.toFixed(1) : ''; $('#hspd').classList.toggle('fast', sp > 1.8);
+    var sp = G.battle ? 1 : speedNow(); $('#hspd').textContent = sp > 1.05 ? '⏩×' + sp.toFixed(1) : ''; $('#hspd').classList.toggle('fast', sp > 1.8);
     $('#halt').textContent = al.here[2] + ' ' + fmtKm(al.km);
     $('#skyh').textContent = al.here[2] + ' ' + al.here[3];
     $('#skyn').textContent = al.next ? '→ ' + al.next[2] + ' ' + al.next[3] : '🏁';
@@ -182,7 +218,7 @@
       var before = altOf(G.score).i;
       G.score += p;
       FX('tap', G.combo); if (window.LXFX) { LXFX.sparks(el, Math.min(30, 6 + G.combo)); LXFX.popAt(el, '+' + p); }
-      if (G.combo >= 5) { // コンボ中は 燃料が ふえる
+      if (G.combo >= 5 && !G.battle) { // コンボ中は 燃料が ふえる
         var add = kd.plus * (G.combo >= 20 ? 2 : 1); G.left = Math.min(G.left + add * 1000, 99000);
         if (window.LXFX) LXFX.popAt($('#tbar'), '+' + add.toFixed(1) + '秒', 'tplus');
       }
@@ -192,15 +228,17 @@
       if (after.i > before) setTimeout(function () { if (!G) return; var r = $('#rkc').getBoundingClientRect(); if (window.LXFX) LXFX.pop(after.here[2] + ' ' + after.here[3] + ' 突破！', r.left + r.width / 2, r.top + r.height / 2, 'big'); FX('lead'); }, 200);
       setTimeout(function () { if (G && !G.over) ask(); }, 260);
     } else {
-      G.combo = 0; G.miss++; G.left -= RULE.miss * 1000; G.meter = Math.max(0, G.meter - 0.25);
-      FX('miss'); if (window.LXFX) LXFX.popAt($('#tbar'), '−' + RULE.miss + '秒', 'tminus');
+      G.combo = 0; G.miss++; G.meter = Math.max(0, G.meter - 0.25);
+      if (!G.battle) G.left -= RULE.miss * 1000;
+      FX('miss'); if (window.LXFX && !G.battle) LXFX.popAt($('#tbar'), '−' + RULE.miss + '秒', 'tminus');
       $('#rkc').classList.add('shake');
       if (G.q.id) A().mark(G.q.id, false);
       if (!G.missedIds[G.q.id || G.n]) { G.missedIds[G.q.id || G.n] = 1; G.missed.push(G.q); }
       G.retry.push({ it: G.it, at: G.n + 4 });
       // 正解と コアの意味を 少し見せる（その間 燃料は 止まる）
-      var c = G.it.k === 'cloze' ? null : G.g.core[G.it.w.en];
-      var line = G.it.k === 'cloze' ? ((G.g.d.clozeHelp[G.it.i] || {}).think || G.it.w.why) : c ? c.core : G.it.w.ja;
+      var ig = G.it.g || G.g;
+      var c = G.it.k === 'cloze' ? null : ig.core[G.it.w.en];
+      var line = G.it.k === 'cloze' ? ((ig.d.clozeHelp[G.it.i] || {}).think || G.it.w.why) : c ? c.core : G.it.w.ja;
       var tip = document.createElement('div'); tip.className = 'rk-miss';
       tip.innerHTML = '<b>正解：<span class="en">' + esc(q.opts[q.a]) + '</span></b><span>🧠 ' + esc(line) + '</span><small>タップで つぎへ</small>';
       $('#rkc').appendChild(tip);
@@ -208,6 +246,7 @@
       G.missT = setTimeout(missNext, RULE.missWait);
       if (G.left <= 0) { G.left = 0; }
     }
+    if (G.battle) G.battle.onScore(G, false);
     drawHud();
   }
   function missNext() {
@@ -241,6 +280,13 @@
     if (!G || G.over) return;
     G.over = true; cancelAnimationFrame(G.raf); clearTimeout(G.missT);
     FX('whistle');
+    if (G.battle) { // 対戦：結果は 部屋の 画面（battle.js）で 出す
+      var done = G, bo2 = G.battle;
+      if (window.LXSCENE) LXSCENE.stop();
+      var rkEl = $('#rk'); if (rkEl) rkEl.remove(); document.body.classList.remove('rk-on');
+      bo2.onEnd(done);
+      return;
+    }
     var S = A().S(); S.best = S.best || {};
     var key = bestKey(G.g, G.mode), old = S.best[key], rec = !old || G.score > old.score;
     if (rec && G.score > 0) { S.best[key] = { score: G.score, ok: G.ok, combo: G.maxCombo }; A().save(); }
@@ -278,7 +324,10 @@
     if (t.id === 'sfx') { var S = A().S(); S.sfx = t.checked; A().save(); return; }
     if (t.dataset.rka != null) return answer(+t.dataset.rka);
     if (t.dataset.rkh != null) return useHint();
-    if (t.dataset.rkq != null) { var g = G && G.g; quit(); G = null; if (g) menu(g); return; }
+    if (t.dataset.rkq != null) {
+      if (G && G.battle) { if (confirm('対戦を やめて 部屋から ぬけますか？')) { var bq = G.battle; quit(); G = null; bq.onQuit(); } return; }
+      var g = G && G.g; quit(); G = null; if (g) menu(g); return;
+    }
     if (t.dataset.rkagain != null) { var g2 = G.g, m = G.mode; return start(g2, m); }
     if (t.classList.contains('rk-card') && G && G.answered && !G.over && G.pauseUntil) return missNext();
   }, true);
@@ -287,8 +336,11 @@
     if (/^[1-4]$/.test(e.key)) { e.preventDefault(); e.stopPropagation(); if (!G.answered) answer(+e.key - 1); }
     else if (e.key === 'h' || e.key === 'H') { e.preventDefault(); e.stopPropagation(); useHint(); }
     else if ((e.key === 'Enter' || e.key === ' ') && G.answered && G.pauseUntil) { e.preventDefault(); e.stopPropagation(); missNext(); }
-    else if (e.key === 'Escape') { var g = G.g; quit(); G = null; menu(g); }
+    else if (e.key === 'Escape') { if (G.battle) return; var g = G.g; quit(); G = null; menu(g); }
   }, true);
 
-  window.EKGAME = { menu: menu, start: start, quit: quit, _G: function () { return G; } };
+  window.EKGAME = { menu: menu, start: start, quit: quit, _G: function () { return G; },
+    startBattle: function (bo) { return start(null, bo.mode, bo); },
+    setRank: function (html) { var el = $('#hrank'); if (el) el.innerHTML = html; },
+    playing: function () { return !!G && !!G.battle && !G.over; } };
 })();
